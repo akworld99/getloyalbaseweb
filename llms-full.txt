@@ -1,0 +1,821 @@
+# Loyalbase: full site text
+
+Key facts:
+- What it is: a customer retention app for WooCommerce stores (live) and Shopify stores (early access). Not a points or loyalty program.
+- What it does: reads a store's orders and, every morning, lists customers to bring back with the reason and the value of one more order: late regulars, yearly occasions, unpaid checkouts, first time buyers (45 to 150 days after a first order), customers who stopped ordering, best customers and corporate buyers. Each comes with a WhatsApp message ready to send.
+- How "late" is decided: for customers with two or more orders, late means the days since their last order exceed the largest of 1.5 times their median gap, their median gap plus 21 days, and 45 days.
+- Proof: every message is matched to the first paid order within 60 days, each order counted once. 1 in 10 people on the bring back lists are held back at random so Results shows how many orders the messages added.
+- Also includes: sales by returning and new customers, best sellers, products rising and falling, bought together, discount code performance, peak dates with last year's numbers, Meta ads and Facebook and Instagram posts and Google Analytics next to the store's real sales, a Monday brief, a monthly report, team logins, list downloads and Sendy email sends.
+- Privacy: customer names, phone numbers, emails and addresses never leave the store. Loyalbase stores order facts and keyed hashes. Names load from the store to the owner's browser using a 5 minute signed pass, and each lookup is logged on the store.
+- Setup: install the WordPress plugin (WordPress 6.2 or newer, PHP 7.4 or newer, WooCommerce), press Connect, approve. About 10 minutes.
+- Price: $50 a month, flat; does not rise with order volume. Early access is free while the store is set up.
+- Coming next: Shopify app, automatic WhatsApp reminders the owner approves, POS and branch sales, reorder links, referrals and review asks.
+- Company: built by Digisavvy in Colombo, Sri Lanka; founded by Akmal Afzal. Contact: WhatsApp +94 77 027 4519, akmal@digisavvyteam.com.
+
+# Home: frequently asked questions
+
+## What is Loyalbase?
+A customer retention app for WooCommerce and Shopify stores. It reads your orders, tells you who to message on WhatsApp and why, and proves how much came back. It also shows what's selling, which dates to plan for, and whether your ads paid.
+
+## How much does Loyalbase cost?
+$50 a month, flat. The price doesn't rise as your orders grow, and early access is free while we set you up.
+
+## Do I need a points program?
+No. Nothing to design, no discounts to fund. If you have one, keep it. They work together.
+
+## How does it know a customer is late?
+It learns each customer's own rhythm. Someone who orders every three weeks is flagged after about six weeks without an order. Someone who orders twice a year isn't flagged for about nine months. Yearly occasions are spotted when the same person orders around the same date in different years.
+
+## Is customer data safe?
+Names, phones, emails and addresses never leave your store. Loyalbase holds order facts and scrambled IDs it can't reverse. Names load from your store to your screen, and every lookup is logged.
+
+## How do I know the messages worked?
+Every message is matched to paid orders within 60 days, counted once. And 1 in 10 people are held back and not messaged, so Results shows what your messages really added.
+
+## Does it work with my POS and branches?
+Not yet. It's on the roadmap, starting with a sales file per branch and then direct sync for cloud POS systems. Walk in customers join the same lists when the till records a phone number.
+
+## Which countries does it work in?
+Any country. Phone numbers are matched in full international form, and money shows in your own currency.
+
+## I use Klaviyo or a points app. Do I switch?
+No. Keep them. Loyalbase finds the people who need a personal nudge and shows what it was worth.
+
+
+---
+
+# Get more repeat customers from your WooCommerce store
+URL: https://getloyalbase.app/woocommerce-customer-retention/
+
+Short answer: Loyalbase is a customer retention plugin and app for WooCommerce. Install the plugin, press Connect, and your order history comes in. Every morning you see which customers are late for their next order, have a yearly occasion coming up, stopped at payment, or bought once and never came back, each with a WhatsApp message ready to send. Results shows which messages brought sales back.
+
+## Why WooCommerce stores lose repeat customers
+
+WooCommerce is good at taking orders. It isn't built to tell you who stopped ordering. Its reports show totals: sales this month, top products, average order value. They don't tell you that a customer who used to buy every three weeks hasn't ordered in two months.
+
+Customers rarely cancel. They drift to a competitor, a marketplace or the supermarket, and most owners only notice when the sales line goes flat. By then a friendly message is much less likely to work.
+
+## What Loyalbase finds in your WooCommerce orders
+
+Seven lists, refreshed every day. Each person comes with the reason they're on the list and what one more order from them is worth.
+
+| List | Who is on it |
+| Late regulars | Customers with two or more orders who have gone quiet for longer than their usual gap. |
+| Yearly occasions | Customers who order around the same date every year, due in the next two weeks. |
+| Unpaid checkouts | People who picked what they wanted in the last two weeks and didn't finish paying. |
+| First time buyers | Bought once, 45 to 150 days ago. The window when a second order is most likely. |
+| Stopped ordering | Two or more orders in the past, nothing in over a year. |
+| Best customers | Your top buyers. Worth a thank you before any offer. |
+| Corporate buyers | People ordering for a company. Worth a call before office events and festive seasons. |
+
+You also get a WhatsApp message written for each list. You can change every word before it goes. See all seven in our WhatsApp message templates.
+
+## How it works
+
+- Install the Loyalbase plugin. In WordPress, go to Plugins, then Add New, then Upload Plugin. The download already knows your account.
+
+- Press Connect to Loyalbase. Approve once. Your store creates its own secret key, which never leaves your website.
+
+- Your order history comes in. It sends in the background with a live count while the Loyalbase page is open. Big stores take minutes, not hours.
+
+- Open Today. Up to three jobs a morning, on your phone or laptop. Tap a customer and WhatsApp opens with the message written.
+
+After that, Loyalbase updates after new orders and again every night.
+
+## What the plugin sends, and what it never sends
+
+### Sent to Loyalbase
+
+- Order dates and amounts
+- Products bought
+- Delivery area
+- An occasion label such as "birthday", worked out on your site
+- Scrambled versions of the phone and email, so repeat customers can be recognised
+
+### Never sent
+
+- Names
+- Phone numbers
+- Email addresses
+- Street addresses
+- Cake or card wording
+
+The key used to scramble phone numbers and emails is created on your website and never sent, so Loyalbase can't turn them back into contact details. When you open a customer, your browser fetches their name straight from your store using a pass that expires in five minutes, and every lookup is logged in WordPress. Read more on our privacy page.
+
+## More than a list
+
+- Sales: returning and new customers by month, best sellers, products rising and falling, what's bought together, and which discount codes bring people back.
+
+- Dates to plan for: big sale and gifting dates with last year's numbers and the date your ads should go live.
+
+- Marketing: connect Facebook and Google Analytics to see ad spend, posts and website visits next to the sales that really came in.
+
+- Bulk sends: download any list as a WhatsApp campaign file or a spreadsheet, or send it to your Sendy email list. Only people who said yes are included.
+
+- WhatsApp tick box at checkout: an optional box that lets customers say yes to WhatsApp messages. The answer is saved on the order as their consent record.
+
+- Proof: 1 in 10 people on the bring back lists are held back, so Results shows what your messages really added. How that works.
+
+## Requirements
+
+- WordPress 6.2 or newer (tested up to 6.8)
+
+- PHP 7.4 or newer
+
+- WooCommerce
+
+- Any country and currency. Phone numbers are matched in full international form.
+
+## See this for your own store
+Connect your store and get your first list in about ten minutes. From $50 a month, free while we set you up.
+
+Get early access
+Ask on WhatsApp
+
+## Questions
+
+### Do I need a developer to set it up?
+No. If you can install a WordPress plugin, you can set up Loyalbase. Upload the plugin, activate it, and press Connect to Loyalbase.
+
+### Will it slow down my store?
+The plugin sends order facts in the background in small batches. The only thing it adds to your checkout is the optional WhatsApp tick box, and you can leave that switched off.
+
+### What happens if I uninstall the plugin?
+Uninstalling removes Loyalbase's settings and keys from your site. Customers' WhatsApp consent stays saved on their orders, because it's their record. To remove your store's data from Loyalbase as well, use Delete this shop in Loyalbase settings.
+
+### Does it work with my email or loyalty plugin?
+Yes. Loyalbase doesn't change your checkout, prices or emails, so it runs alongside points plugins and email tools.
+
+### How much does it cost?
+$50 a month, flat, whatever your order volume. Early access is free while we set you up.
+
+---
+
+# Bring back Shopify customers without running a points program
+URL: https://getloyalbase.app/shopify-customer-retention/
+
+Short answer: Loyalbase for Shopify is in early access. It reads your Shopify orders, finds customers who are late for their next order, have a yearly occasion coming up or bought once and never came back, and gives you a WhatsApp message for each. Join early access and we'll set your store up as soon as it can connect.
+
+## What Shopify stores get
+
+| List | Who is on it |
+| Late regulars | Customers with two or more orders who have gone quiet for longer than their usual gap. |
+| Yearly occasions | Customers who order around the same date every year, due in the next two weeks. |
+| Unpaid checkouts | People who picked what they wanted in the last two weeks and didn't finish paying. |
+| First time buyers | Bought once, 45 to 150 days ago. The window when a second order is most likely. |
+| Stopped ordering | Two or more orders in the past, nothing in over a year. |
+
+Plus the rest of Loyalbase: sales by returning and new customers, dates to plan for with last year's numbers, Meta ads and posts next to real sales, and Results with a held back group so you know what your messages added.
+
+## How it's different from a Shopify loyalty app
+
+Points apps such as Smile.io, LoyaltyLion and Yotpo reward customers who keep coming back. That's useful, but a customer who has stopped buying doesn't visit your store, so they never see their points.
+
+Loyalbase goes after the ones who stopped. There's no widget to install, no rewards to design and no discounts to fund. You get a short list each morning and a message to send. Many stores run both. Read loyalty program or win back messages for the full comparison.
+
+## Privacy on Shopify
+
+Loyalbase works from order facts and scrambled IDs, not contact details. On Shopify, customer names load inside your Shopify admin, and are never stored by Loyalbase.
+
+## What you can do today
+
+- Export your orders from Shopify admin as a CSV file.
+
+- Find the customers who stopped buying with the spreadsheet method in our step by step guide.
+
+- Message them using our seven free WhatsApp templates.
+
+## Get the Shopify app first
+Early access stores connect first. Tell us your store and we'll message you on WhatsApp when it's ready.
+
+Get early access
+Ask on WhatsApp
+
+## Questions
+
+### When will the Shopify app be ready?
+Early access stores get it first. Join the list and we'll message you on WhatsApp when your store can connect.
+
+### Will it work with my Shopify loyalty or email app?
+Yes. Loyalbase doesn't change your theme, checkout or emails, so it runs alongside Smile.io, LoyaltyLion, Yotpo or Klaviyo.
+
+### How much will it cost?
+The same flat price as WooCommerce, from $50 a month. The price doesn't rise as your orders grow.
+
+---
+
+# 7 WhatsApp messages that bring customers back
+URL: https://getloyalbase.app/whatsapp-messages-to-bring-back-customers/
+
+Short answer: The best WhatsApp message to bring a customer back is short, personal and sent at the right moment: when a regular is later than usual, two weeks before a yearly occasion, 45 to 150 days after a first order, or a day or two after an unpaid checkout. Use their first name, sign with your shop's name, ask one easy question, and leave discounts for later.
+
+Late regular
+
+### The customer who has gone quiet
+
+When to send: a customer with two or more orders has gone clearly longer than their usual gap. For example, someone who orders every three weeks and hasn't ordered in six.
+
+Hi [Name], it's been a little while! We'd love to have you back. Anything we can get ready for you this week?
+[Shop name]
+
+Why it works: No discount and no guilt. It reminds them you exist and gives them an easy yes.
+
+Yearly occasion
+
+### The birthday or anniversary they order for every year
+
+When to send: about two weeks before the date they ordered for last year.
+
+Hi [Name]! Your yearly [birthday] order is coming up on [date]. Shall we get something ready for you?
+[Shop name]
+
+Why it works: You solve a problem before they remember they have it. It works best for flowers, cakes and gifts. If you know who the order is for, try: "[Recipient]'s birthday is coming up on [date]. Would you like us to get something ready again this year?"
+
+Unpaid checkout
+
+### The checkout that stopped at payment
+
+When to send: within a day or two of a checkout that didn't get paid.
+
+Hi [Name], we noticed your order didn't go through. Can we help you finish it, or would you like to pay another way?
+[Shop name]
+
+Why it works: Many unpaid checkouts are failed cards or payment worries, not lost interest. Offering another way to pay, like bank transfer or cash on delivery, removes the blocker.
+
+First time buyer
+
+### The customer who bought once
+
+When to send: 45 to 150 days after their first order, if they haven't ordered again.
+
+Hi [Name], thank you again for your first order with [Shop name]! We hope you loved it. Anything we can get for you next?
+
+Why it works: The second order is where a buyer becomes a customer. A thank you with an open question feels like service, not marketing.
+
+Stopped ordering
+
+### The past regular you haven't seen in a year
+
+When to send: when someone with two or more past orders hasn't bought in over a year.
+
+Hi [Name], we've missed you at [Shop name]! A lot has changed since your last order. Can we tempt you this week?
+
+Why it works: It's honest about the gap, and "a lot has changed" gives them a reason to look. If you have a new product, name it.
+
+Best customer
+
+### Your favourite customers
+
+When to send: any time, and especially before a busy season.
+
+Hi [Name], thank you for being one of our favourite customers. It means a lot to us.
+[Shop name]
+
+Why it works: There's no ask. Your best customers are the ones most likely to recommend you, and a thank you keeps them close.
+
+Corporate buyer
+
+### The person who orders for their office
+
+When to send: a few weeks before office events, year end and festive seasons.
+
+Hi [Name], thank you for the orders for your team! Planning anything for the office soon? We can put together a box for any size.
+[Shop name]
+
+Why it works: One office order can be worth many personal ones. A reminder before the season puts you first in line.
+
+## Seven rules for win back messages that don't annoy people
+
+- Only message people who said yes. Meta requires businesses to get permission before messaging people on WhatsApp, and the permission has to name your business. A tick box at checkout is the simplest way to get it.
+
+- Space them out. One message per person every two weeks at most is a good rule.
+
+- Send in the day. Never late at night or early in the morning.
+
+- Use their name and your shop's name. A message that could have come from anyone gets ignored.
+
+- Ask one easy question. "Anything we can get ready for you this week?" is easier to answer than a link to your catalogue.
+
+- Lead without a discount. Save offers for people who don't reply, so you don't teach customers to wait for a code.
+
+- Always honour stop. If someone asks you to stop, stop, and note it so nobody on your team messages them again.
+
+## Send one by one, or in bulk?
+
+For a handful of people a day, send from the WhatsApp Business app on your phone. It's personal and free.
+
+For bigger lists, use Meta's WhatsApp Business Platform. Marketing messages there use templates that Meta approves first, and they're charged per message.
+
+Loyalbase does both. Tap a customer and WhatsApp opens with the message written, or download a whole list as a campaign file for Meta's messaging campaigns. Only people who said yes are included.
+
+## How to tell if it worked
+
+Write down who you messaged and when, then check who ordered in the next 60 days. Better still, keep a few people aside and don't message them, then compare. Our guide on proving your messages worked shows how. Loyalbase does it for you automatically.
+
+## Know exactly who to send these to
+Loyalbase picks the right people each morning, fills in their name and occasion, and tracks what came back.
+
+Get early access
+Ask on WhatsApp
+
+## Questions
+
+### Is it OK to message customers on WhatsApp?
+Yes, if they gave you their number and agreed to hear from your business. Meta requires this permission for business messages, and data protection laws in many countries apply too. If someone asks you to stop, stop.
+
+### What's the best time to send?
+Send during daytime hours when your customers would normally shop, and never late at night. Try two different times for a few weeks and keep the one that gets more replies.
+
+### Should I offer a discount to bring customers back?
+Not in the first message. A personal check in works for many customers on its own. Keep a small offer for people who don't reply, so discounts don't become the reason anyone orders.
+
+### How many customers should I message a day?
+Only as many as you can reply to properly. A fast, friendly reply is part of what brings them back.
+
+Sources: Meta for Developers: Get opt in for WhatsApp (https://developers.facebook.com/documentation/business-messaging/whatsapp/getting-opt-in)
+
+---
+
+# How to find customers who stopped buying from your store
+URL: https://getloyalbase.app/guides/how-to-find-customers-who-stopped-buying/
+
+Short answer: Work out each customer's usual time between orders, then flag anyone who has gone clearly longer than that. Someone who orders every three weeks and hasn't ordered in six is slipping. Someone who orders twice a year isn't. Also check first time buyers 45 to 150 days after their first order, and anyone who orders around the same date every year.
+
+## Why one cut off date doesn't work
+
+A coffee customer who orders every three weeks is long gone after 90 days. A customer who buys a gift twice a year is perfectly normal at 90 days. One number for everyone flags the wrong people and misses the right ones.
+
+The fix is to judge each customer against their own rhythm.
+
+## The four groups worth checking every week
+
+| Group | Who | Why it matters |
+| Late regulars | Two or more orders, now clearly past their usual gap | Still warm, and the easiest to win back |
+| First time buyers | One order, placed 45 to 150 days ago | The second order is where loyalty starts |
+| Yearly occasions | Ordered around the same date in two or more different years | You can remind them before they shop elsewhere |
+| Past regulars | Two or more orders, nothing in over a year | Worth one honest message |
+
+## How Loyalbase decides someone is late
+
+For each customer with at least two orders, Loyalbase takes the median gap between their orders. That's the middle value, so one odd gap doesn't skew it. A customer counts as late when the days since their last order are more than the largest of these three numbers:
+
+- one and a half times their usual gap
+
+- their usual gap plus 21 days
+
+- 45 days
+
+| Usual gap between orders | Flagged as late after |
+| 3 weeks (21 days) | 45 days, about 6 weeks |
+| 1 month (30 days) | 51 days |
+| 2 months (60 days) | 90 days |
+| 6 months (182 days) | 273 days, about 9 months |
+
+Yearly occasions are found when the same person orders within ten days of the same date in different years. Big public gifting dates such as Valentine's Day, Mother's Day and Christmas are left out, so everyone who orders for Christmas isn't treated as having a personal occasion.
+
+Loyalbase also matches the same person across orders by phone or email, and ignores numbers shared by four or more different customers, like an office line.
+
+## Do it yourself in a spreadsheet
+
+- Export your orders. In WooCommerce, go to Analytics, then Orders, then Download. In Shopify admin, export orders as a CSV file. Keep the customer email or phone, the order date and the order total.
+
+- Sort by customer, then by date.
+
+- For each customer, count their orders and note their last order date.
+
+- Work out their usual gap. For customers with two or more orders, find the days between each pair of orders and take the middle value.
+
+- Work out days since their last order: today minus the last order date.
+
+- Flag them as late if days since their last order is more than all three: 1.5 times their usual gap, their usual gap plus 21, and 45.
+
+- Filter first time buyers separately: one order, placed 45 to 150 days ago.
+
+Expect this to take an hour or two the first time, and to be out of date a week later.
+
+## Or let Loyalbase do it every morning
+
+Loyalbase runs this for every customer each night, adds yearly occasions, unpaid checkouts and best customers, and gives you a WhatsApp message for each person. Then it tracks who came back.
+
+## See this for your own store
+Connect your store and get your first list in about ten minutes. From $50 a month, free while we set you up.
+
+Get early access
+Ask on WhatsApp
+
+## Questions
+
+### How long before a customer counts as lost?
+In Loyalbase, a customer with no order in more than 12 months counts as not seen in a year. Those with two or more past orders also go on the stopped ordering list, because they're worth one honest message.
+
+### What is a good repeat purchase rate?
+It depends heavily on what you sell. Stores selling things people run out of, like coffee, pet food or skincare, see far more repeat orders than stores selling furniture. Compare yourself with your own numbers from last year rather than a general benchmark.
+
+### What should I send to customers who stopped buying?
+A short, personal message with their first name and your shop's name, and one easy question. Our seven free WhatsApp templates cover each group.
+
+---
+
+# Do you need a loyalty program, or win back messages?
+URL: https://getloyalbase.app/guides/loyalty-program-vs-win-back-messages/
+
+Short answer: A points program rewards customers who already come back. Win back messages reach the ones who stopped. For most small stores, win back messages are the better first step: they cost a message instead of a discount, they work on the customers you're actually losing, and you can see which ones brought sales back. Add a points program later if your regulars want rewards.
+
+## What a points program does well
+
+- Gives regulars a reason to keep choosing you over a competitor.
+
+- Tiers make your best customers feel recognised.
+
+- Gives new visitors a reason to create an account.
+
+## What a points program costs
+
+Three costs, not one: the app fee, the rewards you fund, and the time to set it up and keep it running. Most loyalty apps also charge more as your order volume grows.
+
+| App | Free plan | Paid plans from |
+| Smile.io | Up to 200 orders a month | $79 a month for 1,000 orders |
+| LoyaltyLion | About 400 orders a month | $199 a month |
+| Yotpo Loyalty | Basic points and referrals | $199 a month for the first 500 orders |
+
+Public pricing, checked October 2026. Sources at the bottom of this page.
+
+## What a points program misses
+
+A customer who has stopped buying doesn't visit your store, so they never see their points balance. Points are a reason to come back for people who are already coming back.
+
+## What win back messages do
+
+- Go straight to the person, on WhatsApp, from your shop.
+
+- Arrive when it matters: when that customer is later than their usual rhythm, or before their yearly occasion.
+
+- Need no discount to work for many customers.
+
+- Can be measured: who ordered after a message, compared with people who weren't messaged.
+
+## Side by side
+
+| | Points program | Win back messages |
+| Who it reaches | Customers who visit your store | Customers who stopped visiting |
+| What it costs | App fee plus the rewards you give | A message |
+| Setup | Rules, rewards, a widget, emails | A list and a phone |
+| How you measure it | Points earned and redeemed | Orders after a message, against a held back group |
+| Best for | Stores with many frequent buyers | Stores losing customers after the first or second order |
+
+## Which should you start with?
+
+### Start with win back messages if
+
+- most of your customers buy once or twice
+- you sell things people reorder
+- you don't want to fund ongoing discounts
+
+### Add a points program if
+
+- you have many frequent buyers who ask for rewards
+- your margins can carry ongoing discounts
+
+### Use both if
+
+- you want to reward your regulars and win back the ones drifting away. They don't conflict.
+
+## See this for your own store
+Connect your store and get your first list in about ten minutes. From $50 a month, free while we set you up.
+
+Get early access
+Ask on WhatsApp
+
+## Questions
+
+### Can I use a loyalty program and Loyalbase together?
+Yes. Loyalbase doesn't add a widget or change your checkout, so it runs alongside any points app.
+
+### Are loyalty programs worth it for small stores?
+They can be, if you have enough frequent buyers to make points feel valuable and the margin to fund rewards. If most customers buy once or twice, start by bringing those customers back.
+
+### Do win back messages need a discount?
+Not usually in the first message. A personal check in at the right moment works for many customers. Keep an offer for people who don't reply.
+
+Sources: Rivo: Smile.io pricing breakdown, April 2026 (a competing vendor) (https://www.rivo.io/blog/smile-io-pricing); Rivo: LoyaltyLion pricing breakdown, April 2026 (a competing vendor) (https://www.rivo.io/blog/loyaltylion-pricing); Yotpo Loyalty and Referrals pricing (https://www.yotpo.com/v2/wp-content/uploads/2026/08/loyalty-pricing-1.md)
+
+---
+
+# How to tell if your messages really brought customers back
+URL: https://getloyalbase.app/guides/how-to-prove-your-messages-worked/
+
+Short answer: Keep a random 1 in 10 of the people you planned to message aside, and don't message them. After 60 days, compare how many in each group ordered. The gap between the two groups is what your messages added. The rest would have ordered anyway.
+
+## Why "they ordered after my message" isn't proof
+
+If you message 90 customers and 26 order, it's tempting to credit the message with 26 orders. But some of them were going to order that week anyway. Without a comparison, you can't tell how many.
+
+## What a held back group is
+
+Before you send, set aside a random few people from the same list and don't message them. Same type of customer, same timing, one difference: no message. Whatever they do is what would have happened anyway.
+
+## A worked example
+
+100 customers are on your late regulars list. You message 90 and hold back 10. After 60 days:
+
+| | Messaged | Held back |
+| People | 90 | 10 |
+| Ordered within 60 days | 26 | 1 |
+| Came back rate | 29% | 10% |
+
+Without a message, about 10% would have ordered anyway. That's about 9 of the 90 you messaged. So your messages added about 17 extra orders (26 minus 9). If your average order is $60, that's about $1,020 in sales you wouldn't have had.
+
+## How Loyalbase counts a customer who came back
+
+- A message counts when the customer pays for an order within 60 days of it.
+
+- Each order is credited once, to the earliest message before it, so messaging someone three times never counts as three wins.
+
+- Messages less than 14 days old are left out of the came back rate, because those customers haven't had time to order yet.
+
+- 1 in 10 people on the yearly occasion, late regular, first time buyer and stopped ordering lists are held back at random. You can switch this off in settings.
+
+## Rules for a fair test
+
+- Choose who to hold back at random. Not your favourite customers, not the hardest cases.
+
+- Hold back from the same list. Compare late regulars with late regulars.
+
+- Don't contact the held back group another way. A promo email to them spoils the comparison.
+
+- Read results over months, not days. Small groups swing a lot.
+
+## Get this calculated for you
+Loyalbase holds people back, matches every message to paid orders, and tells you in plain words how many extra orders your messages added.
+
+Get early access
+Ask on WhatsApp
+
+## Questions
+
+### Don't I lose sales by holding people back?
+Possibly a few orders from 1 in 10 people. In exchange, you learn which messages are worth sending. In Loyalbase you can switch it off at any time.
+
+### How many customers do I need for this to work?
+Small lists swing a lot. With 10 people held back, one order moves their rate by 10 points. Read the results over two or three months.
+
+### Is this the same as an A/B test?
+It's close. An A/B test compares two versions of a message. A held back group compares sending a message with sending nothing.
+
+---
+
+# How Loyalbase compares
+URL: https://getloyalbase.app/compare/
+
+Short answer: Smile.io, LoyaltyLion and Yotpo are points and rewards programs. Klaviyo is an email and SMS platform. Loyalbase is different: it tells you which customers to bring back each day, gives you a WhatsApp message for each, and proves what came back with a held back group. It works alongside all of them.
+
+| | Loyalbase | Smile.io | LoyaltyLion | Yotpo Loyalty | Klaviyo |
+| Built for | Bringing customers back | Points and rewards | Points and tiers | Points and referrals | Email and SMS |
+| WooCommerce | Yes | No | Through a separate connector | Yes | Yes |
+| Shopify | Early access | Yes | Yes | Yes | Yes |
+| Tells you who to message today | Every morning, with reasons | No | No | Segments on Premium | You build the flows |
+| WhatsApp | One tap, message written | Through other apps | Through other apps | Through other apps | Built in since 2025 |
+| Proves what messages added | Held back group | No | No | No | A/B tests |
+| Ads and posts next to real sales | Meta and Google Analytics | No | No | No | Mainly its own channels |
+| No discounts to fund | Yes | No | No | No | Yes |
+| Customer contact details | Stay on your store | Stored on their platform | Stored on their platform | Stored on their platform | Stored on their platform |
+| Paid plans from | $50 a month, flat | $79 a month, rises with orders | $199 a month, rises with orders | $199 a month, rises with orders | $20 a month, rises with contacts |
+
+Competitor details from their public pricing and help pages and independent reviews, checked October 2026. Plans change often, so check before you decide.
+
+## Detailed comparisons
+
+CompareSmile.io alternative for WooCommerce
+Smile.io doesn't support WooCommerce. Your options, and how Loyalbase differs.
+CompareLoyalbase vs Klaviyo
+An email platform you build in, or a daily list of who to bring back. Or both.
+GuideLoyalty program or win back messages?
+What each costs, who each reaches, and which to start with.
+
+## See this for your own store
+Connect your store and get your first list in about ten minutes. From $50 a month, free while we set you up.
+
+Get early access
+Ask on WhatsApp
+
+## Questions
+
+### Is Loyalbase a loyalty program?
+No. There are no points, tiers or rewards. Loyalbase tells you which customers to bring back and why, writes the message, and proves what came back.
+
+### Can I use Loyalbase with Smile.io or Klaviyo?
+Yes. Loyalbase doesn't change your store's checkout, theme or emails, so it runs alongside loyalty and email tools.
+
+Sources: Smile.io help centre: supported ecommerce platforms (https://help.smile.io/en/articles/4036185-supported-ecommerce-platforms); Rivo: Smile.io pricing breakdown, April 2026 (a competing vendor) (https://www.rivo.io/blog/smile-io-pricing); Rivo: LoyaltyLion pricing breakdown, April 2026 (a competing vendor) (https://www.rivo.io/blog/loyaltylion-pricing); WPLoyalty: LoyaltyLion alternatives (a competing vendor) (https://wployalty.net/best-loyaltylion-alternatives/); Yotpo Loyalty and Referrals pricing (https://www.yotpo.com/v2/wp-content/uploads/2026/08/loyalty-pricing-1.md); Omnisend: Klaviyo pricing, May 2026 (a competing vendor) (https://www.omnisend.com/blog/klaviyo-pricing/); Klaviyo: WhatsApp product launch, September 2025 (https://www.klaviyo.com/blog/klaviyo-whatsapp-product-launch)
+
+---
+
+# Smile.io doesn't work with WooCommerce. Here are your options.
+URL: https://getloyalbase.app/compare/smile-io-alternative-for-woocommerce/
+
+Short answer: Smile.io supports Shopify, Shopify Plus, Shopify POS and BigCommerce, and its help centre says it doesn't integrate with WordPress, so WooCommerce stores can't use it. If you want points, use a WooCommerce loyalty plugin or a platform such as Yotpo that supports WooCommerce. If what you want is customers ordering again, Loyalbase finds the ones who stopped and gives you a WhatsApp message for each.
+
+## Your options on WooCommerce
+
+| Option | What it is | Good for |
+| A WooCommerce points plugin, such as WooCommerce Points and Rewards or WPLoyalty | Points and rewards inside your store | A classic points program on a small budget |
+| Yotpo Loyalty | A loyalty and referrals platform that supports WooCommerce | Bigger stores, with paid plans from $199 a month |
+| Loyalbase | Finds customers who stopped buying, writes a WhatsApp message for each, and proves what came back | Getting customers to order again without funding rewards |
+
+## Smile.io vs Loyalbase
+
+| | Smile.io | Loyalbase |
+| What it is | Points and rewards program | Tells you who to bring back, and how |
+| Platforms | Shopify, Shopify Plus, Shopify POS, BigCommerce | WooCommerce now, Shopify in early access |
+| Who it reaches | Customers who visit your store | Customers who stopped visiting |
+| What you fund | The rewards customers redeem | Nothing beyond the subscription |
+| WhatsApp | Through other apps | One tap, message written |
+| Proof | Program reports | Held back group shows what messages added |
+| Price | Free up to 200 orders a month, then $79 a month for 1,000 orders, $199 for 2,500 | $50 a month, flat |
+
+## When Smile.io is the better choice
+
+If you're on Shopify or BigCommerce and want a polished points and referral program, Smile.io is a well known option. Many stores run a points program and Loyalbase side by side: points for regulars, messages for the customers drifting away.
+
+## See this for your own store
+Connect your store and get your first list in about ten minutes. From $50 a month, free while we set you up.
+
+Get early access
+Ask on WhatsApp
+
+## Questions
+
+### Does Smile.io work with WordPress or WooCommerce?
+No. Smile.io's help centre lists Shopify, Shopify Plus, Shopify POS and BigCommerce as supported platforms and says it doesn't integrate with WordPress.
+
+### Can I use a points plugin and Loyalbase together?
+Yes. Loyalbase doesn't change your checkout or add a widget, so it runs alongside any WooCommerce points plugin.
+
+### Is Loyalbase a loyalty program?
+No. There are no points or rewards. It finds customers who stopped buying, gives you a message for each, and shows the sales that came back.
+
+Sources: Smile.io help centre: supported ecommerce platforms (https://help.smile.io/en/articles/4036185-supported-ecommerce-platforms); Rivo: Smile.io pricing breakdown, April 2026 (a competing vendor) (https://www.rivo.io/blog/smile-io-pricing); Yotpo Loyalty and Referrals pricing (https://www.yotpo.com/v2/wp-content/uploads/2026/08/loyalty-pricing-1.md)
+
+---
+
+# Loyalbase vs Klaviyo
+URL: https://getloyalbase.app/compare/loyalbase-vs-klaviyo/
+
+Short answer: Klaviyo is a full email and SMS marketing platform: you build lists, flows and campaigns yourself, and the price rises with your contacts. Loyalbase is narrower: each morning it tells you which customers to bring back and why, gives you a WhatsApp message for each, and proves what came back against a held back group. Many stores use Klaviyo for newsletters and Loyalbase for personal win backs.
+
+## Side by side
+
+| | Klaviyo | Loyalbase |
+| Built for | Email and SMS marketing at any scale | Getting customers to order again |
+| Main channel | Email and SMS, with WhatsApp since 2025 | WhatsApp, with lists you can send to email |
+| Who decides who to contact | You build segments and flows | Loyalbase picks people each morning, with reasons |
+| Setup | Flows, templates, segments | Install a plugin, open Today |
+| Proof | Revenue reports and A/B tests | Held back group shows what messages added |
+| Ads next to real sales | Not its focus | Meta ads and Google Analytics beside your store's sales |
+| Customer contact details | Stored on Klaviyo | Stay on your store |
+| Price | Free up to 250 profiles, $20 a month for 500 contacts, $60 for 2,500, $150 for 10,000 | $50 a month, flat |
+
+## Choose Klaviyo if
+
+- email is your main channel and your list is large
+- you want newsletters and automated abandoned cart emails
+- you have someone with time to build and maintain flows
+
+## Choose Loyalbase if
+
+- your customers answer WhatsApp faster than email
+- you don't have time to build segments and flows
+- you want a short list each day and proof of what it brought back
+
+## Using both
+
+Keep Klaviyo for newsletters and store emails. Use Loyalbase to find the people worth a personal message. You can download any Loyalbase list as a spreadsheet and import it into your email tool, or send it straight to Sendy.
+
+## See this for your own store
+Connect your store and get your first list in about ten minutes. From $50 a month, free while we set you up.
+
+Get early access
+Ask on WhatsApp
+
+## Questions
+
+### Does Loyalbase send emails?
+Not by itself. You can send any list to your own Sendy email list, or download it as a spreadsheet for your email tool.
+
+### Is Loyalbase cheaper than Klaviyo?
+It depends on your list size. Klaviyo is free for very small lists and its price rises with your contacts. Loyalbase is $50 a month, flat, however many customers you have.
+
+### Does Klaviyo support WhatsApp?
+Yes. Klaviyo announced WhatsApp in September 2025. You still build the flows and decide who to message yourself.
+
+Sources: Omnisend: Klaviyo pricing, May 2026 (a competing vendor) (https://www.omnisend.com/blog/klaviyo-pricing/); Klaviyo: WhatsApp product launch, September 2025 (https://www.klaviyo.com/blog/klaviyo-whatsapp-product-launch); Klaviyo help centre: Marketing Analytics (https://help.klaviyo.com/hc/en-us/articles/33789259613595-Getting-started-with-Marketing-Analytics)
+
+---
+
+# Guides for store owners
+URL: https://getloyalbase.app/guides/
+
+GuideHow to find customers who stopped buying
+The method that judges each customer against their own rhythm, plus a spreadsheet version.
+Templates7 WhatsApp messages that bring customers back
+Copy and send. When to send each one, and why it works.
+GuideHow to prove your messages worked
+Held back groups explained, with a worked example.
+GuideLoyalty program or win back messages?
+What each costs, who each reaches, and which to start with.
+WooCommerceCustomer retention for WooCommerce
+What Loyalbase finds in your WooCommerce orders, and how to set it up.
+CompareLoyalbase vs loyalty and email apps
+Smile.io, LoyaltyLion, Yotpo and Klaviyo, side by side.
+
+---
+
+# About Loyalbase
+URL: https://getloyalbase.app/about/
+
+Short answer: Loyalbase is a customer retention app for WooCommerce and Shopify stores, built in Colombo, Sri Lanka, by Digisavvy, a performance marketing team. It reads a store's orders, tells the owner who to message each day and why, and shows the sales that came back.
+
+## How it started
+
+Loyalbase began as a customer dashboard we built for a cake and gifting store in Sri Lanka. The owner wanted to know which regulars had gone quiet and who to remind before birthdays and anniversaries. We turned it into a product any WooCommerce or Shopify store can use.
+
+## What we believe
+
+- Customer data belongs to the store. Names, phone numbers, emails and addresses stay on your website. Loyalbase works from order facts and scrambled IDs.
+
+- Plain words beat dashboards. "Late for their next order" instead of "at risk segment". One clear thing to do on every screen.
+
+- Proof beats vanity numbers. We count the orders your messages added, against a held back group, not messages sent or opened.
+
+- WhatsApp first. In many markets, customers answer WhatsApp long before they open an email.
+
+## Who we are
+
+Loyalbase is built by Digisavvy, a performance marketing team in Colombo, and founded by Akmal Afzal.
+
+## Where we're going
+
+Next up: the Shopify app, automatic WhatsApp reminders you approve before they send, and walk in sales from POS systems at your outlets. Our first markets are Sri Lanka, India, Pakistan, Bangladesh, the UAE and the Gulf, and stores anywhere can join.
+
+We're raising our first round. If you know ecommerce in South Asia or the Gulf, talk to us.
+
+## Contact
+
+- WhatsApp: +94 77 027 4519
+
+- Email: akmal@digisavvyteam.com
+
+## See this for your own store
+Connect your store and get your first list in about ten minutes. From $50 a month, free while we set you up.
+
+Get early access
+Ask on WhatsApp
+
+---
+
+# Privacy
+URL: https://getloyalbase.app/privacy/
+
+Short answer: This website uses Google Analytics to count visits and Formspree to receive the early access form. We don't sell personal data. The Loyalbase app never stores your customers' names, phone numbers, emails or addresses: those stay on your store, and Loyalbase works from order facts and scrambled IDs.
+
+## This website
+
+### Analytics
+
+We use Google Analytics to understand which pages are useful. It uses cookies and records things like pages viewed, device type and approximate location. You can block it with your browser settings or the Google Analytics opt out add on.
+
+### Early access form
+
+When you fill in the early access form, we receive your email, store website and WhatsApp number through Formspree, which delivers it to our inbox. We use it only to contact you about Loyalbase.
+
+### WhatsApp links
+
+Tapping a WhatsApp button opens WhatsApp, which is run by Meta. If you message us, we see your number and messages like any WhatsApp chat.
+
+### Hosting and fonts
+
+This site is hosted on GitHub Pages and loads fonts from Google Fonts. Like any web host, they may receive your IP address when you visit.
+
+### How long we keep it, and your choices
+
+We keep early access details for as long as we're in touch about Loyalbase, and delete them when you ask. You can ask to see, correct or delete anything we hold about you by emailing akmal@digisavvyteam.com. We don't sell personal data.
+
+## The Loyalbase app and your store's data
+
+- What Loyalbase stores: order facts such as dates, totals, products and delivery area, an occasion label such as "birthday", consent flags, and scrambled versions of phone numbers and emails.
+
+- What it never stores: customer names, phone numbers, emails, street addresses, or cake and card wording.
+
+- Scrambled IDs can't be reversed. The key used to scramble them is created on your website and never sent to Loyalbase.
+
+- Names stay on your store. When you open a customer, your browser fetches the name straight from your store using a pass that expires in five minutes. Names are never sent to Loyalbase or saved in your browser.
+
+- Every lookup is logged on your own store, so you can see each time a name was shown.
+
+- Anything that looks like contact details is refused. The Loyalbase servers reject data containing fields they don't expect.
+
+- You can delete your store from Loyalbase at any time with Delete this shop in settings.
+
+## Who we are
+
+Loyalbase is a product of Digisavvy, Colombo, Sri Lanka. Questions about privacy: akmal@digisavvyteam.com.

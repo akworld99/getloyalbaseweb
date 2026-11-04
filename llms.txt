@@ -1,0 +1,40 @@
+# Loyalbase
+
+> Loyalbase is a customer retention app for WooCommerce and Shopify stores. It finds customers who stopped buying or are due to order, writes a WhatsApp message for each, and shows the sales that came back, measured against a held back group. From $50 a month, flat.
+
+Key facts:
+- What it is: a customer retention app for WooCommerce stores (live) and Shopify stores (early access). Not a points or loyalty program.
+- What it does: reads a store's orders and, every morning, lists customers to bring back with the reason and the value of one more order: late regulars, yearly occasions, unpaid checkouts, first time buyers (45 to 150 days after a first order), customers who stopped ordering, best customers and corporate buyers. Each comes with a WhatsApp message ready to send.
+- How "late" is decided: for customers with two or more orders, late means the days since their last order exceed the largest of 1.5 times their median gap, their median gap plus 21 days, and 45 days.
+- Proof: every message is matched to the first paid order within 60 days, each order counted once. 1 in 10 people on the bring back lists are held back at random so Results shows how many orders the messages added.
+- Also includes: sales by returning and new customers, best sellers, products rising and falling, bought together, discount code performance, peak dates with last year's numbers, Meta ads and Facebook and Instagram posts and Google Analytics next to the store's real sales, a Monday brief, a monthly report, team logins, list downloads and Sendy email sends.
+- Privacy: customer names, phone numbers, emails and addresses never leave the store. Loyalbase stores order facts and keyed hashes. Names load from the store to the owner's browser using a 5 minute signed pass, and each lookup is logged on the store.
+- Setup: install the WordPress plugin (WordPress 6.2 or newer, PHP 7.4 or newer, WooCommerce), press Connect, approve. About 10 minutes.
+- Price: $50 a month, flat; does not rise with order volume. Early access is free while the store is set up.
+- Coming next: Shopify app, automatic WhatsApp reminders the owner approves, POS and branch sales, reorder links, referrals and review asks.
+- Company: built by Digisavvy in Colombo, Sri Lanka; founded by Akmal Afzal. Contact: WhatsApp +94 77 027 4519, akmal@digisavvyteam.com.
+
+## Main page
+- [Loyalbase home](https://getloyalbase.app/): what it does, a week with Loyalbase, features, comparison, pricing, FAQ
+
+## Product
+- [Get more repeat customers from your WooCommerce store](https://getloyalbase.app/woocommerce-customer-retention/): Find WooCommerce customers who stopped buying, send each a ready written WhatsApp message, and see the sales that came back. 10 minute setup, $50 a month.
+- [Bring back Shopify customers without running a points program](https://getloyalbase.app/shopify-customer-retention/): Loyalbase finds Shopify customers who stopped buying and gives you a WhatsApp message for each, with proof of what came back. Now in early access.
+
+## Guides
+- [How to find customers who stopped buying from your store](https://getloyalbase.app/guides/how-to-find-customers-who-stopped-buying/): A simple method to spot customers who stopped buying, using each person's own buying rhythm. Includes a spreadsheet version you can do today.
+- [7 WhatsApp messages that bring customers back](https://getloyalbase.app/whatsapp-messages-to-bring-back-customers/): Copy 7 WhatsApp templates to win back customers: late regulars, first time buyers, unpaid checkouts, yearly occasions and more, with when to send each.
+- [How to tell if your messages really brought customers back](https://getloyalbase.app/guides/how-to-prove-your-messages-worked/): Some customers would have ordered anyway. A held back group shows how many extra orders your messages really added. Simple explanation with a worked example.
+- [Do you need a loyalty program, or win back messages?](https://getloyalbase.app/guides/loyalty-program-vs-win-back-messages/): Points programs reward customers who already come back. Win back messages reach the ones who stopped. Costs, pros and cons, and when to use each.
+
+## Compare
+- [How Loyalbase compares](https://getloyalbase.app/compare/): How Loyalbase compares with loyalty apps and email tools for WooCommerce and Shopify stores: what each is for, platforms, WhatsApp, proof and pricing.
+- [Smile.io doesn't work with WooCommerce. Here are your options.](https://getloyalbase.app/compare/smile-io-alternative-for-woocommerce/): Smile.io doesn't support WooCommerce. Here are the options for WooCommerce stores that want repeat customers, and how Loyalbase compares.
+- [Loyalbase vs Klaviyo](https://getloyalbase.app/compare/loyalbase-vs-klaviyo/): Klaviyo is an email and SMS platform you build flows in. Loyalbase tells you who to bring back each day and proves what came back. How they differ.
+
+## Company
+- [About Loyalbase](https://getloyalbase.app/about/): Loyalbase is a customer retention app for WooCommerce and Shopify stores, built in Colombo by Digisavvy. Who we are and what we believe.
+- [Privacy](https://getloyalbase.app/privacy/): How the Loyalbase website and app handle personal data. Customer names, phone numbers, emails and addresses stay on your store.
+
+## Optional
+- [Full text of every page](https://getloyalbase.app/llms-full.txt)

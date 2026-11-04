@@ -1,0 +1,70 @@
+# getloyalbase.app: search engines and AI assistants are welcome.
+User-agent: *
+Allow: /
+Disallow: /build/
+
+User-agent: GPTBot
+Allow: /
+Disallow: /build/
+
+User-agent: OAI-SearchBot
+Allow: /
+Disallow: /build/
+
+User-agent: ChatGPT-User
+Allow: /
+Disallow: /build/
+
+User-agent: ClaudeBot
+Allow: /
+Disallow: /build/
+
+User-agent: Claude-SearchBot
+Allow: /
+Disallow: /build/
+
+User-agent: Claude-User
+Allow: /
+Disallow: /build/
+
+User-agent: PerplexityBot
+Allow: /
+Disallow: /build/
+
+User-agent: Perplexity-User
+Allow: /
+Disallow: /build/
+
+User-agent: Google-Extended
+Allow: /
+Disallow: /build/
+
+User-agent: Googlebot
+Allow: /
+Disallow: /build/
+
+User-agent: Bingbot
+Allow: /
+Disallow: /build/
+
+User-agent: Applebot
+Allow: /
+Disallow: /build/
+
+User-agent: Applebot-Extended
+Allow: /
+Disallow: /build/
+
+User-agent: DuckDuckBot
+Allow: /
+Disallow: /build/
+
+User-agent: CCBot
+Allow: /
+Disallow: /build/
+
+User-agent: meta-externalagent
+Allow: /
+Disallow: /build/
+
+Sitemap: https://getloyalbase.app/sitemap.xml
