@@ -3,6 +3,15 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-32C4JZB9DC"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-32C4JZB9DC');
+</script>
+
 <title>Loyalbase: bring back customers to your WooCommerce or Shopify store</title>
 <meta name="description" content="Loyalbase reads your store's orders, tells you who to message on WhatsApp each morning, and proves how much came back. For WooCommerce and Shopify stores. From $50 a month.">
 <meta property="og:title" content="Loyalbase: bring your customers back">
@@ -549,8 +558,8 @@ a{color:#1F63B6}a:hover{color:#0F2A4A}
 <div class="lb-card" style="flex: 1 1 300px; min-width: 0; max-width: 420px; padding: 26px; border: 2px solid #F0D7AC; background: #FFF8EC">
 <h3 class="lb-h" style="margin: 0; font-size: 22px; color: #0F2A4A">Talk to the founders</h3>
 <p style="margin: 8px 0 0; font-size: 15px; color: #4A5565">20 minutes, a live demo on a real store, and the deck.</p>
-<a href="mailto:[INVESTOR EMAIL]?subject=Loyalbase%20round" class="lb-btn" style="margin-top: 16px; width: 100%; background: #0F2A4A; color: #FFFFFF">Email the founders</a>
-<a href="https://wa.me/[FOUNDER WHATSAPP]" class="lb-btn lb-btn-g" style="margin-top: 10px; width: 100%">Message on WhatsApp</a>
+<a href="mailto:[INVESTOR EMAIL]?subject=Loyalbase%20round" onclick="if(window.gtag)gtag('event','investor_click',{channel:'email'})" class="lb-btn" style="margin-top: 16px; width: 100%; background: #0F2A4A; color: #FFFFFF">Email the founders</a>
+<a href="https://wa.me/[FOUNDER WHATSAPP]" onclick="if(window.gtag)gtag('event','investor_click',{channel:'whatsapp'})" class="lb-btn lb-btn-g" style="margin-top: 10px; width: 100%">Message on WhatsApp</a>
 </div>
 </div>
 </section>
@@ -626,10 +635,10 @@ function vals(){
     cd:LB_DAYS[s.day],weekBarClass:motion?"lb-weekbar":"",
     tabs:LB_LISTS.map(function(l){return{label:l.label,count:l.count,on:l.id===s.tab,off:l.id!==s.tab,pick:function(){pickTab(l.id);}};}),
     cur:cur,typing:s.typing,notTyping:!s.typing,sent:s.sent,notSent:!s.sent,
-    send:function(){state.sent=true;render('lists');},
+    send:function(){state.sent=true;render('lists');if(window.gtag)gtag('event','demo_whatsapp_tap',{list:state.tab});},
     sentNote:"Opened in WhatsApp. If "+cur.first+" orders within 60 days, it shows in Results.",
     submitted:s.submitted,notSubmitted:!s.submitted,
-    submit:function(e){e.preventDefault();state.submitted=true;render('form');},
+    submit:function(e){e.preventDefault();state.submitted=true;render('form');if(window.gtag)gtag('event','generate_lead',{form:'early_access'});},
     "true":true,"false":false
   };
 }
