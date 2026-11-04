@@ -1,0 +1,669 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Loyalbase: bring back customers to your WooCommerce or Shopify store</title>
+<meta name="description" content="Loyalbase reads your store's orders, tells you who to message on WhatsApp each morning, and proves how much came back. For WooCommerce and Shopify stores. From $50 a month.">
+<meta property="og:title" content="Loyalbase: bring your customers back">
+<meta property="og:description" content="Know who's drifting away. Bring them back with one message. Customer retention for WooCommerce and Shopify stores.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://getloyalbase.com/">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230F2A4A'/%3E%3Cpath d='M45.2 21.6A16 16 0 1 1 22 17.8' fill='none' stroke='%232A78D6' stroke-width='6' stroke-linecap='round'/%3E%3Cpath d='M14.5 14.5l8.6 2.6-2.6 8.6' fill='none' stroke='%232A78D6' stroke-width='6' stroke-linecap='round' stroke-linejoin='round'/%3E%3Ccircle cx='32' cy='34' r='5.5' fill='%23fff'/%3E%3C/svg%3E">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Loyalbase","applicationCategory":"BusinessApplication","operatingSystem":"Web","description":"Customer retention app for WooCommerce and Shopify stores. Tells you who to message on WhatsApp and proves how much came back.","offers":{"@type":"Offer","price":"50","priceCurrency":"USD","description":"Flat monthly price"},"publisher":{"@type":"Organization","name":"Digisavvy"},"url":"https://getloyalbase.com/"}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap">
+<style>
+body{margin:0;background:#FFFFFF}
+a{color:#1F63B6}a:hover{color:#0F2A4A}
+.lb *{box-sizing:border-box}
+.lb-h{font-family:'Inter',system-ui,-apple-system,'Segoe UI',sans-serif;letter-spacing:-.03em;font-weight:700}
+.lb-sr{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+.lb-wrap{max-width:1160px;margin:0 auto;padding:0 clamp(16px,4vw,32px)}
+.lb-eyebrow{font-size:13px;font-weight:600;letter-spacing:.08em;text-transform:uppercase}
+.lb-h2{margin:12px 0 0;font-size:clamp(30px,3.4vw,46px);line-height:1.1;letter-spacing:-.03em;font-weight:700;color:#0F2A4A;font-family:'Inter',system-ui,sans-serif}
+.lb-h2 .lb-soft{color:#6B7788;font-weight:500}
+.lb-lead{margin:16px 0 0;font-size:18px;line-height:1.55;color:#4A5565;max-width:640px}
+.lb-card{background:#FFFFFF;border:1px solid #E3E8EE;border-radius:20px;box-shadow:0 1px 2px rgba(15,42,74,.04)}
+.lb-btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:52px;padding:0 24px;border-radius:14px;font-weight:600;font-size:16px;text-decoration:none;border:0;font-family:inherit;cursor:pointer;transition:transform .2s ease,box-shadow .2s ease}
+.lb-btn:hover{transform:translateY(-1px)}
+.lb-btn-p{background:linear-gradient(135deg,#2A78D6 0%,#1F63B6 100%);color:#FFFFFF;box-shadow:0 10px 24px rgba(42,120,214,.28)}
+.lb-btn-g{background:#0E7A3F;color:#FFFFFF}
+.lb-pill{display:inline-block;padding:2px 9px;border-radius:999px;font-size:12px;font-weight:600}
+.lb-grad-text{background:linear-gradient(90deg,#7FB2F0 0%,#4FD1A5 100%);-webkit-background-clip:text;background-clip:text;color:transparent}
+.lb-grad-text-dark{background:linear-gradient(90deg,#1F63B6 0%,#0E7A3F 100%);-webkit-background-clip:text;background-clip:text;color:transparent}
+.lb-hero-bg{background:linear-gradient(160deg,#081A30 0%,#0F2A4A 45%,#153C6E 100%)}
+.lb-soft-bg{background:linear-gradient(180deg,#F7F9FC 0%,#EEF3F9 100%)}
+.lb-navy-grad{background:linear-gradient(150deg,#0F2A4A 0%,#153C6E 100%)}
+.lb-card-glow{position:relative}
+.lb-card-glow::before{content:"";position:absolute;inset:-1px;border-radius:inherit;padding:1px;background:linear-gradient(135deg,rgba(42,120,214,.6),rgba(79,209,165,.4));-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude;pointer-events:none}
+@keyframes lbRise{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+@keyframes lbPop{0%{opacity:0;transform:translateY(10px) scale(.96)}100%{opacity:1;transform:none}}
+@keyframes lbPulseG{0%{box-shadow:0 0 0 0 rgba(14,122,63,.45)}70%{box-shadow:0 0 0 12px rgba(14,122,63,0)}100%{box-shadow:0 0 0 0 rgba(14,122,63,0)}}
+@keyframes lbMarquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@keyframes lbFlowX{0%{left:0;opacity:0}10%{opacity:1}90%{opacity:1}100%{left:calc(100% - 10px);opacity:0}}
+@keyframes lbFlowY{0%{top:0;opacity:0}10%{opacity:1}90%{opacity:1}100%{top:calc(100% - 10px);opacity:0}}
+@keyframes lbBlink{0%,80%,100%{opacity:.25}40%{opacity:1}}
+@keyframes lbGrowY{from{transform:scaleY(0)}to{transform:none}}
+@keyframes lbGrowX{from{transform:scaleX(0)}to{transform:none}}
+@keyframes lbBar{from{width:0}to{width:100%}}
+@keyframes lbGlow{0%,100%{opacity:.55}50%{opacity:.9}}
+@keyframes lbHub{0%,100%{box-shadow:0 0 0 0 rgba(42,120,214,.35),0 20px 50px rgba(15,42,74,.3)}50%{box-shadow:0 0 0 22px rgba(42,120,214,0),0 20px 50px rgba(15,42,74,.3)}}
+.lb-rise{animation:lbRise .8s cubic-bezier(.2,.7,.2,1) both}
+.lb-pop{animation:lbPop .45s cubic-bezier(.2,.7,.2,1) both}
+.lb .lb-d1{animation-delay:.2s}.lb .lb-d2{animation-delay:.4s}.lb .lb-d3{animation-delay:.6s}.lb .lb-d4{animation-delay:.8s}.lb .lb-d5{animation-delay:1s}.lb .lb-d6{animation-delay:1.2s}.lb .lb-d7{animation-delay:1.4s}.lb .lb-d8{animation-delay:1.6s}
+.lb-go .lb-in{animation:lbRise .7s cubic-bezier(.2,.7,.2,1) both}
+.lb-go .lb-grow{animation:lbGrowY .9s cubic-bezier(.2,.7,.2,1) both;transform-origin:bottom}
+.lb-go .lb-growx{animation:lbGrowX 1s cubic-bezier(.2,.7,.2,1) both;transform-origin:left}
+.lb-go .lb-hub{animation:lbHub 2.6s ease-in-out infinite}
+.lb-go .lb-fx{animation:lbFlowX 2.4s ease-in-out infinite}
+.lb-go .lb-fx2{animation:lbFlowX 2.4s ease-in-out 1.2s infinite}
+.lb-go .lb-fy{animation:lbFlowY 2.4s ease-in-out infinite}
+.lb-pulseg{animation:lbPulseG 1.8s ease-out infinite}
+.lb-glow{animation:lbGlow 5s ease-in-out infinite}
+.lb-marquee2{animation:lbMarquee 30s linear infinite}
+.lb-blink1{animation:lbBlink 1.2s infinite}.lb-blink2{animation:lbBlink 1.2s .2s infinite}.lb-blink3{animation:lbBlink 1.2s .4s infinite}
+.lb-weekbar{animation:lbBar 3.2s linear both}
+.lb-still *,.lb-still *::before,.lb-still *::after{animation:none!important}
+@media (prefers-reduced-motion: reduce){.lb *{animation:none!important}}
+.lb-screen{transition:transform .35s cubic-bezier(.2,.7,.2,1),box-shadow .35s}
+.lb-screen:hover{transform:translateY(-6px);box-shadow:0 26px 50px rgba(15,42,74,.16)}
+.lb-t th,.lb-t td{padding:14px 16px;border-bottom:1px solid #E3E8EE;text-align:left;vertical-align:top;font-size:14.5px;line-height:1.4}
+.lb-t thead th{font-size:14px;font-weight:600;color:#0F2A4A;background:#F7F8FA}
+.lb-t tbody th{font-weight:600;color:#0F2A4A;width:200px}
+.lb-t td{color:#3D4756}
+.lb-t tr:last-child th,.lb-t tr:last-child td{border-bottom:0}
+.lb-t .lb-us{background:#EEF4FC;color:#0F2A4A;font-weight:500}
+.lb-t thead .lb-us{background:#0F2A4A;color:#FFFFFF}
+.lb-mk{display:inline-flex;width:20px;height:20px;border-radius:50%;align-items:center;justify-content:center;font-size:12px;font-weight:700;margin-right:8px;vertical-align:-4px;flex:0 0 auto}
+.lb-yes{background:#E6F4ED;color:#17704A}.lb-no{background:#EEF0F3;color:#5B6675}.lb-part{background:#FDF3E3;color:#8A520E}
+.lb-ph{display:inline-block;padding:2px 8px;border:1px dashed #A86411;border-radius:6px;background:#FFF8EC;color:#8A520E;font-weight:600;font-size:13px}
+.lb-faq summary{cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:20px 0;font-weight:600;font-size:17px;color:#0F2A4A;min-height:44px}
+.lb-faq summary::-webkit-details-marker{display:none}
+.lb-faq summary::after{content:"+";font-size:26px;font-weight:400;color:#1F63B6;flex:0 0 auto}
+.lb-faq details[open] summary::after{content:"\2212"}
+.lb-faq p{margin:0 0 20px;font-size:16px;line-height:1.6;color:#4A5565}
+.lb-input{width:100%;min-height:50px;padding:0 16px;border-radius:12px;border:1px solid rgba(255,255,255,.35);background:rgba(255,255,255,.08);color:#FFFFFF;font:inherit;font-size:16px}
+.lb-input::placeholder{color:#B7C6D9}
+.lb-input:focus{outline:3px solid #7FB2F0;outline-offset:1px}
+.lb-range{width:100%;accent-color:#2A78D6;height:44px;margin:0}
+.lb button:focus-visible,.lb a:focus-visible,.lb summary:focus-visible,.lb input:focus-visible{outline:3px solid #7FB2F0;outline-offset:2px;border-radius:10px}
+.lb-tab{min-height:44px;padding:0 16px;border-radius:999px;font:inherit;font-weight:600;font-size:14.5px;cursor:pointer;display:inline-flex;align-items:center;gap:8px;border:1.5px solid #D7DEE7;background:#FFFFFF;color:#0F2A4A;transition:transform .2s,box-shadow .2s}
+.lb-tab:hover{transform:translateY(-1px);box-shadow:0 6px 16px rgba(15,42,74,.08)}
+.lb-tab-on{background:#0F2A4A;border-color:#0F2A4A;color:#FFFFFF}
+.lb-day{flex:1 1 0;min-width:0;padding:12px;border-radius:14px;border:1.5px solid #E3E8EE;background:#FFFFFF;font:inherit;cursor:pointer;text-align:left;display:flex;flex-direction:column;gap:3px;min-height:60px}
+.lb-day-on{border-color:#2A78D6;background:#EEF4FC}
+.lb-node{background:#FFFFFF;border:1px solid #E3E8EE;border-radius:16px;padding:14px 16px;display:flex;align-items:center;gap:12px;min-height:64px}
+.lb-node-ic{width:36px;height:36px;border-radius:10px;display:flex;align-items:center;justify-content:center;flex:0 0 auto}
+.lb-line{position:relative;height:2px;background:#D7DEE7;flex:1 1 auto;min-width:40px}
+.lb-dot{position:absolute;top:-4px;left:0;width:10px;height:10px;border-radius:50%;background:#2A78D6;opacity:0}
+@media (max-width:860px){
+.lb-navlinks{display:none!important}
+.lb-stage{transform:scale(.86);transform-origin:top center;height:560px!important}
+.lb-days{flex-wrap:wrap}.lb-day{flex:1 1 40%}
+.lb-diagram{flex-direction:column!important}
+.lb-line{display:none!important}
+.lb-col{width:100%!important}
+}
+</style>
+
+</head>
+<body>
+<div class="lb" style="width: 100%; min-width: 0; overflow-x: hidden; background: #FFFFFF; color: #16212F; font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif; font-size: 16px; line-height: 1.55; -webkit-font-smoothing: antialiased">
+
+<!-- FUNDRAISING BANNER -->
+
+<div style="background: #081A30; color: #FFFFFF">
+<div class="lb-wrap" style="min-height: 42px; display: flex; align-items: center; justify-content: center; gap: 12px; flex-wrap: wrap; padding-top: 6px; padding-bottom: 6px; font-size: 14px">
+<span style="display: inline-flex; align-items: center; gap: 8px"><span class="lb-glow" style="width: 8px; height: 8px; border-radius: 50%; background: #F5C986; flex: 0 0 auto"></span><span><b style="color: #F5C986">We're raising our first round.</b> Early partners welcome.</span></span>
+<a href="#invest" style="color: #FFFFFF; font-weight: 600; text-decoration: underline; text-underline-offset: 3px; white-space: nowrap">Talk to the founders →</a>
+</div>
+</div>
+
+
+<!-- NAV -->
+<header style="background: #FFFFFF; border-bottom: 1px solid #E3E8EE; position: relative; z-index: 2">
+<div class="lb-wrap" style="padding-top: 14px; padding-bottom: 14px; display: flex; align-items: center; justify-content: space-between; gap: 20px; flex-wrap: wrap">
+<a href="#top" aria-label="Loyalbase home" style="display: inline-flex; align-items: center; gap: 10px; text-decoration: none; color: #0F2A4A; min-height: 44px">
+<svg viewBox="0 0 40 40" width="32" height="32" aria-hidden="true"><path d="M30.6 12.4A13 13 0 1 1 11.8 9.6" fill="none" stroke="#2A78D6" stroke-width="4.6" stroke-linecap="round"></path><path d="M5.8 6.6l6.6 2.2-2.2 6.6" fill="none" stroke="#2A78D6" stroke-width="4.6" stroke-linecap="round" stroke-linejoin="round"></path><circle cx="20" cy="21" r="4.2" fill="#2A78D6"></circle></svg>
+<span style="font-size: 22px; font-weight: 700; letter-spacing: -0.02em">loyalbase</span>
+</a>
+<nav class="lb-navlinks" aria-label="Main" style="display: flex; align-items: center; gap: 28px; font-size: 15px; font-weight: 500">
+<a href="#week" style="color: #16212F; text-decoration: none">How it works</a>
+<a href="#platform" style="color: #16212F; text-decoration: none">Platform</a>
+<a href="#features" style="color: #16212F; text-decoration: none">Features</a>
+<a href="#compare" style="color: #16212F; text-decoration: none">Compare</a>
+<a href="#pricing" style="color: #16212F; text-decoration: none">Pricing</a>
+</nav>
+<a href="#early-access" class="lb-btn lb-btn-p" style="min-height: 44px; padding: 0 18px; font-size: 15px; box-shadow: none">Get early access</a>
+</div>
+</header>
+
+<!-- HERO -->
+<section id="top" class="lb-hero-bg" style="color: #FFFFFF; padding: clamp(48px, 7vw, 96px) 0 0; position: relative; overflow: hidden">
+<div aria-hidden="true" class="lb-glow" style="position: absolute; top: -200px; right: -120px; width: 640px; height: 640px; border-radius: 50%; background: radial-gradient(closest-side, rgba(42, 120, 214, .45), rgba(42, 120, 214, 0))"></div>
+<div class="lb-wrap" style="display: flex; flex-wrap: wrap; align-items: center; gap: clamp(32px, 5vw, 64px); position: relative">
+<div style="flex: 1 1 480px; min-width: 0; padding-bottom: clamp(40px, 6vw, 80px)">
+<div class="lb-rise" style="display: inline-flex; align-items: center; gap: 8px; padding: 6px 14px; border-radius: 999px; background: rgba(255, 255, 255, .1); color: #CFE0F5; font-size: 13.5px; font-weight: 600">For WooCommerce and Shopify stores, worldwide</div>
+<h1 class="lb-h lb-rise lb-d1" style="margin: 20px 0 0; font-size: clamp(40px, 5.6vw, 72px); line-height: 1.04; letter-spacing: -0.04em; color: #FFFFFF">Know who's drifting away.<br><span class="lb-grad-text">Bring them back with one message.</span></h1>
+<p class="lb-rise lb-d2" style="margin: 22px 0 0; font-size: clamp(17px, 1.5vw, 20px); line-height: 1.55; color: #C8D4E3; max-width: 540px">Loyalbase reads your orders, tells you who to message on WhatsApp each morning, and proves how much came back.</p>
+<div class="lb-rise lb-d3" style="margin-top: 30px; display: flex; flex-wrap: wrap; gap: 12px">
+<a href="#early-access" class="lb-btn lb-btn-p" style="min-height: 54px; font-size: 17px">Get early access</a>
+<a href="#week" class="lb-btn" style="min-height: 54px; font-size: 17px; background: rgba(255, 255, 255, .1); color: #FFFFFF; border: 1.5px solid rgba(255, 255, 255, .25)">See how it works</a>
+</div>
+<ul class="lb-rise lb-d4" style="list-style: none; margin: 28px 0 0; padding: 0; display: flex; flex-wrap: wrap; gap: 10px 22px; font-size: 15px; color: #C8D4E3">
+<li style="display: flex; align-items: center; gap: 8px"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="#9FD8B5" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg>10 minute setup</li>
+<li style="display: flex; align-items: center; gap: 8px"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="#9FD8B5" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg>No points program</li>
+<li style="display: flex; align-items: center; gap: 8px"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="#9FD8B5" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg>Customer data stays on your store</li>
+</ul>
+<div class="lb-rise lb-d5" style="margin-top: 32px; display: flex; flex-wrap: wrap; align-items: center; gap: 8px">
+<span style="display: inline-flex; align-items: center; gap: 8px; padding: 7px 12px; border-radius: 10px; border: 1px solid rgba(255, 255, 255, .18); background: rgba(255, 255, 255, .06); font-weight: 600; font-size: 14px">WooCommerce <span class="lb-pill" style="background: #17704A; color: #FFFFFF; font-size: 11px">Live</span></span>
+<span style="display: inline-flex; align-items: center; gap: 8px; padding: 7px 12px; border-radius: 10px; border: 1px solid rgba(255, 255, 255, .18); background: rgba(255, 255, 255, .06); font-weight: 600; font-size: 14px">Shopify <span class="lb-pill" style="background: #A86411; color: #FFFFFF; font-size: 11px">Early access</span></span>
+<span style="display: inline-flex; padding: 7px 12px; border-radius: 10px; border: 1px solid rgba(255, 255, 255, .18); background: rgba(255, 255, 255, .06); font-weight: 600; font-size: 14px">WhatsApp</span>
+<span style="display: inline-flex; padding: 7px 12px; border-radius: 10px; border: 1px solid rgba(255, 255, 255, .18); background: rgba(255, 255, 255, .06); font-weight: 600; font-size: 14px">Meta Ads</span>
+<span style="display: inline-flex; padding: 7px 12px; border-radius: 10px; border: 1px solid rgba(255, 255, 255, .18); background: rgba(255, 255, 255, .06); font-weight: 600; font-size: 14px">Google Analytics</span>
+</div>
+</div>
+
+<div style="flex: 1 1 400px; min-width: 0; display: flex; justify-content: center; align-self: flex-end">
+<div class="lb-stage" style="position: relative; width: 100%; max-width: 500px; height: 600px; display: flex; justify-content: center">
+<div class="lb-rise lb-d1" role="img" aria-label="The Loyalbase app on a phone showing today's jobs" style="position: relative; width: 296px; height: 620px; border-radius: 48px 48px 0 0; background: #16304F; padding: 10px 10px 0; box-shadow: 0 40px 80px rgba(0, 0, 0, .4)">
+<div style="width: 100%; height: 100%; border-radius: 38px 38px 0 0; background: #F7F8FA; overflow: hidden; display: flex; flex-direction: column; color: #16212F">
+<div style="padding: 22px 18px 6px; display: flex; align-items: center; justify-content: space-between">
+<span style="display: inline-flex; align-items: center; gap: 6px; color: #0F2A4A; font-weight: 700; font-size: 15px"><svg viewBox="0 0 40 40" width="20" height="20" aria-hidden="true"><path d="M30.6 12.4A13 13 0 1 1 11.8 9.6" fill="none" stroke="#2A78D6" stroke-width="4.6" stroke-linecap="round"></path><path d="M5.8 6.6l6.6 2.2-2.2 6.6" fill="none" stroke="#2A78D6" stroke-width="4.6" stroke-linecap="round" stroke-linejoin="round"></path><circle cx="20" cy="21" r="4.2" fill="#2A78D6"></circle></svg>loyalbase</span>
+<span style="padding: 4px 9px; border-radius: 999px; background: #FFFFFF; border: 1px solid #E3E8EE; font-size: 11px; font-weight: 600; color: #3D4756">Roast &amp; Co.</span>
+</div>
+<div style="padding: 8px 18px 4px"><div style="font-size: 12px; color: #5B6675">Monday morning</div><div class="lb-h" style="font-size: 26px; color: #0F2A4A; line-height: 1.1">Good morning, Sam</div><div style="font-size: 12.5px; color: #5B6675; margin-top: 2px">3 things to do today</div></div>
+<div style="padding: 12px; display: flex; flex-direction: column; gap: 10px; flex: 1 1 auto">
+<div class="lb-rise lb-d2" style="background: #FFFFFF; border: 1px solid #E3E8EE; border-radius: 16px; padding: 13px 14px"><span class="lb-pill" style="background: #E8F1FC; color: #1F4F8F; font-size: 11px">Occasions</span><div style="margin-top: 7px; font-size: 14.5px; font-weight: 600; color: #0F2A4A; line-height: 1.3">3 yearly occasions in 2 weeks</div><div style="margin-top: 4px; font-size: 12.5px; color: #5B6675">Last year: $265</div></div>
+<div class="lb-rise lb-d3" style="background: #FFFFFF; border: 1.5px solid #E9C88F; border-radius: 16px; padding: 13px 14px"><span class="lb-pill" style="background: #FDF3E3; color: #8A520E; font-size: 11px">Late regulars</span><div style="margin-top: 7px; font-size: 14.5px; font-weight: 600; color: #0F2A4A; line-height: 1.3">7 regulars are late</div><div style="margin-top: 4px; font-size: 12.5px; color: #5B6675">If each orders once more: $410</div></div>
+<div class="lb-rise lb-d4" style="background: #FFFFFF; border: 1px solid #E3E8EE; border-radius: 16px; padding: 13px 14px"><span class="lb-pill" style="background: #F1EAFB; color: #5B2D91; font-size: 11px">Unpaid checkouts</span><div style="margin-top: 7px; font-size: 14.5px; font-weight: 600; color: #0F2A4A; line-height: 1.3">4 stopped at payment</div><div style="margin-top: 4px; font-size: 12.5px; color: #5B6675">Left unpaid: $218</div></div>
+</div>
+</div>
+</div>
+<template data-region="hero"><sc-if value="{{ heroBubble }}" hint-placeholder-val="{{ true }}">
+<div class="lb-pop" aria-hidden="true" style="position: absolute; left: 0; top: 232px; width: 230px; background: #FFFFFF; color: #16212F; border-radius: 18px; padding: 14px; box-shadow: 0 24px 48px rgba(0, 0, 0, .35)">
+<div style="display: flex; align-items: center; gap: 8px; font-size: 12px; font-weight: 600; color: #0E7A3F"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20.5l1.4-4.9A8 8 0 1 1 21 12z"></path></svg>WhatsApp to Emma</div>
+<div style="margin-top: 10px; background: #DCF8C6; border-radius: 12px 12px 12px 4px; padding: 10px 12px; font-size: 13px; line-height: 1.45">Hi Emma, it's been a little while! Anything we can get ready for you this week?</div>
+<div style="margin-top: 10px; display: flex; justify-content: flex-end"><span class="lb-pulseg" style="padding: 7px 14px; border-radius: 999px; background: #0E7A3F; color: #FFFFFF; font-size: 12.5px; font-weight: 600">Send</span></div>
+</div>
+</sc-if>
+<sc-if value="{{ heroToast }}" hint-placeholder-val="{{ true }}">
+<div class="lb-pop" aria-hidden="true" style="position: absolute; right: 0; top: 430px; width: 220px; background: #FFFFFF; color: #16212F; border-radius: 18px; padding: 14px 16px; box-shadow: 0 24px 48px rgba(0, 0, 0, .35); display: flex; gap: 12px; align-items: flex-start">
+<span style="flex: 0 0 auto; width: 34px; height: 34px; border-radius: 50%; background: #E6F4ED; color: #17704A; display: flex; align-items: center; justify-content: center"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg></span>
+<span style="display: flex; flex-direction: column"><span style="font-size: 14px; font-weight: 600; color: #0F2A4A">Emma ordered again</span><span style="font-size: 12.5px; color: #5B6675">$64, three days later</span></span>
+</div>
+</sc-if>
+<sc-if value="{{ heroCounter }}" hint-placeholder-val="{{ false }}">
+<div class="lb-pop" aria-hidden="true" style="position: absolute; right: 0; top: 50px; width: 186px; background: #FFFFFF; color: #0F2A4A; border-radius: 18px; padding: 14px 16px; box-shadow: 0 24px 48px rgba(0, 0, 0, .35)"><div style="font-size: 12px; color: #5B6675; font-weight: 600">Came back this month</div><div class="lb-h" style="font-size: 30px; line-height: 1.1; margin-top: 4px">$1,860</div><div style="font-size: 12px; color: #17704A; margin-top: 4px; font-weight: 600">from 23 messages</div></div>
+</template><div data-mount="hero" style="display: contents"></div></sc-if>
+</div>
+</div>
+</div>
+</section>
+
+<!-- TICKER -->
+<section aria-label="Examples of what Loyalbase notices" style="background: #0F2A4A; color: #FFFFFF; border-top: 1px solid rgba(255, 255, 255, .1); padding: 12px 0; overflow: hidden">
+<div style="overflow: hidden; width: 100%"><div class="lb-marquee2" style="display: flex; gap: 10px; width: max-content">
+<template data-region="ticker"><sc-for list="{{ ticker }}" as="t"><span style="flex: 0 0 auto; display: inline-flex; align-items: center; gap: 8px; padding: 7px 14px; border-radius: 999px; background: rgba(255, 255, 255, .08); font-size: 13.5px; white-space: nowrap"><span style="width: 8px; height: 8px; border-radius: 50%; background: {{ t.dot }}; flex: 0 0 auto"></span>{{ t.text }}</span></sc-for></template><div data-mount="ticker" style="display: contents"></div>
+</div></div>
+</section>
+
+<!-- WHY + CALC -->
+<section id="why" class="lb-reveal" style="background: #FFFFFF; padding: clamp(56px, 7vw, 100px) 0">
+<div class="lb-wrap" style="display: flex; flex-wrap: wrap; gap: clamp(32px, 5vw, 72px); align-items: center">
+<div style="flex: 1 1 420px; min-width: 0">
+<div class="lb-eyebrow" style="color: #2A78D6">Why it matters</div>
+<h2 class="lb-h2">Every ad buys a first order. <span class="lb-soft">Profit lives in the second.</span></h2>
+<p class="lb-lead">Customers don't cancel. They quietly stop. Loyalbase spots them the week they go quiet, not six months later.</p>
+<div style="margin-top: 26px; display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 12px">
+<div class="lb-in lb-d1 lb-card" style="padding: 16px 18px"><div class="lb-h" style="font-size: 20px; color: #0F2A4A">Already paid for</div><div style="font-size: 14px; color: #5B6675; margin-top: 4px">A message costs nothing.</div></div>
+<div class="lb-in lb-d2 lb-card" style="padding: 16px 18px"><div class="lb-h" style="font-size: 20px; color: #0F2A4A">Already trust you</div><div style="font-size: 14px; color: #5B6675; margin-top: 4px">No convincing, just a nudge.</div></div>
+<div class="lb-in lb-d3 lb-card" style="padding: 16px 18px"><div class="lb-h" style="font-size: 20px; color: #0F2A4A">Already on WhatsApp</div><div style="font-size: 14px; color: #5B6675; margin-top: 4px">Personal messages get read.</div></div>
+</div>
+</div>
+<div style="flex: 1 1 380px; min-width: 0">
+<div class="lb-card lb-card-glow" style="padding: clamp(22px, 3vw, 30px); box-shadow: 0 24px 60px rgba(15, 42, 74, .1)">
+<h3 class="lb-h" style="margin: 0; font-size: 24px; color: #0F2A4A; line-height: 1.15">What's sitting in your customer list?</h3>
+<div style="margin-top: 20px; display: flex; flex-direction: column; gap: 14px">
+<div><div style="display: flex; justify-content: space-between; font-size: 15px; font-weight: 600; color: #0F2A4A"><label for="lb-orders">Orders a month</label><span><span id="calcOrders">600</span></span></div><input id="lb-orders" class="lb-range" type="range" min="50" max="3000" step="50" value="600"></div>
+<div><div style="display: flex; justify-content: space-between; font-size: 15px; font-weight: 600; color: #0F2A4A"><label for="lb-aov">Average order</label><span><span id="calcAov">$40</span></span></div><input id="lb-aov" class="lb-range" type="range" min="10" max="300" step="5" value="40"></div>
+</div>
+<div class="lb-navy-grad" style="margin-top: 18px; padding: 18px 20px; border-radius: 16px; color: #FFFFFF">
+<div style="font-size: 13.5px; color: #B7C6D9">If 1 in 10 buyers never return, that's about</div>
+<div class="lb-h" style="font-size: clamp(32px, 3.4vw, 42px); line-height: 1.05; margin-top: 4px; font-variant-numeric: tabular-nums"><span id="calcLost">$288,000</span> <span style="font-size: 16px; font-weight: 500; color: #B7C6D9">a year gone</span></div>
+<div style="margin-top: 12px; padding-top: 12px; border-top: 1px solid rgba(255, 255, 255, .15); display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; font-size: 14.5px"><span style="color: #C8D4E3">Bring back 1 in 4 of them</span><b style="color: #9FD8B5"><span id="calcBack">$72,000</span></b></div>
+</div>
+<p style="margin: 10px 0 0; font-size: 12.5px; color: #5B6675">Rough estimate, one extra order per person.</p>
+</div>
+</div>
+</div>
+</section>
+
+<!-- A WEEK -->
+<section id="week" class="lb-soft-bg" style="padding: clamp(56px, 7vw, 100px) 0">
+<div class="lb-wrap">
+<div class="lb-eyebrow" style="color: #2A78D6">How it works</div>
+<h2 class="lb-h2">A week with Loyalbase. <span class="lb-soft">Ten minutes a day.</span></h2>
+<template data-region="week"><div class="lb-days" role="group" aria-label="Pick a day" style="margin-top: 30px; display: flex; gap: 10px">
+<sc-for list="{{ days }}" as="d" hint-placeholder-count="5">
+<button type="button" class="lb-day {{ d.cls }}" aria-pressed="{{ d.on }}" onClick="{{ d.pick }}">
+<span style="font-size: 12px; font-weight: 600; color: #5B6675; text-transform: uppercase; letter-spacing: .06em">{{ d.day }}</span>
+<span style="font-size: 14.5px; font-weight: 600; color: #0F2A4A; line-height: 1.25">{{ d.short }}</span>
+<sc-if value="{{ d.on }}" hint-placeholder-val="{{ false }}"><span aria-hidden="true" style="margin-top: 6px; height: 3px; border-radius: 2px; background: #E3E8EE; overflow: hidden; display: block"><span class="{{ weekBarClass }}" style="display: block; height: 100%; background: #2A78D6; width: 100%"></span></span></sc-if>
+</button>
+</sc-for>
+</div>
+<div style="margin-top: 18px; display: flex; flex-wrap: wrap; gap: 20px; align-items: stretch">
+<div class="lb-card lb-pop" style="flex: 1 1 420px; min-width: 0; padding: clamp(22px, 3vw, 32px); display: flex; flex-direction: column; gap: 14px">
+<span class="lb-pill" style="background: {{ cd.pillBg }}; color: {{ cd.pillFg }}; align-self: flex-start; font-size: 13px; padding: 4px 11px">{{ cd.tag }}</span>
+<h3 class="lb-h" style="margin: 0; font-size: clamp(22px, 2.4vw, 28px); color: #0F2A4A; line-height: 1.15">{{ cd.title }}</h3>
+<p style="margin: 0; font-size: 16.5px; line-height: 1.55; color: #4A5565">{{ cd.body }}</p>
+<div style="margin-top: auto; padding: 14px 16px; border-radius: 14px; background: #F7F8FA; font-size: 15px; color: #0F2A4A"><b style="color: #5B6675; font-size: 13px; display: block">You do</b>{{ cd.action }}</div>
+</div>
+<div class="lb-pop lb-navy-grad" style="flex: 1 1 360px; min-width: 0; border-radius: 20px; color: #FFFFFF; padding: clamp(20px, 3vw, 28px); display: flex; flex-direction: column; gap: 12px; min-height: 300px">
+<div class="lb-eyebrow" style="color: #8FA6C2">{{ cd.screenLabel }}</div>
+<sc-for list="{{ cd.rows }}" as="r" hint-placeholder-count="3">
+<div class="lb-pop" style="background: rgba(255, 255, 255, .07); border: 1px solid rgba(255, 255, 255, .12); border-radius: 14px; padding: 12px 14px; display: flex; justify-content: space-between; gap: 12px; align-items: center">
+<span style="display: flex; flex-direction: column; min-width: 0"><span style="font-weight: 600; font-size: 15px">{{ r.a }}</span><span style="font-size: 13px; color: #B7C6D9">{{ r.b }}</span></span>
+<span style="font-weight: 700; font-size: 16px; color: {{ r.color }}; white-space: nowrap; font-variant-numeric: tabular-nums">{{ r.c }}</span>
+</div>
+</sc-for>
+<div style="margin-top: auto; font-size: 13px; color: #8FA6C2">{{ cd.foot }}</div>
+</div>
+</div></template><div data-mount="week" style="display: contents"></div>
+</div>
+</section>
+
+<!-- PLATFORM DIAGRAM -->
+<section id="platform" class="lb-reveal" style="background: #FFFFFF; padding: clamp(56px, 7vw, 100px) 0">
+<div class="lb-wrap">
+<div style="max-width: 720px">
+<div class="lb-eyebrow" style="color: #2A78D6">One place for the whole business</div>
+<h2 class="lb-h2">Online, in store, ads and WhatsApp. <span class="lb-soft">One customer, one view.</span></h2>
+<p class="lb-lead">Every channel feeds in. Loyalbase matches the same person across them and hands you back a short list, with proof.</p>
+</div>
+
+<div class="lb-diagram" role="img" aria-label="Diagram: WooCommerce, Shopify, POS outlets, Meta ads and Google Analytics flow into Loyalbase, which produces Today's jobs, WhatsApp messages, Sales and Marketing insight, and Results with proof." style="margin-top: 40px; display: flex; align-items: center; gap: 0">
+
+<div class="lb-col" style="width: 280px; flex: 0 0 auto; display: flex; flex-direction: column; gap: 12px">
+<div class="lb-eyebrow" style="color: #5B6675; margin-bottom: 2px">Where orders happen</div>
+<div class="lb-node lb-in lb-d1"><span class="lb-node-ic" style="background: #F3EAF9; color: #7F54B3"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 4h2l2.5 11h11L21 7H6"></path><circle cx="9" cy="19" r="1.5"></circle><circle cx="17" cy="19" r="1.5"></circle></svg></span><span style="display: flex; flex-direction: column"><span style="font-weight: 600; color: #0F2A4A">WooCommerce</span><span style="font-size: 12.5px; color: #17704A; font-weight: 600">Live</span></span></div>
+<div class="lb-node lb-in lb-d2"><span class="lb-node-ic" style="background: #E9F6EA; color: #3A8E4D"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 7h12l1 13H5z"></path><path d="M9 7a3 3 0 0 1 6 0"></path></svg></span><span style="display: flex; flex-direction: column"><span style="font-weight: 600; color: #0F2A4A">Shopify</span><span style="font-size: 12.5px; color: #8A520E; font-weight: 600">Early access</span></span></div>
+<div class="lb-node lb-in lb-d3" style="border-style: dashed"><span class="lb-node-ic" style="background: #FDF3E3; color: #A86411"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="12" rx="2"></rect><path d="M7 20h10"></path><path d="M12 16v4"></path><path d="M7 9h6"></path></svg></span><span style="display: flex; flex-direction: column"><span style="font-weight: 600; color: #0F2A4A">POS at your outlets</span><span style="font-size: 12.5px; color: #5B6675; font-weight: 600">Coming: walk in sales by branch</span></span></div>
+<div class="lb-node lb-in lb-d4"><span class="lb-node-ic" style="background: #E8F1FC; color: #1F63B6"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 11v2a2 2 0 0 0 2 2h1l5 3V6L7 9H6a2 2 0 0 0-2 2z"></path><path d="M16 9a4 4 0 0 1 0 6"></path></svg></span><span style="display: flex; flex-direction: column"><span style="font-weight: 600; color: #0F2A4A">Meta ads and posts</span><span style="font-size: 12.5px; color: #17704A; font-weight: 600">Live</span></span></div>
+<div class="lb-node lb-in lb-d5"><span class="lb-node-ic" style="background: #FFF3E6; color: #D9731A"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19V10"></path><path d="M10 19V5"></path><path d="M16 19v-7"></path><path d="M2 19h20"></path></svg></span><span style="display: flex; flex-direction: column"><span style="font-weight: 600; color: #0F2A4A">Google Analytics</span><span style="font-size: 12.5px; color: #17704A; font-weight: 600">Live</span></span></div>
+</div>
+
+<div class="lb-line" aria-hidden="true"><span class="lb-dot lb-fx"></span><span class="lb-dot lb-fx2" style="background: #4FD1A5"></span></div>
+
+<div class="lb-col lb-hub lb-navy-grad" style="width: 300px; flex: 0 0 auto; border-radius: 24px; padding: 26px 24px; color: #FFFFFF; display: flex; flex-direction: column; gap: 14px; box-shadow: 0 20px 50px rgba(15, 42, 74, .3)">
+<div style="display: flex; align-items: center; gap: 10px"><svg viewBox="0 0 40 40" width="34" height="34" aria-hidden="true"><path d="M30.6 12.4A13 13 0 1 1 11.8 9.6" fill="none" stroke="#7FB2F0" stroke-width="4.6" stroke-linecap="round"></path><path d="M5.8 6.6l6.6 2.2-2.2 6.6" fill="none" stroke="#7FB2F0" stroke-width="4.6" stroke-linecap="round" stroke-linejoin="round"></path><circle cx="20" cy="21" r="4.2" fill="#7FB2F0"></circle></svg><span class="lb-h" style="font-size: 22px">Loyalbase</span></div>
+<div style="font-size: 14px; color: #C8D4E3; line-height: 1.5">Matches one customer across every channel. Works out who is late, who is due, what's selling and what came back.</div>
+<div style="display: flex; flex-direction: column; gap: 6px; font-size: 13px">
+<span style="display: flex; align-items: center; gap: 8px; color: #C8D4E3"><span style="width: 6px; height: 6px; border-radius: 50%; background: #4FD1A5"></span>Order facts and scrambled IDs only</span>
+<span style="display: flex; align-items: center; gap: 8px; color: #C8D4E3"><span style="width: 6px; height: 6px; border-radius: 50%; background: #4FD1A5"></span>Names and numbers stay on your store</span>
+<span style="display: flex; align-items: center; gap: 8px; color: #C8D4E3"><span style="width: 6px; height: 6px; border-radius: 50%; background: #4FD1A5"></span>1 in 10 held back for proof</span>
+</div>
+</div>
+
+<div class="lb-line" aria-hidden="true"><span class="lb-dot lb-fx" style="background: #4FD1A5"></span><span class="lb-dot lb-fx2"></span></div>
+
+<div class="lb-col" style="width: 280px; flex: 0 0 auto; display: flex; flex-direction: column; gap: 12px">
+<div class="lb-eyebrow" style="color: #5B6675; margin-bottom: 2px">What you get</div>
+<div class="lb-node lb-in lb-d3"><span class="lb-node-ic" style="background: #E8F1FC; color: #1F63B6"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 2"></path></svg></span><span style="display: flex; flex-direction: column"><span style="font-weight: 600; color: #0F2A4A">Today's jobs</span><span style="font-size: 12.5px; color: #5B6675">Who to message, and why</span></span></div>
+<div class="lb-node lb-in lb-d4"><span class="lb-node-ic" style="background: #E6F4ED; color: #0E7A3F"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20.5l1.4-4.9A8 8 0 1 1 21 12z"></path></svg></span><span style="display: flex; flex-direction: column"><span style="font-weight: 600; color: #0F2A4A">WhatsApp messages</span><span style="font-size: 12.5px; color: #5B6675">One tap, or bulk campaigns</span></span></div>
+<div class="lb-node lb-in lb-d5"><span class="lb-node-ic" style="background: #FDF3E3; color: #A86411"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19l5-6 4 3 7-9"></path><path d="M2 21h20"></path></svg></span><span style="display: flex; flex-direction: column"><span style="font-weight: 600; color: #0F2A4A">Sales and marketing insight</span><span style="font-size: 12.5px; color: #5B6675">What sells, what the ads returned</span></span></div>
+<div class="lb-node lb-in lb-d6 lb-card-glow"><span class="lb-node-ic" style="background: #E6F4ED; color: #17704A"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg></span><span style="display: flex; flex-direction: column"><span style="font-weight: 600; color: #0F2A4A">Results, with proof</span><span style="font-size: 12.5px; color: #5B6675">Money back, vs the held back group</span></span></div>
+<div class="lb-node lb-in lb-d7"><span class="lb-node-ic" style="background: #F1EAFB; color: #5B2D91"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 6h16v12H4z"></path><path d="M4 9l8 5 8-5"></path></svg></span><span style="display: flex; flex-direction: column"><span style="font-weight: 600; color: #0F2A4A">Monday brief</span><span style="font-size: 12.5px; color: #5B6675">Two minutes, in your inbox</span></span></div>
+</div>
+</div>
+<p style="margin: 18px 0 0; font-size: 13.5px; color: #5B6675; max-width: 760px">POS connection is on the roadmap: a sales file per branch to start, direct sync for cloud POS systems after. Walk in customers join the same lists when the till records a phone number.</p>
+</div>
+</section>
+
+<!-- LISTS DEMO -->
+<section id="examples" class="lb-hero-bg" style="color: #FFFFFF; padding: clamp(56px, 7vw, 100px) 0">
+<div class="lb-wrap">
+<div class="lb-eyebrow" style="color: #7FB2F0">Try it</div>
+<h2 class="lb-h2" style="color: #FFFFFF">Seven lists. <span class="lb-grad-text" style="font-weight: 600">The message is already written.</span></h2>
+<template data-region="lists"><div role="group" aria-label="Choose a list" style="margin-top: 30px; display: flex; flex-wrap: wrap; gap: 8px">
+<sc-for list="{{ tabs }}" as="t" hint-placeholder-count="7">
+<sc-if value="{{ t.on }}" hint-placeholder-val="{{ false }}"><button type="button" aria-pressed="true" onClick="{{ t.pick }}" class="lb-tab" style="background: #FFFFFF; border-color: #FFFFFF; color: #0F2A4A">{{ t.label }}<span style="padding: 1px 8px; border-radius: 999px; background: #0F2A4A; color: #FFFFFF; font-size: 12px">{{ t.count }}</span></button></sc-if>
+<sc-if value="{{ t.off }}" hint-placeholder-val="{{ true }}"><button type="button" aria-pressed="false" onClick="{{ t.pick }}" class="lb-tab" style="background: transparent; border-color: rgba(255, 255, 255, .28); color: #FFFFFF">{{ t.label }}<span style="padding: 1px 8px; border-radius: 999px; background: rgba(255, 255, 255, .14); color: #FFFFFF; font-size: 12px">{{ t.count }}</span></button></sc-if>
+</sc-for>
+</div>
+<div style="margin-top: 20px; display: flex; flex-wrap: wrap; gap: 20px; align-items: stretch">
+<div style="flex: 1 1 400px; min-width: 0; background: #FFFFFF; color: #16212F; border-radius: 20px; padding: clamp(20px, 3vw, 28px); display: flex; flex-direction: column; gap: 16px">
+<div style="font-size: 17px; line-height: 1.5; color: #0F2A4A; font-weight: 500">{{ cur.rule }}</div>
+<div class="lb-card" style="padding: 16px; display: flex; flex-direction: column; gap: 10px">
+<div style="display: flex; align-items: center; gap: 12px"><span style="width: 44px; height: 44px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 600; background: {{ cur.pillBg }}; color: {{ cur.pillFg }}">{{ cur.initials }}</span><span style="display: flex; flex-direction: column; min-width: 0"><span style="font-weight: 600; font-size: 16px; color: #0F2A4A">{{ cur.name }}</span><span style="font-size: 13.5px; color: #5B6675">{{ cur.store }}</span></span></div>
+<div style="font-size: 15px; color: #3D4756">{{ cur.why }}</div>
+<div style="font-size: 14.5px; color: #0F2A4A; font-weight: 600; padding-top: 10px; border-top: 1px solid #E3E8EE">{{ cur.value }}</div>
+</div>
+<div style="font-size: 13px; color: #5B6675; margin-top: auto">Example customers. Your lists come from your own orders.</div>
+</div>
+<div style="flex: 1 1 360px; min-width: 0; background: #ECE5DD; border-radius: 20px; overflow: hidden; display: flex; flex-direction: column; min-height: 360px">
+<div style="background: #0E5E33; color: #FFFFFF; padding: 12px 16px; display: flex; align-items: center; gap: 12px"><span style="width: 36px; height: 36px; border-radius: 50%; background: rgba(255, 255, 255, .18); display: flex; align-items: center; justify-content: center; font-weight: 600; font-size: 13px">{{ cur.initials }}</span><span style="display: flex; flex-direction: column"><span style="font-weight: 600; font-size: 15px">{{ cur.name }}</span><span style="font-size: 12.5px; color: #CDE8D6">from {{ cur.store }}</span></span></div>
+<div style="flex: 1 1 auto; padding: 20px 16px; display: flex; flex-direction: column; justify-content: flex-end; gap: 12px; color: #16212F">
+<sc-if value="{{ typing }}" hint-placeholder-val="{{ false }}"><div class="lb-pop" aria-label="Writing" style="align-self: flex-end; background: #DCF8C6; border-radius: 14px 14px 4px 14px; padding: 14px 18px; display: flex; gap: 6px"><span class="lb-blink1" style="width: 8px; height: 8px; border-radius: 50%; background: #3D6B4F"></span><span class="lb-blink2" style="width: 8px; height: 8px; border-radius: 50%; background: #3D6B4F"></span><span class="lb-blink3" style="width: 8px; height: 8px; border-radius: 50%; background: #3D6B4F"></span></div></sc-if>
+<sc-if value="{{ notTyping }}" hint-placeholder-val="{{ true }}"><div class="lb-pop" style="align-self: flex-end; max-width: 92%; background: #DCF8C6; border-radius: 14px 14px 4px 14px; padding: 12px 14px; box-shadow: 0 1px 1px rgba(0, 0, 0, .08)"><div style="font-size: 15px; line-height: 1.5">{{ cur.msg }}</div><div style="font-size: 15px; line-height: 1.5; margin-top: 6px">{{ cur.sign }}</div></div></sc-if>
+<sc-if value="{{ sent }}" hint-placeholder-val="{{ false }}"><div class="lb-pop" style="align-self: center; background: #FFFFFF; border-radius: 12px; padding: 10px 14px; font-size: 13.5px; color: #3D4756; text-align: center; max-width: 92%">{{ sentNote }}</div></sc-if>
+</div>
+<div style="background: #F7F8FA; padding: 12px 16px; display: flex; flex-wrap: wrap; gap: 10px; align-items: center; justify-content: space-between; color: #16212F">
+<span style="font-size: 13px; color: #4A5565">Edit anything before it goes.</span>
+<sc-if value="{{ notSent }}" hint-placeholder-val="{{ true }}"><button type="button" onClick="{{ send }}" class="lb-btn lb-btn-g" style="min-height: 44px; padding: 0 16px; font-size: 14.5px">Open in WhatsApp</button></sc-if>
+<sc-if value="{{ sent }}" hint-placeholder-val="{{ false }}"><span style="min-height: 44px; padding: 0 16px; border-radius: 12px; background: #E6F4ED; color: #17704A; font-weight: 600; font-size: 14.5px; display: inline-flex; align-items: center">Logged</span></sc-if>
+</div>
+</div>
+</div></template><div data-mount="lists" style="display: contents"></div>
+</div>
+</section>
+
+<!-- FEATURES GRID -->
+<section id="features" class="lb-soft-bg lb-reveal" style="padding: clamp(56px, 7vw, 100px) 0">
+<div class="lb-wrap">
+<div class="lb-eyebrow" style="color: #2A78D6">Everything in one app</div>
+<h2 class="lb-h2">Who to message. What's selling. <span class="lb-soft">Whether your ads paid.</span></h2>
+<div style="margin-top: 36px; display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px">
+
+<div class="lb-card lb-screen lb-in lb-d1" style="padding: 20px; display: flex; flex-direction: column; gap: 10px">
+<h3 class="lb-h" style="margin: 0; font-size: 19px; color: #0F2A4A">Today</h3>
+<p style="margin: 0; font-size: 14.5px; color: #4A5565">Up to three jobs a morning, with the money attached.</p>
+<div aria-hidden="true" style="margin-top: auto; display: flex; flex-direction: column; gap: 6px">
+<div style="background: #F7F8FA; border-radius: 10px; padding: 9px 11px; font-size: 13px; display: flex; justify-content: space-between"><span><b>Daniel R.</b> anniversary in 9 days</span><span style="color: #1F63B6; font-weight: 600">$85</span></div>
+<div style="background: #F7F8FA; border-radius: 10px; padding: 9px 11px; font-size: 13px; display: flex; justify-content: space-between"><span><b>Emma W.</b> 4 weeks late</span><span style="color: #8A520E; font-weight: 600">$64</span></div>
+</div>
+</div>
+
+<div class="lb-card lb-screen lb-in lb-d2" style="padding: 20px; display: flex; flex-direction: column; gap: 10px">
+<h3 class="lb-h" style="margin: 0; font-size: 19px; color: #0F2A4A">Ideas for the week</h3>
+<p style="margin: 0; font-size: 14.5px; color: #4A5565">Moves worth making, from your own numbers.</p>
+<div aria-hidden="true" style="margin-top: auto; display: flex; flex-direction: column; gap: 6px">
+<div style="background: #F7F8FA; border-radius: 10px; padding: 9px 11px; font-size: 13px; font-weight: 600; color: #0F2A4A">Black Friday in 6 weeks: ads live by 13 Nov</div>
+<div style="background: #F7F8FA; border-radius: 10px; padding: 9px 11px; font-size: 13px; font-weight: 600; color: #0F2A4A">"Cold brew kit" is up 40%</div>
+</div>
+</div>
+
+<div class="lb-card lb-screen lb-in lb-d3" style="padding: 20px; display: flex; flex-direction: column; gap: 10px">
+<h3 class="lb-h" style="margin: 0; font-size: 19px; color: #0F2A4A">Sales</h3>
+<p style="margin: 0; font-size: 14.5px; color: #4A5565">Returning vs new, best sellers, bought together, discount codes that work.</p>
+<div role="img" aria-label="Six months of rising sales, mostly from returning customers" style="margin-top: auto; display: flex; align-items: flex-end; gap: 7px; height: 90px; border-bottom: 1px solid #E3E8EE">
+<div class="lb-grow lb-d1" style="flex: 1; height: 50%; display: flex; flex-direction: column; border-radius: 4px 4px 0 0; overflow: hidden"><div style="flex: 0 0 34%; background: #9CC3F2"></div><div style="flex: 1; background: #1F63B6"></div></div>
+<div class="lb-grow lb-d2" style="flex: 1; height: 58%; display: flex; flex-direction: column; border-radius: 4px 4px 0 0; overflow: hidden"><div style="flex: 0 0 36%; background: #9CC3F2"></div><div style="flex: 1; background: #1F63B6"></div></div>
+<div class="lb-grow lb-d3" style="flex: 1; height: 55%; display: flex; flex-direction: column; border-radius: 4px 4px 0 0; overflow: hidden"><div style="flex: 0 0 30%; background: #9CC3F2"></div><div style="flex: 1; background: #1F63B6"></div></div>
+<div class="lb-grow lb-d4" style="flex: 1; height: 66%; display: flex; flex-direction: column; border-radius: 4px 4px 0 0; overflow: hidden"><div style="flex: 0 0 32%; background: #9CC3F2"></div><div style="flex: 1; background: #1F63B6"></div></div>
+<div class="lb-grow lb-d5" style="flex: 1; height: 72%; display: flex; flex-direction: column; border-radius: 4px 4px 0 0; overflow: hidden"><div style="flex: 0 0 35%; background: #9CC3F2"></div><div style="flex: 1; background: #1F63B6"></div></div>
+<div class="lb-grow lb-d6" style="flex: 1; height: 88%; display: flex; flex-direction: column; border-radius: 4px 4px 0 0; overflow: hidden"><div style="flex: 0 0 38%; background: #9CC3F2"></div><div style="flex: 1; background: #1F63B6"></div></div>
+</div>
+</div>
+
+<div class="lb-card lb-screen lb-in lb-d4" style="padding: 20px; display: flex; flex-direction: column; gap: 10px">
+<h3 class="lb-h" style="margin: 0; font-size: 19px; color: #0F2A4A">Dates to plan for</h3>
+<p style="margin: 0; font-size: 14.5px; color: #4A5565">Peak dates, ad deadlines, last year's numbers.</p>
+<div aria-hidden="true" style="margin-top: auto; border: 1.5px solid #9CC3F2; border-radius: 12px; padding: 11px 13px; background: #F4F8FD"><div style="font-weight: 600; color: #0F2A4A; font-size: 14px">Black Friday <span style="font-weight: 500; color: #5B6675">27 Nov</span></div><div style="margin-top: 3px; font-size: 13px; color: #4A5565">Ads live by 13 Nov. Last year: 142 orders, 2.3× normal.</div></div>
+</div>
+
+<div class="lb-card lb-screen lb-in lb-d5" style="padding: 20px; display: flex; flex-direction: column; gap: 10px">
+<h3 class="lb-h" style="margin: 0; font-size: 19px; color: #0F2A4A">Marketing</h3>
+<p style="margin: 0; font-size: 14.5px; color: #4A5565">Meta ads, posts and website visits next to real sales.</p>
+<div aria-hidden="true" style="margin-top: auto; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px">
+<div style="background: #F7F8FA; border-radius: 12px; padding: 11px"><div style="font-size: 12px; color: #5B6675">Ad spend</div><div class="lb-h" style="font-size: 20px; color: #0F2A4A">$1,200</div></div>
+<div style="background: #E6F4ED; border-radius: 12px; padding: 11px"><div style="font-size: 12px; color: #17704A">Sales per $1</div><div class="lb-h" style="font-size: 20px; color: #0F5C3A">7.5×</div></div>
+</div>
+</div>
+
+<div class="lb-card lb-screen lb-card-glow lb-in lb-d6" style="padding: 20px; display: flex; flex-direction: column; gap: 10px">
+<h3 class="lb-h" style="margin: 0; font-size: 19px; color: #0F2A4A">Results, with proof</h3>
+<p style="margin: 0; font-size: 14.5px; color: #4A5565">1 in 10 held back. You see what your messages really added.</p>
+<div aria-hidden="true" style="margin-top: auto; background: #F7F8FA; border-radius: 12px; padding: 12px; font-size: 13.5px; color: #0F2A4A">
+<div style="display: flex; justify-content: space-between"><span>Messaged came back</span><b style="color: #17704A">29%</b></div>
+<div style="display: flex; justify-content: space-between; margin-top: 5px"><span>Held back came back</span><b style="color: #5B6675">11%</b></div>
+<div style="margin-top: 8px; padding-top: 8px; border-top: 1px solid #E3E8EE; font-weight: 600">Your messages added about 9 orders</div>
+</div>
+</div>
+
+<div class="lb-card lb-screen lb-in lb-d7" style="padding: 20px; display: flex; flex-direction: column; gap: 10px">
+<h3 class="lb-h" style="margin: 0; font-size: 19px; color: #0F2A4A">Bulk sends</h3>
+<p style="margin: 0; font-size: 14.5px; color: #4A5565">Any list as a WhatsApp campaign file, spreadsheet or Sendy email list. Consent only.</p>
+</div>
+
+<div class="lb-card lb-screen lb-in lb-d8" style="padding: 20px; display: flex; flex-direction: column; gap: 10px">
+<h3 class="lb-h" style="margin: 0; font-size: 19px; color: #0F2A4A">Monday brief and monthly report</h3>
+<p style="margin: 0; font-size: 14.5px; color: #4A5565">Two minutes to read. One page to print. Team logins included.</p>
+</div>
+
+</div>
+</div>
+</section>
+
+<!-- PRIVACY (short) -->
+<section id="privacy" style="background: #0B1F37; color: #FFFFFF; padding: clamp(48px, 6vw, 80px) 0">
+<div class="lb-wrap" style="display: flex; flex-wrap: wrap; gap: clamp(24px, 4vw, 56px); align-items: center">
+<div style="flex: 1 1 380px; min-width: 0">
+<div class="lb-eyebrow" style="color: #7FB2F0">Privacy by design</div>
+<h2 class="lb-h2" style="color: #FFFFFF">Customer details never leave your store.</h2>
+<p class="lb-lead" style="color: #C8D4E3">Loyalbase sees order facts and scrambled IDs. Names and numbers load straight from your store to your screen, and every lookup is logged.</p>
+</div>
+<div style="flex: 1 1 360px; min-width: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 12px">
+<div style="padding: 16px 18px; border-radius: 14px; background: rgba(255, 255, 255, .06); border: 1px solid rgba(255, 255, 255, .12); font-size: 14.5px; color: #C8D4E3"><b style="color: #FFFFFF; display: block">Never stored</b>Names, phones, emails, addresses</div>
+<div style="padding: 16px 18px; border-radius: 14px; background: rgba(255, 255, 255, .06); border: 1px solid rgba(255, 255, 255, .12); font-size: 14.5px; color: #C8D4E3"><b style="color: #FFFFFF; display: block">Consent first</b>Bulk lists only include people who said yes</div>
+<div style="padding: 16px 18px; border-radius: 14px; background: rgba(255, 255, 255, .06); border: 1px solid rgba(255, 255, 255, .12); font-size: 14.5px; color: #C8D4E3"><b style="color: #FFFFFF; display: block">Totals only</b>Marketing data carries no customer details</div>
+<div style="padding: 16px 18px; border-radius: 14px; background: rgba(255, 255, 255, .06); border: 1px solid rgba(255, 255, 255, .12); font-size: 14.5px; color: #C8D4E3"><b style="color: #FFFFFF; display: block">Yours to delete</b>Public privacy page, one click to remove your shop</div>
+</div>
+</div>
+</section>
+
+<!-- COMPARE -->
+<section id="compare" class="lb-soft-bg" style="padding: clamp(56px, 7vw, 100px) 0">
+<div class="lb-wrap">
+<div class="lb-eyebrow" style="color: #2A78D6">How it compares</div>
+<h2 class="lb-h2">Points apps reward people who show up. <span class="lb-soft">We go after the ones who stopped.</span></h2>
+<div class="lb-card" style="margin-top: 32px; overflow-x: auto">
+<table class="lb-t" style="width: 100%; min-width: 960px; border-collapse: collapse">
+<caption class="lb-sr">Loyalbase compared with Smile.io, LoyaltyLion, Yotpo Loyalty and Klaviyo</caption>
+<thead><tr><th scope="col"><span class="lb-sr">Feature</span></th><th scope="col" class="lb-us">Loyalbase</th><th scope="col">Smile.io</th><th scope="col">LoyaltyLion</th><th scope="col">Yotpo Loyalty</th><th scope="col">Klaviyo</th></tr></thead>
+<tbody>
+<tr><th scope="row">Built for</th><td class="lb-us">Bringing customers back</td><td>Points and rewards</td><td>Points and tiers</td><td>Points and referrals</td><td>Email and SMS</td></tr>
+<tr><th scope="row">WooCommerce</th><td class="lb-us"><span class="lb-mk lb-yes" aria-hidden="true">✓</span>Yes</td><td><span class="lb-mk lb-no" aria-hidden="true">✕</span>No</td><td><span class="lb-mk lb-part" aria-hidden="true">~</span>Via connector</td><td><span class="lb-mk lb-yes" aria-hidden="true">✓</span>Yes</td><td><span class="lb-mk lb-yes" aria-hidden="true">✓</span>Yes</td></tr>
+<tr><th scope="row">Shopify</th><td class="lb-us"><span class="lb-mk lb-part" aria-hidden="true">~</span>Early access</td><td><span class="lb-mk lb-yes" aria-hidden="true">✓</span>Yes</td><td><span class="lb-mk lb-yes" aria-hidden="true">✓</span>Yes</td><td><span class="lb-mk lb-yes" aria-hidden="true">✓</span>Yes</td><td><span class="lb-mk lb-yes" aria-hidden="true">✓</span>Yes</td></tr>
+<tr><th scope="row">Tells you who to message today</th><td class="lb-us"><span class="lb-mk lb-yes" aria-hidden="true">✓</span>Every morning, with reasons</td><td><span class="lb-mk lb-no" aria-hidden="true">✕</span></td><td><span class="lb-mk lb-no" aria-hidden="true">✕</span></td><td><span class="lb-mk lb-part" aria-hidden="true">~</span>Segments on Premium</td><td><span class="lb-mk lb-part" aria-hidden="true">~</span>You build the flows</td></tr>
+<tr><th scope="row">WhatsApp</th><td class="lb-us"><span class="lb-mk lb-yes" aria-hidden="true">✓</span>One tap, message written</td><td><span class="lb-mk lb-part" aria-hidden="true">~</span>Other apps</td><td><span class="lb-mk lb-part" aria-hidden="true">~</span>Other apps</td><td><span class="lb-mk lb-part" aria-hidden="true">~</span>Other apps</td><td><span class="lb-mk lb-yes" aria-hidden="true">✓</span>Built in</td></tr>
+<tr><th scope="row">Proves what messages added</th><td class="lb-us"><span class="lb-mk lb-yes" aria-hidden="true">✓</span>Held back group</td><td><span class="lb-mk lb-no" aria-hidden="true">✕</span></td><td><span class="lb-mk lb-no" aria-hidden="true">✕</span></td><td><span class="lb-mk lb-no" aria-hidden="true">✕</span></td><td><span class="lb-mk lb-part" aria-hidden="true">~</span>A/B tests</td></tr>
+<tr><th scope="row">Ads and posts next to real sales</th><td class="lb-us"><span class="lb-mk lb-yes" aria-hidden="true">✓</span>Meta and Google Analytics</td><td><span class="lb-mk lb-no" aria-hidden="true">✕</span></td><td><span class="lb-mk lb-no" aria-hidden="true">✕</span></td><td><span class="lb-mk lb-no" aria-hidden="true">✕</span></td><td><span class="lb-mk lb-part" aria-hidden="true">~</span>Own channels</td></tr>
+<tr><th scope="row">No discounts to fund</th><td class="lb-us"><span class="lb-mk lb-yes" aria-hidden="true">✓</span></td><td><span class="lb-mk lb-no" aria-hidden="true">✕</span></td><td><span class="lb-mk lb-no" aria-hidden="true">✕</span></td><td><span class="lb-mk lb-no" aria-hidden="true">✕</span></td><td><span class="lb-mk lb-yes" aria-hidden="true">✓</span></td></tr>
+<tr><th scope="row">Customer data stays on your store</th><td class="lb-us"><span class="lb-mk lb-yes" aria-hidden="true">✓</span></td><td><span class="lb-mk lb-no" aria-hidden="true">✕</span></td><td><span class="lb-mk lb-no" aria-hidden="true">✕</span></td><td><span class="lb-mk lb-no" aria-hidden="true">✕</span></td><td><span class="lb-mk lb-no" aria-hidden="true">✕</span></td></tr>
+<tr><th scope="row">Paid plans from</th><td class="lb-us">$50/mo, flat</td><td>$79/mo, rises with orders</td><td>$199/mo, rises with orders</td><td>$199/mo, rises with orders</td><td>$20/mo, rises with contacts</td></tr>
+</tbody>
+</table>
+</div>
+<p style="margin: 12px 0 0; font-size: 13px; color: #5B6675">Public pricing and help pages, checked October 2026. Loyalbase works alongside all of them.</p>
+</div>
+</section>
+
+<!-- GO LIVE + PRICING -->
+<section id="pricing" class="lb-reveal" style="background: #FFFFFF; padding: clamp(56px, 7vw, 100px) 0">
+<div class="lb-wrap" style="display: flex; flex-wrap: wrap; gap: clamp(32px, 5vw, 64px); align-items: center">
+<div style="flex: 1 1 440px; min-width: 0">
+<div class="lb-eyebrow" style="color: #2A78D6">Pricing and setup</div>
+<h2 class="lb-h2">From $50 a month. <span class="lb-grad-text-dark">Live in ten minutes.</span></h2>
+<ol style="margin: 26px 0 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 14px">
+<li class="lb-in lb-d1" style="display: flex; gap: 14px; align-items: flex-start"><span class="lb-h" style="flex: 0 0 32px; height: 32px; border-radius: 10px; background: #0F2A4A; color: #FFFFFF; display: flex; align-items: center; justify-content: center; font-size: 15px">1</span><span style="font-size: 16px; color: #16212F; padding-top: 4px"><b>Sign up, download the plugin.</b> It already knows your account.</span></li>
+<li class="lb-in lb-d2" style="display: flex; gap: 14px; align-items: flex-start"><span class="lb-h" style="flex: 0 0 32px; height: 32px; border-radius: 10px; background: #0F2A4A; color: #FFFFFF; display: flex; align-items: center; justify-content: center; font-size: 15px">2</span><span style="font-size: 16px; color: #16212F; padding-top: 4px"><b>Install on WordPress, press Connect.</b> Approve once.</span></li>
+<li class="lb-in lb-d3" style="display: flex; gap: 14px; align-items: flex-start"><span class="lb-h" style="flex: 0 0 32px; height: 32px; border-radius: 10px; background: #0F2A4A; color: #FFFFFF; display: flex; align-items: center; justify-content: center; font-size: 15px">3</span><span style="font-size: 16px; color: #16212F; padding-top: 4px"><b>Orders come in.</b> Minutes, with a live count.</span></li>
+<li class="lb-in lb-d4" style="display: flex; gap: 14px; align-items: flex-start"><span class="lb-h" style="flex: 0 0 32px; height: 32px; border-radius: 10px; background: #2A78D6; color: #FFFFFF; display: flex; align-items: center; justify-content: center; font-size: 15px">4</span><span style="font-size: 16px; color: #16212F; padding-top: 4px"><b>Open Today. Send your first message.</b></span></li>
+</ol>
+</div>
+<div class="lb-hero-bg" style="flex: 1 1 340px; min-width: 0; max-width: 440px; border-radius: 24px; color: #FFFFFF; padding: clamp(24px, 3vw, 34px); box-shadow: 0 30px 60px rgba(15, 42, 74, .25)">
+<div style="display: flex; justify-content: space-between; align-items: center; gap: 12px"><span class="lb-h" style="font-size: 22px">Loyalbase</span><span class="lb-pill" style="background: #F5C986; color: #0F2A4A; font-size: 12px; padding: 4px 11px">Launch price</span></div>
+<div style="margin-top: 20px; display: flex; align-items: baseline; gap: 8px"><span class="lb-h" style="font-size: clamp(44px, 5vw, 56px); line-height: 1">$50</span><span style="color: #B7C6D9; font-size: 15px">a month, flat. From.</span></div>
+<ul style="list-style: none; margin: 18px 0 0; padding: 0; display: flex; flex-direction: column; gap: 8px; font-size: 14.5px; color: #C8D4E3">
+<li>Every list, every screen</li><li>Unlimited customers and orders</li><li>Team logins</li><li>Setup help on WhatsApp</li>
+</ul>
+<a href="#early-access" class="lb-btn" style="margin-top: 24px; width: 100%; min-height: 52px; background: #FFFFFF; color: #0F2A4A; font-size: 16px">Start with early access</a>
+<div style="margin-top: 12px; font-size: 13px; color: #8FA6C2; text-align: center">Free while we set you up. Pay when you're happy. Local currency pricing available.</div>
+</div>
+</div>
+</section>
+
+<!-- ROADMAP CHIPS -->
+<section class="lb-soft-bg" style="padding: clamp(40px, 5vw, 64px) 0">
+<div class="lb-wrap" style="display: flex; flex-wrap: wrap; align-items: center; gap: 12px 16px">
+<span class="lb-eyebrow" style="color: #5B6675">On the way</span>
+<span class="lb-pill" style="background: #FFFFFF; border: 1px solid #E3E8EE; color: #0F2A4A; font-size: 14px; padding: 8px 14px">Automatic WhatsApp reminders</span>
+<span class="lb-pill" style="background: #FFFFFF; border: 1px solid #E3E8EE; color: #0F2A4A; font-size: 14px; padding: 8px 14px">Shopify app</span>
+<span class="lb-pill" style="background: #FFFFFF; border: 1px solid #E3E8EE; color: #0F2A4A; font-size: 14px; padding: 8px 14px">POS and branch sales</span>
+<span class="lb-pill" style="background: #FFFFFF; border: 1px solid #E3E8EE; color: #0F2A4A; font-size: 14px; padding: 8px 14px">One tap reorder links</span>
+<span class="lb-pill" style="background: #FFFFFF; border: 1px solid #E3E8EE; color: #0F2A4A; font-size: 14px; padding: 8px 14px">Referrals and review asks</span>
+<span class="lb-pill" style="background: #FFFFFF; border: 1px solid #E3E8EE; color: #0F2A4A; font-size: 14px; padding: 8px 14px">Ad audiences from your store</span>
+</div>
+</section>
+
+<!-- FAQ -->
+<section id="faq" style="background: #FFFFFF; padding: clamp(56px, 7vw, 96px) 0">
+<div style="max-width: 820px; margin: 0 auto; padding: 0 clamp(16px, 4vw, 32px)">
+<h2 class="lb-h2" style="margin: 0; font-size: clamp(28px, 3.2vw, 40px)">Questions owners ask</h2>
+<div class="lb-faq" style="margin-top: 20px; border-top: 1px solid #E3E8EE">
+<details style="border-bottom: 1px solid #E3E8EE"><summary>What is Loyalbase?</summary><p>A customer retention app for WooCommerce and Shopify stores. It reads your orders, tells you who to message on WhatsApp and why, and proves how much came back. It also shows what's selling, which dates to plan for, and whether your ads paid.</p></details>
+<details style="border-bottom: 1px solid #E3E8EE"><summary>Do I need a points program?</summary><p>No. Nothing to design, no discounts to fund. If you have one, keep it. They work together.</p></details>
+<details style="border-bottom: 1px solid #E3E8EE"><summary>How does it know a customer is late?</summary><p>It learns each customer's own rhythm. A three week buyer is flagged after about four. A twice a year buyer isn't. Yearly occasions are spotted from repeated dates.</p></details>
+<details style="border-bottom: 1px solid #E3E8EE"><summary>Is customer data safe?</summary><p>Names, phones, emails and addresses never leave your store. Loyalbase holds order facts and scrambled IDs it can't reverse. Names load from your store to your screen, and every lookup is logged.</p></details>
+<details style="border-bottom: 1px solid #E3E8EE"><summary>How do I know the messages worked?</summary><p>Every message is matched to paid orders within 60 days, counted once. And 1 in 10 people are held back and not messaged, so Results shows what your messages really added.</p></details>
+<details style="border-bottom: 1px solid #E3E8EE"><summary>Does it work with my POS and branches?</summary><p>Not yet. It's on the roadmap, starting with a sales file per branch and then direct sync for cloud POS systems. Walk in customers join the same lists when the till records a phone number.</p></details>
+<details style="border-bottom: 1px solid #E3E8EE"><summary>I use Klaviyo or a points app. Do I switch?</summary><p>No. Keep them. Loyalbase finds the people who need a personal nudge and shows what it was worth.</p></details>
+</div>
+</div>
+</section>
+
+<!-- INVEST -->
+<section id="invest" class="lb-soft-bg" style="padding: clamp(48px, 6vw, 80px) 0; border-top: 1px solid #E3E8EE">
+<div class="lb-wrap" style="display: flex; flex-wrap: wrap; gap: clamp(24px, 4vw, 56px); align-items: center">
+<div style="flex: 1 1 400px; min-width: 0">
+<div class="lb-eyebrow" style="color: #A86411">For investors</div>
+<h2 class="lb-h2">We're raising our first round.</h2>
+<p class="lb-lead">Built by Digisavvy, a performance marketing team that's spent years turning ad spend into repeat buyers. Product live, first stores connecting, WhatsApp automation and Shopify next. Looking for partners who know ecommerce in South Asia and the Gulf.</p>
+</div>
+<div class="lb-card" style="flex: 1 1 300px; min-width: 0; max-width: 420px; padding: 26px; border: 2px solid #F0D7AC; background: #FFF8EC">
+<h3 class="lb-h" style="margin: 0; font-size: 22px; color: #0F2A4A">Talk to the founders</h3>
+<p style="margin: 8px 0 0; font-size: 15px; color: #4A5565">20 minutes, a live demo on a real store, and the deck.</p>
+<a href="mailto:[INVESTOR EMAIL]?subject=Loyalbase%20round" class="lb-btn" style="margin-top: 16px; width: 100%; background: #0F2A4A; color: #FFFFFF">Email the founders</a>
+<a href="https://wa.me/[FOUNDER WHATSAPP]" class="lb-btn lb-btn-g" style="margin-top: 10px; width: 100%">Message on WhatsApp</a>
+</div>
+</div>
+</section>
+
+<!-- FINAL CTA -->
+<section id="early-access" class="lb-hero-bg" style="color: #FFFFFF; padding: clamp(56px, 7vw, 100px) 0">
+<div class="lb-wrap" style="display: flex; flex-wrap: wrap; gap: clamp(32px, 5vw, 64px); align-items: center">
+<div style="flex: 1 1 440px; min-width: 0">
+<h2 class="lb-h" style="margin: 0; font-size: clamp(32px, 4vw, 54px); line-height: 1.06; color: #FFFFFF">Your next sale is already in your customer list. <span class="lb-grad-text">Go and get it.</span></h2>
+<p style="margin: 18px 0 0; font-size: 17px; line-height: 1.55; color: #C8D4E3; max-width: 480px">Join early access. We'll connect your store with you over WhatsApp.</p>
+</div>
+<div style="flex: 1 1 360px; min-width: 0; background: rgba(255, 255, 255, .06); border: 1px solid rgba(255, 255, 255, .16); border-radius: 22px; padding: clamp(22px, 3vw, 30px)">
+<template data-region="form"><sc-if value="{{ notSubmitted }}" hint-placeholder-val="{{ true }}">
+<form onSubmit="{{ submit }}" style="display: flex; flex-direction: column; gap: 14px">
+<div style="display: flex; flex-direction: column; gap: 6px"><label for="lb-email" style="font-size: 14px; font-weight: 600">Work email</label><input id="lb-email" class="lb-input" type="email" name="email" placeholder="you@yourstore.com" autocomplete="email"></div>
+<div style="display: flex; flex-direction: column; gap: 6px"><label for="lb-site" style="font-size: 14px; font-weight: 600">Store website</label><input id="lb-site" class="lb-input" type="text" name="site" placeholder="yourstore.com" autocomplete="url"></div>
+<div style="display: flex; flex-direction: column; gap: 6px"><label for="lb-wa" style="font-size: 14px; font-weight: 600">WhatsApp number</label><input id="lb-wa" class="lb-input" type="tel" name="whatsapp" placeholder="+94 77 123 4567" autocomplete="tel"></div>
+<button type="submit" class="lb-btn" style="min-height: 52px; background: #FFFFFF; color: #0F2A4A; font-size: 16px; font-weight: 700">Get early access</button>
+</form>
+</sc-if>
+<sc-if value="{{ submitted }}" hint-placeholder-val="{{ false }}">
+<div class="lb-pop" role="status" style="display: flex; flex-direction: column; gap: 8px; padding: 12px 0"><span class="lb-h" style="font-size: 24px">You're on the list.</span><span style="font-size: 15.5px; color: #C8D4E3">We'll message you on WhatsApp to get started.</span></div>
+</sc-if></template><div data-mount="form" style="display: contents"></div>
+</div>
+</div>
+</section>
+
+<footer style="background: #081A30; color: #B7C6D9; padding: 30px 0">
+<div class="lb-wrap" style="display: flex; flex-wrap: wrap; gap: 16px; align-items: center; justify-content: space-between; font-size: 14px">
+<span style="display: inline-flex; align-items: center; gap: 8px; color: #FFFFFF; font-weight: 700; font-size: 18px"><svg viewBox="0 0 40 40" width="24" height="24" aria-hidden="true"><path d="M30.6 12.4A13 13 0 1 1 11.8 9.6" fill="none" stroke="#7FB2F0" stroke-width="4.6" stroke-linecap="round"></path><path d="M5.8 6.6l6.6 2.2-2.2 6.6" fill="none" stroke="#7FB2F0" stroke-width="4.6" stroke-linecap="round" stroke-linejoin="round"></path><circle cx="20" cy="21" r="4.2" fill="#7FB2F0"></circle></svg>loyalbase</span>
+<nav aria-label="Footer" style="display: flex; flex-wrap: wrap; gap: 8px 20px"><a href="#week" style="color: #B7C6D9; text-decoration: none">How it works</a><a href="#platform" style="color: #B7C6D9; text-decoration: none">Platform</a><a href="#compare" style="color: #B7C6D9; text-decoration: none">Compare</a><a href="#pricing" style="color: #B7C6D9; text-decoration: none">Pricing</a><a href="#privacy" style="color: #B7C6D9; text-decoration: none">Privacy</a><a href="#invest" style="color: #B7C6D9; text-decoration: none">Investors</a></nav>
+<span style="font-size: 13px">© 2026 Loyalbase · A Digisavvy product · getloyalbase.com</span>
+</div>
+</footer>
+
+</div>
+
+<script>
+(function(){
+
+var LB_LISTS = [
+  { id: "occasions", label: "Yearly occasions", count: 3, rule: "Order for the same date every year. Due in the next 2 weeks.", name: "Daniel R.", first: "Daniel", initials: "DR", store: "Bloom Lane Flowers", why: "Anniversary order, 3 years running. Due in 9 days.", value: "Last year: $85", msg: "Hi Daniel! Your yearly anniversary order is coming up on 22 October. Shall we get something ready for you?", sign: "Bloom Lane Flowers", pillBg: "#E8F1FC", pillFg: "#1F4F8F" },
+  { id: "unpaid", label: "Unpaid checkouts", count: 4, rule: "Picked what they wanted, didn't finish paying. Last 2 weeks.", name: "Priya S.", first: "Priya", initials: "PS", store: "Little Oak Kids", why: "Stopped at payment 2 days ago. Cotton sleep set.", value: "Left unpaid: $56", msg: "Hi Priya, we noticed your order didn't go through. Can we help you finish it, or would you like to pay another way?", sign: "Little Oak Kids", pillBg: "#F1EAFB", pillFg: "#5B2D91" },
+  { id: "overdue", label: "Late regulars", count: 7, rule: "Order often, gone quiet for longer than usual.", name: "Emma W.", first: "Emma", initials: "EW", store: "Roast & Co. Coffee", why: "Usually every 3 weeks. Last order 7 weeks ago.", value: "One more order: $64", msg: "Hi Emma, it's been a little while! We'd love to have you back. Anything we can get ready for you this week?", sign: "Roast & Co.", pillBg: "#FDF3E3", pillFg: "#8A520E" },
+  { id: "nudge", label: "First time buyers", count: 12, rule: "Bought once, 45 to 150 days ago. The window for a second order.", name: "Aisha K.", first: "Aisha", initials: "AK", store: "Glow Theory Skincare", why: "Bought once, 2 months ago. Vitamin C serum.", value: "One more order: $38", msg: "Hi Aisha, thank you again for your first order with Glow Theory! Anything we can get for you next?", sign: "Glow Theory", pillBg: "#E6F4ED", pillFg: "#17704A" },
+  { id: "lapsed", label: "Stopped ordering", count: 9, rule: "Two or more orders before. Nothing in over a year.", name: "Lucas M.", first: "Lucas", initials: "LM", store: "Pawsome Pet Supply", why: "6 orders before. Nothing for 14 months.", value: "One more order: $112", msg: "Hi Lucas, we've missed you at Pawsome! A lot has changed. Can we tempt you this week?", sign: "Pawsome Pet Supply", pillBg: "#FBEAEA", pillFg: "#9E2A2A" },
+  { id: "vip", label: "Best customers", count: 18, rule: "Your top customers. Say thank you, ask for nothing.", name: "Mei L.", first: "Mei", initials: "ML", store: "Kin & Cloth", why: "11 orders, $1,240 in 12 months.", value: "Worth a thank you", msg: "Hi Mei, thank you for being one of our favourite customers. It means a lot to us.", sign: "Kin & Cloth", pillBg: "#E3E8EE", pillFg: "#0F2A4A" },
+  { id: "corporate", label: "Corporate buyers", count: 6, rule: "Order for a company. Call before team events and festive seasons.", name: "Tom H.", first: "Tom", initials: "TH", store: "Roast & Co. Coffee", why: "5 orders for Northline Studio. Biggest last December.", value: "Last office order: $420", msg: "Hi Tom, thank you for the orders for your team! Planning anything for the office soon? We can put together a box for any size.", sign: "Roast & Co.", pillBg: "#E3F3F4", pillFg: "#0E5E66" }
+];
+var LB_DAYS = [
+  { day: "Monday", short: "Your brief", tag: "Monday brief", pillBg: "#E8F1FC", pillFg: "#1F4F8F", title: "Two minutes: last week, this week.", body: "Sales vs last week, who came back, dates coming up, three things worth doing.", action: "Read it. Pick one job.", screenLabel: "Monday brief", rows: [{ a: "Sales last week", b: "vs the week before", c: "+12%", color: "#9FD8B5" }, { a: "Brought back", b: "from 11 messages", c: "4", color: "#FFFFFF" }, { a: "Black Friday", b: "ads live by 13 Nov", c: "6 weeks", color: "#F5C986" }], foot: "In the app and your inbox." },
+  { day: "Tuesday", short: "7 regulars late", tag: "Late regulars", pillBg: "#FDF3E3", pillFg: "#8A520E", title: "Emma orders every 3 weeks. It's been 7.", body: "Loyalbase knows each customer's rhythm and flags Emma now, while a message still works.", action: "Tap Emma. Tap Send.", screenLabel: "Late for their next order", rows: [{ a: "Emma W.", b: "every 3 weeks, 7 weeks ago", c: "$64", color: "#F5C986" }, { a: "Rohan P.", b: "monthly, 9 weeks ago", c: "$48", color: "#F5C986" }, { a: "Sofia G.", b: "fortnightly, 5 weeks ago", c: "$32", color: "#F5C986" }], foot: "If each orders once more: $410" },
+  { day: "Wednesday", short: "An anniversary", tag: "Yearly occasions", pillBg: "#E8F1FC", pillFg: "#1F4F8F", title: "Daniel ordered flowers around 22 October, three years running.", body: "Nobody told Loyalbase. It noticed the repeated date. A reminder now beats a Google search later.", action: "Send the reminder.", screenLabel: "Occasions, next 2 weeks", rows: [{ a: "Daniel R.", b: "anniversary, 3 years", c: "9 days", color: "#7FB2F0" }, { a: "Nadia F.", b: "birthday cake, 2 years", c: "12 days", color: "#7FB2F0" }, { a: "Chris B.", b: "same date, 4 years", c: "13 days", color: "#7FB2F0" }], foot: "Last year: $265" },
+  { day: "Thursday", short: "4 unpaid checkouts", tag: "Unpaid checkouts", pillBg: "#F1EAFB", pillFg: "#5B2D91", title: "Priya picked a sleep set and stopped at payment.", body: "Card failed, baby woke up, who knows. A human message with another way to pay recovers more than any automated email.", action: "Offer bank transfer or cash on delivery.", screenLabel: "Stopped at payment", rows: [{ a: "Priya S.", b: "2 days ago", c: "$56", color: "#D9B8F5" }, { a: "Ahmed K.", b: "4 days ago", c: "$92", color: "#D9B8F5" }, { a: "Lena O.", b: "yesterday", c: "$40", color: "#D9B8F5" }], foot: "Left unpaid: $218" },
+  { day: "Friday", short: "What came back", tag: "Results", pillBg: "#E6F4ED", pillFg: "#17704A", title: "Emma ordered again. $64, three days after your message.", body: "Every message matched to paid orders within 60 days. 1 in 10 held back, so you see what the messages really added.", action: "Nothing. Enjoy it.", screenLabel: "Results, last 30 days", rows: [{ a: "Messaged", b: "WhatsApp, email, downloads", c: "48", color: "#FFFFFF" }, { a: "Came back", b: "paid within 60 days", c: "14", color: "#9FD8B5" }, { a: "Back in sales", b: "about 9 extra orders", c: "$2,140", color: "#9FD8B5" }], foot: "Held back: 11% came back. Messaged: 29%." }
+];
+var LB_TICKER = [
+  { text: "Emma W. is 4 weeks late", dot: "#F5C986" }, { text: "Daniel's anniversary order due in 9 days", dot: "#7FB2F0" }, { text: "Priya stopped at payment: $56", dot: "#D9B8F5" }, { text: "Emma came back: $64", dot: "#9FD8B5" }, { text: "Black Friday: ads live by 13 Nov", dot: "#7FB2F0" }, { text: "\"Cold brew kit\" up 40%", dot: "#9FD8B5" }, { text: "12 first time buyers to invite back", dot: "#9FD8B5" }, { text: "Your messages added about 9 orders", dot: "#9FD8B5" }, { text: "Sales per $1 of ads: 7.5×", dot: "#FFFFFF" }, { text: "Thursday posts reach the most people", dot: "#7FB2F0" }
+];
+
+
+var state={tab:"overdue",sent:false,typing:false,hero:2,day:1,submitted:false,orders:600,aov:40};
+var motion=!window.matchMedia||!window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+function money(v){return "$"+Math.round(v).toLocaleString("en-US");}
+function vals(){
+  var s=state,self=null;
+  var hero=motion?s.hero:2;
+  var cur=LB_LISTS[2];LB_LISTS.forEach(function(l){if(l.id===s.tab)cur=l;});
+  return {
+    heroBubble:hero===1||hero===2,heroToast:hero===2||hero===3,heroCounter:hero===3,
+    ticker:LB_TICKER.concat(LB_TICKER),
+    days:LB_DAYS.map(function(d,i){return{day:d.day,short:d.short,on:i===s.day,cls:i===s.day?"lb-day-on":"",pick:function(){pickDay(i);}};}),
+    cd:LB_DAYS[s.day],weekBarClass:motion?"lb-weekbar":"",
+    tabs:LB_LISTS.map(function(l){return{label:l.label,count:l.count,on:l.id===s.tab,off:l.id!==s.tab,pick:function(){pickTab(l.id);}};}),
+    cur:cur,typing:s.typing,notTyping:!s.typing,sent:s.sent,notSent:!s.sent,
+    send:function(){state.sent=true;render('lists');},
+    sentNote:"Opened in WhatsApp. If "+cur.first+" orders within 60 days, it shows in Results.",
+    submitted:s.submitted,notSubmitted:!s.submitted,
+    submit:function(e){e.preventDefault();state.submitted=true;render('form');},
+    "true":true,"false":false
+  };
+}
+function get(ctx,path){var p=path.split('.'),v=ctx;for(var i=0;i<p.length;i++){if(v==null)return undefined;v=v[p[i]];}return v;}
+function interp(str,ctx){var m=str.match(/^\s*\{\{\s*([\w.]+)\s*\}\}\s*$/);if(m)return get(ctx,m[1]);return str.replace(/\{\{\s*([\w.]+)\s*\}\}/g,function(_,k){var v=get(ctx,k);return v==null?'':v;});}
+function renderNode(node,ctx,out){
+  if(node.nodeType===3){out.appendChild(document.createTextNode(interp(node.nodeValue,ctx)));return;}
+  if(node.nodeType!==1)return;
+  var tag=node.tagName.toLowerCase();
+  if(tag==='sc-if'){var v=interp(node.getAttribute('value'),ctx);if(v){for(var c=node.firstChild;c;c=c.nextSibling)renderNode(c,ctx,out);}return;}
+  if(tag==='sc-for'){var list=interp(node.getAttribute('list'),ctx)||[];var as=node.getAttribute('as');list.forEach(function(item,i){var c2=Object.create(ctx);c2[as]=item;c2.$index=i;for(var c=node.firstChild;c;c=c.nextSibling)renderNode(c,c2,out);});return;}
+  var el=document.createElement(tag);
+  for(var i=0;i<node.attributes.length;i++){var a=node.attributes[i];if(/^hint-/.test(a.name))continue;
+    if(/^on[A-Z]/.test(a.name)||/^on[a-z]+$/.test(a.name)&&/\{\{/.test(a.value)){var fn=interp(a.value,ctx);if(typeof fn==='function')el.addEventListener(a.name.slice(2).toLowerCase(),fn);continue;}
+    var val=interp(a.value,ctx);if(val===false||val==null)val=String(val);el.setAttribute(a.name,String(val));}
+  for(var c=node.firstChild;c;c=c.nextSibling)renderNode(c,ctx,el);
+  out.appendChild(el);
+}
+var tpls={};
+document.querySelectorAll('template[data-region]').forEach(function(t){tpls[t.dataset.region]=t;});
+function render(name){var t=tpls[name],m=document.querySelector('[data-mount="'+name+'"]');if(!t||!m)return;var ctx=vals();var frag=document.createDocumentFragment();for(var c=t.content.firstChild;c;c=c.nextSibling)renderNode(c,ctx,frag);m.innerHTML='';m.appendChild(frag);}
+function renderAll(){Object.keys(tpls).forEach(render);}
+var typingT,weekT,weekResume;
+function pickTab(id){clearTimeout(typingT);state.tab=id;state.sent=false;state.typing=motion;render('lists');if(motion)typingT=setTimeout(function(){state.typing=false;render('lists');},750);}
+function startWeek(){clearInterval(weekT);if(!motion)return;weekT=setInterval(function(){state.day=(state.day+1)%LB_DAYS.length;render('week');},3200);}
+function pickDay(i){clearInterval(weekT);state.day=i;render('week');clearTimeout(weekResume);weekResume=setTimeout(startWeek,12000);}
+renderAll();
+if(motion){setInterval(function(){state.hero=(state.hero+1)%4;render('hero');},2600);startWeek();}
+var o=document.getElementById('lb-orders'),a=document.getElementById('lb-aov');
+function calc(){var orders=Number(o.value),aov=Number(a.value);document.getElementById('calcOrders').textContent=orders.toLocaleString('en-US');document.getElementById('calcAov').textContent=money(aov);var lost=orders*0.1*12*aov;document.getElementById('calcLost').textContent=money(lost);document.getElementById('calcBack').textContent=money(lost*0.25);}
+o.addEventListener('input',calc);a.addEventListener('input',calc);calc();
+var rev=document.querySelectorAll('.lb-reveal');
+if('IntersectionObserver' in window&&motion){var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('lb-go');io.unobserve(e.target);}});},{threshold:0.08});rev.forEach(function(el){io.observe(el);});}else{rev.forEach(function(el){el.classList.add('lb-go');});}
+})();
+</script>
+</body>
+</html>
