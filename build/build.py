@@ -43,7 +43,7 @@ ORG = {
     "@id": f"{SITE}/#org",
     "name": "Loyalbase",
     "url": f"{SITE}/",
-    "logo": {"@type": "ImageObject", "url": f"{SITE}/assets/logo-light.png", "width": 715, "height": 169},
+    "logo": {"@type": "ImageObject", "url": f"{SITE}/assets/logo-light.png", "width": 1406, "height": 340},
     "description": "Customer retention app for WooCommerce and Shopify stores.",
     "parentOrganization": {"@type": "Organization", "name": "Digisavvy"},
     "founder": {"@type": "Person", "name": "Akmal Afzal", "sameAs": [LINKEDIN]},
@@ -123,7 +123,7 @@ def header(current=None):
     cur_attr = ' aria-current="page"'
     links = "".join(f'<a href="{h}"{cur_attr if h == current else ""}>{t}</a>' for h, t in NAV)
     return f'''<header class="lf-head"><div class="lf-wrap">
-<a class="lf-logo" href="/" aria-label="Loyalbase home"><img src="/assets/logo-light.png" alt="Loyalbase" width="144" height="34"></a>
+<a class="lf-logo" href="/" aria-label="Loyalbase home"><img src="/assets/logo-light.svg" alt="Loyalbase" width="141" height="34"></a>
 <nav class="lf-nav" aria-label="Main">{links}</nav>
 <a class="lf-btn" href="/#early-access" data-cta>Get early access</a>
 </div></header>'''
@@ -136,7 +136,7 @@ def footer():
         cols += f'<div><h2>{title}</h2><ul>{items}</ul></div>'
     return f'''<footer class="lf-foot"><div class="lf-wrap">
 <div class="lf-foot-top">
-<div class="lf-foot-brand"><img src="/assets/logo-dark.png" alt="Loyalbase" width="127" height="30" loading="lazy"><p>Customer retention for WooCommerce and Shopify stores. Find who stopped buying, message them on WhatsApp, see what came back.</p></div>
+<div class="lf-foot-brand"><img src="/assets/logo-dark.svg" alt="Loyalbase" width="124" height="30" loading="lazy"><p>Customer retention for WooCommerce and Shopify stores. Find who stopped buying, message them on WhatsApp, see what came back.</p></div>
 {cols}
 </div>
 <div class="lf-foot-bottom"><span>© 2026 Loyalbase. A Digisavvy product, Colombo, Sri Lanka.</span><span>getloyalbase.app</span></div>
@@ -224,8 +224,9 @@ def head(title, desc, path, og_img, schema, extra=""):
 <meta name="twitter:description" content="{esc(desc)}">
 <meta name="twitter:image" content="{SITE}{og_img}">
 <meta name="theme-color" content="#0F2A4A">
-<link rel="icon" type="image/png" href="/assets/favicon.png">
-<link rel="apple-touch-icon" href="/assets/favicon.png">
+<link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+<link rel="icon" type="image/png" sizes="512x512" href="/assets/favicon.png">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
 <link rel="alternate" type="text/plain" title="LLM summary" href="/llms.txt">
 {FONTS}
 <link rel="stylesheet" href="/assets/site.css">
@@ -358,8 +359,9 @@ def home_seo_block():
 <meta name="twitter:description" content="{esc(HOME_DESC)}">
 <meta name="twitter:image" content="{SITE}/assets/og.png">
 <meta name="theme-color" content="#0F2A4A">
-<link rel="icon" type="image/png" href="/assets/favicon.png">
-<link rel="apple-touch-icon" href="/assets/favicon.png">
+<link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+<link rel="icon" type="image/png" sizes="512x512" href="/assets/favicon.png">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
 <link rel="alternate" type="text/plain" title="LLM summary" href="/llms.txt">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="/assets/site.css">
@@ -444,6 +446,12 @@ def patch_home():
                   '<img src="/assets/logo-light.png" alt="" aria-hidden="true" width="93" height="22" style="height: 22px; width: auto; display: block">')
     h = h.replace('<img src="assets/logo-dark.png" alt="Loyalbase" style="height: 32px; width: auto; display: block">',
                   '<img src="/assets/logo-dark.png" alt="Loyalbase" width="134" height="32" loading="lazy" style="height: 32px; width: auto; display: block">')
+
+    # vector logos
+    h = h.replace('<img src="/assets/logo-light.png" alt="Loyalbase" width="144" height="34"', '<img src="/assets/logo-light.svg" alt="Loyalbase" width="141" height="34"')
+    h = h.replace('<img src="/assets/logo-light.png" alt="" aria-hidden="true" width="93" height="22"', '<img src="/assets/logo-light.svg" alt="" aria-hidden="true" width="91" height="22"')
+    h = h.replace('<img src="/assets/logo-dark.png" alt="Loyalbase" width="134" height="32"', '<img src="/assets/logo-dark.svg" alt="Loyalbase" width="132" height="32"')
+    h = h.replace('width="132" height="32" loading="lazy" style="height: 32px; width: auto; display: block">', 'width="132" height="32" loading="lazy" style="height: 32px; width: auto; display: block; align-self: flex-start">')
 
     # hero platform badges link to their pages
     h = h.replace('<span style="display: inline-flex; align-items: center; gap: 8px; padding: 7px 12px; border-radius: 10px; border: 1px solid rgba(255, 255, 255, .18); background: rgba(255, 255, 255, .06); font-weight: 600; font-size: 14px">WooCommerce <span class="lb-pill" style="background: #17704A; color: #FFFFFF; font-size: 11px">Live</span></span>',
@@ -619,7 +627,7 @@ def make_og_images():
         except OSError:
             return ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf", size)
     logo = Image.open(os.path.join(ROOT, "assets", "logo-dark.png")).convert("RGBA")
-    logo.thumbnail((300, 72))
+    logo.thumbnail((310, 75))
     os.makedirs(os.path.join(ROOT, "assets", "og"), exist_ok=True)
 
     def card(title, kicker, out):
