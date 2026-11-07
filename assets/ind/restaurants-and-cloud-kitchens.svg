@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 240" width="400" height="240" role="img">
+<style>
+.tw{animation:tw 2.6s ease-in-out infinite;transform-box:fill-box;transform-origin:center}
+.tw2{animation:tw 3.1s ease-in-out .8s infinite;transform-box:fill-box;transform-origin:center}
+.fl{animation:fl 1.4s ease-in-out infinite;transform-box:fill-box;transform-origin:50% 100%}
+.fl2{animation:fl 1.7s ease-in-out .3s infinite;transform-box:fill-box;transform-origin:50% 100%}
+.st{animation:st 3.2s ease-in-out infinite}
+.st2{animation:st 3.2s ease-in-out 1.1s infinite}
+.fo{animation:fo 4s ease-in-out infinite;transform-box:fill-box;transform-origin:center}
+.fo2{animation:fo 4.6s ease-in-out 1.2s infinite;transform-box:fill-box;transform-origin:center}
+.dr{animation:dr 2.4s ease-in infinite}
+@keyframes tw{0%,100%{opacity:.25;transform:scale(.7)}50%{opacity:1;transform:scale(1)}}
+@keyframes fl{0%,100%{transform:scaleY(1) rotate(-3deg)}50%{transform:scaleY(1.18) rotate(3deg)}}
+@keyframes st{0%{opacity:0;transform:translateY(8px)}35%{opacity:.85}100%{opacity:0;transform:translateY(-16px)}}
+@keyframes fo{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
+@keyframes dr{0%{opacity:0;transform:translateY(-4px)}20%{opacity:1}80%{opacity:1;transform:translateY(16px)}100%{opacity:0;transform:translateY(18px)}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important}}
+</style>
+<defs><linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#FFE6D6"/><stop offset="1" stop-color="#FFD0B8"/></linearGradient>
+<radialGradient id="glow" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#FFFFFF" stop-opacity=".75"/><stop offset="1" stop-color="#FFFFFF" stop-opacity="0"/></radialGradient></defs>
+<rect width="400" height="240" fill="url(#bg)"/>
+<circle cx="335" cy="38" r="88" fill="#FFFFFF" opacity=".28"/>
+<circle cx="40" cy="225" r="70" fill="#FFFFFF" opacity=".22"/>
+<ellipse cx="200" cy="132" rx="150" ry="100" fill="url(#glow)"/>
+
+<ellipse cx="208" cy="216" rx="122" ry="8" fill="#A0461E" opacity=".15"/>
+<g stroke="#FFFFFF" stroke-width="4" fill="none" stroke-linecap="round" opacity=".9"><path class="st" d="M188 92 q-8-10 0-20 q8-10 0-20"/><path class="st2" d="M214 88 q-8-10 0-20 q8-10 0-20"/><path class="st" d="M240 92 q-8-10 0-20 q8-10 0-20"/></g>
+<path d="M248 70 L300 120" stroke="#8B5A3C" stroke-width="5" stroke-linecap="round"/><path d="M262 64 L306 122" stroke="#A86B45" stroke-width="5" stroke-linecap="round"/>
+<path d="M150 124 h128 a64 64 0 0 1 -128 0Z" fill="#FFFFFF"/>
+<path d="M156 140 h116" stroke="#2A78D6" stroke-width="4" stroke-dasharray="8 6"/>
+<ellipse cx="214" cy="124" rx="64" ry="12" fill="#F7C873"/>
+<path d="M164 122 q8 -8 16 0 t16 0 t16 0 t16 0 t16 0 t16 0" stroke="#E8A93E" stroke-width="3" fill="none"/>
+<circle cx="190" cy="120" r="7" fill="#3CB371"/><circle cx="238" cy="119" r="6" fill="#E5484D"/><ellipse cx="214" cy="117" rx="9" ry="5" fill="#FFFFFF"/><ellipse cx="214" cy="117" rx="4" ry="3" fill="#FFB020"/>
+<rect x="196" y="186" width="36" height="14" rx="4" fill="#FFFFFF"/>
+<path d="M66 110 L118 110 L124 210 L60 210Z" fill="#D9A86C"/><path d="M66 110 L118 110 L116 124 L68 124Z" fill="#C8945A"/>
+<circle cx="92" cy="164" r="17" fill="#FFFFFF"/><path d="M84 164 h16 M92 156 v16" stroke="#E85D75" stroke-width="4" stroke-linecap="round" opacity="0"/>
+<text x="92" y="169" text-anchor="middle" font-family="Inter, -apple-system, 'Segoe UI', Arial, sans-serif" font-size="13" font-weight="800" fill="#E85D75">8pm</text>
+<g class="fo"><path d="M336 30 a24 24 0 0 1 24 24 c0 18 -24 42 -24 42 s-24 -24 -24 -42 a24 24 0 0 1 24 -24Z" fill="#E85D75"/><circle cx="336" cy="54" r="9" fill="#FFFFFF"/></g>
+<path class="tw" d="M316 141 Q317.62 148.38 325 150 Q317.62 151.62 316 159 Q314.38 151.62 307 150 Q314.38 148.38 316 141Z" fill="#FFFFFF"/><path class="tw2" d="M352 176 Q353.08 180.92 358 182 Q353.08 183.08 352 188 Q350.92 183.08 346 182 Q350.92 180.92 352 176Z" fill="#FFFFFF"/>
+
+</svg>

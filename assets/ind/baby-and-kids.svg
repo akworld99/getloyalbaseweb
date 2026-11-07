@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 240" width="400" height="240" role="img">
+<style>
+.tw{animation:tw 2.6s ease-in-out infinite;transform-box:fill-box;transform-origin:center}
+.tw2{animation:tw 3.1s ease-in-out .8s infinite;transform-box:fill-box;transform-origin:center}
+.fl{animation:fl 1.4s ease-in-out infinite;transform-box:fill-box;transform-origin:50% 100%}
+.fl2{animation:fl 1.7s ease-in-out .3s infinite;transform-box:fill-box;transform-origin:50% 100%}
+.st{animation:st 3.2s ease-in-out infinite}
+.st2{animation:st 3.2s ease-in-out 1.1s infinite}
+.fo{animation:fo 4s ease-in-out infinite;transform-box:fill-box;transform-origin:center}
+.fo2{animation:fo 4.6s ease-in-out 1.2s infinite;transform-box:fill-box;transform-origin:center}
+.dr{animation:dr 2.4s ease-in infinite}
+@keyframes tw{0%,100%{opacity:.25;transform:scale(.7)}50%{opacity:1;transform:scale(1)}}
+@keyframes fl{0%,100%{transform:scaleY(1) rotate(-3deg)}50%{transform:scaleY(1.18) rotate(3deg)}}
+@keyframes st{0%{opacity:0;transform:translateY(8px)}35%{opacity:.85}100%{opacity:0;transform:translateY(-16px)}}
+@keyframes fo{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
+@keyframes dr{0%{opacity:0;transform:translateY(-4px)}20%{opacity:1}80%{opacity:1;transform:translateY(16px)}100%{opacity:0;transform:translateY(18px)}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important}}
+</style>
+<defs><linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#E1F0FD"/><stop offset="1" stop-color="#E6E6FA"/></linearGradient>
+<radialGradient id="glow" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#FFFFFF" stop-opacity=".75"/><stop offset="1" stop-color="#FFFFFF" stop-opacity="0"/></radialGradient></defs>
+<rect width="400" height="240" fill="url(#bg)"/>
+<circle cx="335" cy="38" r="88" fill="#FFFFFF" opacity=".28"/>
+<circle cx="40" cy="225" r="70" fill="#FFFFFF" opacity=".22"/>
+<ellipse cx="200" cy="132" rx="150" ry="100" fill="url(#glow)"/>
+
+<ellipse cx="206" cy="216" rx="124" ry="8" fill="#3A5A8C" opacity=".14"/>
+<g fill="#FFFFFF" opacity=".9"><ellipse cx="74" cy="64" rx="30" ry="14"/><ellipse cx="96" cy="56" rx="22" ry="16"/><ellipse cx="300" cy="44" rx="26" ry="11"/><ellipse cx="318" cy="38" rx="18" ry="13"/></g>
+<path d="M150 64 q6-20 12 0Z" fill="#FFCC80"/>
+<rect x="140" y="64" width="34" height="18" rx="5" fill="#FFB74D"/>
+<rect x="134" y="80" width="46" height="128" rx="16" fill="#FFFFFF"/>
+<rect x="134" y="132" width="46" height="76" rx="0" fill="#FFF3E0"/><rect x="134" y="184" width="46" height="24" rx="12" fill="#FFF3E0"/>
+<path d="M140 104 h12 M140 120 h8 M140 136 h12 M140 152 h8 M140 168 h12" stroke="#90A4D4" stroke-width="2.5" stroke-linecap="round"/>
+<rect x="210" y="160" width="48" height="48" rx="8" fill="#FF8A80"/><text x="234" y="194" text-anchor="middle" font-family="Inter, -apple-system, 'Segoe UI', Arial, sans-serif" font-size="28" font-weight="800" fill="#FFFFFF">A</text>
+<rect x="262" y="160" width="48" height="48" rx="8" fill="#64B5F6"/><text x="286" y="194" text-anchor="middle" font-family="Inter, -apple-system, 'Segoe UI', Arial, sans-serif" font-size="28" font-weight="800" fill="#FFFFFF">B</text>
+<g transform="rotate(-6 260 136)"><rect x="236" y="110" width="48" height="48" rx="8" fill="#81C784"/><text x="260" y="144" text-anchor="middle" font-family="Inter, -apple-system, 'Segoe UI', Arial, sans-serif" font-size="28" font-weight="800" fill="#FFFFFF">C</text></g>
+<g class="fo"><ellipse cx="344" cy="104" rx="24" ry="29" fill="#FFD166"/><ellipse cx="336" cy="94" rx="6" ry="9" fill="#FFFFFF" opacity=".45"/><path d="M340 132 l8 0 l-4 6Z" fill="#F0B83C"/><path d="M344 138 q-10 20 4 40 q10 16 -2 32" stroke="#8C9EC9" stroke-width="2" fill="none"/></g>
+<path class="tw" d="M108 123 Q109.62 130.38 117 132 Q109.62 133.62 108 141 Q106.38 133.62 99 132 Q106.38 130.38 108 123Z" fill="#FFFFFF"/><path class="tw2" d="M92 170 Q93.08 174.92 98 176 Q93.08 177.08 92 182 Q90.92 177.08 86 176 Q90.92 174.92 92 170Z" fill="#FFFFFF"/><path class="tw2" d="M210 63 Q211.26 68.74 217 70 Q211.26 71.26 210 77 Q208.74 71.26 203 70 Q208.74 68.74 210 63Z" fill="#FFFFFF"/>
+
+</svg>

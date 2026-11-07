@@ -14,6 +14,7 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import content as C  # noqa: E402
 import industries as I  # noqa: E402
+import illustrations as IL  # noqa: E402
 
 C.PAGES.extend(I.PAGES)
 
@@ -313,12 +314,14 @@ def render_page(p):
 {banner()}
 {header(current)}
 <main id="main">
-<div class="sx-hero"><div class="lf-wrap">
+<div class="sx-hero{' sx-hero-art' if p.get('art') else ''}"><div class="lf-wrap">
 <nav class="sx-crumbs" aria-label="Breadcrumb"><ol>{crumbs}</ol></nav>
+<div class="sx-hero-grid"><div class="sx-hero-text">
 <div class="sx-eyebrow">{esc(p["eyebrow"])}</div>
 <h1>{esc(p["h1"])}</h1>
 <p class="sx-stand">{esc(p["stand"])}</p>
 <div class="sx-meta">{meta}</div>
+</div>{p.get('art', '')}</div>
 </div></div>
 <div class="sx-main"><div class="lf-wrap"><article class="{body_cls}"{' style="max-width: none"' if p["path"] in ("/guides/", "/industries/") else ""}>
 {answer}
@@ -507,7 +510,7 @@ def home_ask_block():
 
 def home_industries_block():
     cards = "".join(
-        f'<a class="lb-ind" href="/industries/{slug}/"><b>{esc(name)}</b><span>{esc(text)}</span></a>'
+        f'<a class="lb-ind" href="/industries/{slug}/">{IL.figure(slug)}<div class="lb-ind-body"><b>{esc(name)}</b><span>{esc(text)}</span></div></a>'
         for slug, name, text in I.HUB_ITEMS)
     return f'''<!--INDUSTRIES--><section id="industries" class="lb-soft-bg" style="padding: clamp(48px, 6vw, 84px) 0">
 <div class="lb-wrap">
@@ -771,7 +774,7 @@ def make_og_images():
     logo.thumbnail((310, 75))
     os.makedirs(os.path.join(ROOT, "assets", "og"), exist_ok=True)
 
-    def card(title, kicker, out):
+    def card(title, kicker, out, art=None):
         W, H = 1200, 630
         img = Image.new("RGB", (W, H), (8, 26, 48))
         px = img.load()
@@ -784,7 +787,11 @@ def make_og_images():
                     px[x + 1, y] = (r, g, b)
         d = ImageDraw.Draw(img)
         img.paste(logo, (80, 70), logo)
-        fk = font("Inter-SemiBold.otf", 28)
+        ks = 28
+        fk = font("Inter-SemiBold.otf", ks)
+        while art and ks > 18 and d.textlength(kicker.upper(), font=fk) > 548:
+            ks -= 1
+            fk = font("Inter-SemiBold.otf", ks)
         d.text((82, 196), kicker.upper(), font=fk, fill=(127, 178, 240))
         size = 68
         while True:
@@ -792,7 +799,7 @@ def make_og_images():
             words, lines, cur = title.split(), [], ""
             for w in words:
                 trial = (cur + " " + w).strip()
-                if d.textlength(trial, font=ft) <= 1040:
+                if d.textlength(trial, font=ft) <= (540 if art else 1040):
                     cur = trial
                 else:
                     lines.append(cur)
@@ -806,14 +813,27 @@ def make_og_images():
             d.text((80, y), ln, font=ft, fill=(255, 255, 255))
             y += int(size * 1.15)
         d.text((82, 548), "getloyalbase.app", font=font("Inter-Medium.otf", 26), fill=(200, 212, 227))
+        if art and os.path.exists(art):
+            pic = Image.open(art).convert("RGB").resize((480, 288), Image.LANCZOS)
+            mask = Image.new("L", pic.size, 0)
+            ImageDraw.Draw(mask).rounded_rectangle((0, 0, 479, 287), radius=28, fill=255)
+            shadow = Image.new("RGBA", (W, H), (0, 0, 0, 0))
+            ImageDraw.Draw(shadow).rounded_rectangle((652, 186, 1140, 482), radius=30, fill=(0, 0, 0, 70))
+            from PIL import ImageFilter
+            img.paste(Image.new("RGB", (W, H), (0, 0, 0)), (0, 0), shadow.filter(ImageFilter.GaussianBlur(14)).split()[3])
+            img.paste(pic, (660, 171), mask)
         img.save(out, optimize=True)
 
     card("Get customers to order again. No loyalty program.", "Customer retention for WooCommerce and Shopify", os.path.join(ROOT, "assets", "og.png"))
     for p in PAGES:
-        card(p["h1"], p["eyebrow"], os.path.join(ROOT, "assets", "og", slug_of(p["path"]) + ".png"))
+        art = None
+        if p.get("image"):
+            art = os.path.join(ROOT, "build", ".art", os.path.basename(p["image"]).replace(".svg", ".png"))
+        card(p["h1"], p["eyebrow"], os.path.join(ROOT, "assets", "og", slug_of(p["path"]) + ".png"), art)
 
 
 if __name__ == "__main__":
+    IL.write_all(ROOT)
     for p in PAGES:
         render_page(p)
     patch_home()

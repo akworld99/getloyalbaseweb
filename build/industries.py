@@ -4,6 +4,7 @@ Every claim here matches the product as shipped (Nov 2026): WooCommerce live, Sh
 POS not yet. Example answers use made-up names and numbers and say so on the page.
 """
 from content import table, tpl, cta
+from illustrations import figure
 
 PAGES = []
 
@@ -70,7 +71,8 @@ def u(s):
 
 def industry(slug, nav, title, desc, eyebrow, h1, stand, answer, body, faqs, related):
     PAGES.append(dict(path=f"/industries/{slug}/", section="industries", title=title, nav=nav, description=desc, eyebrow=eyebrow,
-                      h1=h1, stand=stand, answer=answer, body=body, faqs=faqs, related=related, schema="article"))
+                      h1=h1, stand=stand, answer=answer, body=body, faqs=faqs, related=related, schema="article",
+                      art=figure(slug, "sx-art sx-art-hero", eager=True), image=f"/assets/ind/{slug}.svg"))
 
 
 COMMON_FAQ_PRIVACY = ("Does Loyalbase see my customers' names and phone numbers?",
@@ -677,7 +679,10 @@ HUB_ITEMS = [
     ("corporate-gifting-and-b2b", "Corporate gifting and B2B", "Find every business customer, and call them before the season."),
 ]
 
-hub_cards = "".join(f'<a href="/industries/{s}/"><span>Industry</span><b>{n}</b><p>{t}</p></a>' for s, n, t in HUB_ITEMS)
+hub_cards = "".join(
+    f'<a class="sx-indcard{" sx-indcard-big" if i < 4 else ""}" href="/industries/{s}/">{figure(s)}'
+    f'<div class="sx-indcard-body"><span>Industry</span><b>{n}</b><p>{t}</p><em>See how it works →</em></div></a>'
+    for i, (s, n, t) in enumerate(HUB_ITEMS))
 PAGES.append(dict(
     path="/industries/",
     section="industries",
@@ -689,7 +694,7 @@ PAGES.append(dict(
     stand="Every kind of store loses customers in its own way. A bakery loses a birthday, a grocery store loses a weekly shop. Pick yours to see the lists, questions and messages that matter most.",
     answer="Loyalbase works for any WooCommerce store whose customers buy more than once (Shopify is in early access). It learns each customer's own rhythm, so the same app spots a missed weekly grocery shop, a skincare refill that's overdue and a birthday cake due once a year.",
     body=f'''
-<div class="sx-hub">{hub_cards}</div>
+<div class="sx-indgrid">{hub_cards}</div>
 <h2>Don't see your industry?</h2>
 <p>If your customers buy more than once, Loyalbase will find the ones drifting away. It doesn't need to know your industry, because it judges each customer against their own past orders. A customer who buys every three weeks is late after about six. One who buys twice a year isn't late for about nine months.</p>
 <p>Some features shine for certain stores. Occasions come from gift card and cake wording. Festival groups suit stores with seasonal peaks. Company accounts suit anyone who sells to offices. Ask works for everyone.</p>

@@ -2006,17 +2006,45 @@ URL: https://getloyalbase.app/industries/
 
 Short answer: Loyalbase works for any WooCommerce store whose customers buy more than once (Shopify is in early access). It learns each customer's own rhythm, so the same app spots a missed weekly grocery shop, a skincare refill that's overdue and a birthday cake due once a year.
 
+Birthday in 12 daysAnna P. · ordered 14 Mar last year
 IndustryBakeries and cake shops
-Birthdays, anniversaries and festival orders, remembered for you.IndustryGifts, flowers and hampers
-Remind gift buyers before the date, and win back last Valentine's buyers.IndustryOnline grocery
-Notice the missed weekly shop while it's still easy to fix.IndustryBeauty and skincare
-Reach customers when the bottle runs out, and learn which first product makes them stay.IndustryFashion and clothing
-Bring last season's festival shoppers back for the next one.IndustryPet food and supplies
-Remind pet owners before the food bag runs out.IndustryRestaurants and cloud kitchens
-Keep regulars ordering direct, and see when they order.IndustryCoffee, tea and specialty food
-Turn a tasting set into a monthly habit.IndustryBaby and kids
-Grow with your customers' children, from nappies to birthdays.IndustryCorporate gifting and B2B
-Find every business customer, and call them before the season.
+Birthdays, anniversaries and festival orders, remembered for you.See how it works →
+
+Last Valentine's buyerDaniel R. · not back since · $85
+IndustryGifts, flowers and hampers
+Remind gift buyers before the date, and win back last Valentine's buyers.See how it works →
+
+Missed the weekly shopFatima R. · 34 days, usually 7
+IndustryOnline grocery
+Notice the missed weekly shop while it's still easy to fix.See how it works →
+
+Refill dueVitamin C serum · every 9 weeks
+IndustryBeauty and skincare
+Reach customers when the bottle runs out, and learn which first product makes them stay.See how it works →
+
+Eid regular, 3 yearsAisha N. · send the new collection
+IndustryFashion and clothing
+Bring last season's festival shoppers back for the next one.See how it works →
+
+Due in 2 daysOmar K. · Adult dry food 10kg
+IndustryPet food and supplies
+Remind pet owners before the food bag runs out.See how it works →
+
+Friday regular went quietKasun P. · last order 4 weeks ago
+IndustryRestaurants and cloud kitchens
+Keep regulars ordering direct, and see when they order.See how it works →
+
+Tasting set, no full bag44% of these came back
+IndustryCoffee, tea and specialty food
+Turn a tasting set into a monthly habit.See how it works →
+
+Next size up?Sofia L. · last nappies 52 days ago
+IndustryBaby and kids
+Grow with your customers' children, from nappies to birthdays.See how it works →
+
+5 people, 1 companyOrdered 40 hampers last December
+IndustryCorporate gifting and B2B
+Find every business customer, and call them before the season.See how it works →
 
 ## Don't see your industry?
 

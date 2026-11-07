@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 240" width="400" height="240" role="img">
+<style>
+.tw{animation:tw 2.6s ease-in-out infinite;transform-box:fill-box;transform-origin:center}
+.tw2{animation:tw 3.1s ease-in-out .8s infinite;transform-box:fill-box;transform-origin:center}
+.fl{animation:fl 1.4s ease-in-out infinite;transform-box:fill-box;transform-origin:50% 100%}
+.fl2{animation:fl 1.7s ease-in-out .3s infinite;transform-box:fill-box;transform-origin:50% 100%}
+.st{animation:st 3.2s ease-in-out infinite}
+.st2{animation:st 3.2s ease-in-out 1.1s infinite}
+.fo{animation:fo 4s ease-in-out infinite;transform-box:fill-box;transform-origin:center}
+.fo2{animation:fo 4.6s ease-in-out 1.2s infinite;transform-box:fill-box;transform-origin:center}
+.dr{animation:dr 2.4s ease-in infinite}
+@keyframes tw{0%,100%{opacity:.25;transform:scale(.7)}50%{opacity:1;transform:scale(1)}}
+@keyframes fl{0%,100%{transform:scaleY(1) rotate(-3deg)}50%{transform:scaleY(1.18) rotate(3deg)}}
+@keyframes st{0%{opacity:0;transform:translateY(8px)}35%{opacity:.85}100%{opacity:0;transform:translateY(-16px)}}
+@keyframes fo{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
+@keyframes dr{0%{opacity:0;transform:translateY(-4px)}20%{opacity:1}80%{opacity:1;transform:translateY(16px)}100%{opacity:0;transform:translateY(18px)}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important}}
+</style>
+<defs><linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#DDF5E8"/><stop offset="1" stop-color="#C8EDDA"/></linearGradient>
+<radialGradient id="glow" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#FFFFFF" stop-opacity=".75"/><stop offset="1" stop-color="#FFFFFF" stop-opacity="0"/></radialGradient></defs>
+<rect width="400" height="240" fill="url(#bg)"/>
+<circle cx="335" cy="38" r="88" fill="#FFFFFF" opacity=".28"/>
+<circle cx="40" cy="225" r="70" fill="#FFFFFF" opacity=".22"/>
+<ellipse cx="200" cy="132" rx="150" ry="100" fill="url(#glow)"/>
+
+<ellipse cx="208" cy="216" rx="110" ry="8" fill="#1F7A4D" opacity=".14"/>
+<g transform="rotate(-14 214 86)"><rect x="200" y="40" width="26" height="96" rx="13" fill="#E9B36A"/><path d="M206 56 l14 8 M206 74 l14 8 M206 92 l14 8" stroke="#C98B3E" stroke-width="3" stroke-linecap="round"/></g>
+<g><ellipse cx="168" cy="94" rx="18" ry="26" fill="#2E9E63" transform="rotate(-20 168 94)"/><ellipse cx="186" cy="86" rx="16" ry="28" fill="#3CB371" transform="rotate(8 186 86)"/><path d="M168 118 L176 70 M186 112 L186 62" stroke="#1F7A4D" stroke-width="2" opacity=".5"/></g>
+<g transform="rotate(24 250 92)"><path d="M244 66 L256 66 L250 124Z" fill="#FF8C42"/><path d="M250 66 l-8-14 M250 66 l0-16 M250 66 l8-14" stroke="#3CB371" stroke-width="4" stroke-linecap="round"/></g>
+<path d="M138 108 L278 108 L266 210 L150 210Z" fill="#D9A86C"/>
+<path d="M138 108 L278 108 L276 124 L140 124Z" fill="#C8945A"/>
+<path d="M190 150 q18 -14 36 0" stroke="#B57E45" stroke-width="3" fill="none" stroke-linecap="round" opacity=".6"/>
+<circle cx="298" cy="196" r="20" fill="#E5484D"/><path d="M298 178 q4-10 12-10" stroke="#3B7D3B" stroke-width="3" fill="none" stroke-linecap="round"/><ellipse cx="291" cy="190" rx="5" ry="7" fill="#FFFFFF" opacity=".35"/>
+<circle cx="120" cy="200" r="15" fill="#FFB020"/><circle cx="116" cy="196" r="4" fill="#FFFFFF" opacity=".35"/>
+<g class="fo"><circle cx="78" cy="78" r="34" fill="#FFFFFF"/><path d="M62 78 a16 16 0 1 1 6 12.5" stroke="#2A78D6" stroke-width="5" fill="none" stroke-linecap="round"/><path d="M60 88 l8 4 l2-9" stroke="#2A78D6" stroke-width="5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="78" y="83" text-anchor="middle" font-family="Inter, -apple-system, 'Segoe UI', Arial, sans-serif" font-size="13" font-weight="800" fill="#0F2A4A">7d</text></g>
+<path class="tw" d="M336 60 Q337.8 68.2 346 70 Q337.8 71.8 336 80 Q334.2 71.8 326 70 Q334.2 68.2 336 60Z" fill="#FFFFFF"/><path class="tw2" d="M358 114 Q359.08 118.92 364 120 Q359.08 121.08 358 126 Q356.92 121.08 352 120 Q356.92 118.92 358 114Z" fill="#FFFFFF"/>
+
+</svg>
