@@ -7,11 +7,15 @@ Key facts:
 - What it does: reads a store's orders and, every morning, lists customers to bring back with the reason and the value of one more order: late regulars, yearly occasions, unpaid checkouts, first time buyers (45 to 150 days after a first order), customers who stopped ordering, best customers and corporate buyers. Each comes with a WhatsApp message ready to send.
 - How "late" is decided: for customers with two or more orders, late means the days since their last order exceed the largest of 1.5 times their median gap, their median gap plus 21 days, and 45 days.
 - Proof: every message is matched to the first paid order within 60 days, each order counted once. 1 in 10 people on the bring back lists are held back at random so Results shows how many orders the messages added.
+- Ask Loyalbase: owners type a question in plain words or pick one of over 40 ready-made questions (customers, sales, products, Meta ads and posts). Answers are a sentence, a table or a customer list. Every date, festival, product, area and amount can be changed. Ready-made questions run without AI; where AI is switched on it only receives totals, product names, areas and order sources, never customer names, phones, emails or order numbers.
+- Festival groups: customers are tagged by the festivals they order for, year by year, using a short ordering window for each (Christmas, Avurudu, Eid ul-Fitr, Eid ul-Adha, Vesak, Deepavali, Thai Pongal). Days shared by two festivals count for neither.
+- Business customers: recognised from the company name at checkout, or a work email domain when that's empty (personal providers and the shop's own domain excluded). Only a keyed hash of the domain leaves the store (plugin 0.5.0+).
+- Industries it suits: bakeries and cake shops, gifts, flowers and hampers, online grocery, beauty and skincare, fashion and clothing, pet food and supplies, restaurants and cloud kitchens (own website orders), coffee, tea and specialty food, baby and kids, corporate gifting and B2B.
 - Also includes: sales by returning and new customers, best sellers, products rising and falling, bought together, discount code performance, peak dates with last year's numbers, Meta ads and Facebook and Instagram posts and Google Analytics next to the store's real sales, a Monday brief, a monthly report, team logins, list downloads and Sendy email sends.
 - Privacy: customer names, phone numbers, emails and addresses never leave the store. Loyalbase stores order facts and keyed hashes. Names load from the store to the owner's browser using a 5 minute signed pass, and each lookup is logged on the store.
 - Setup: install the WordPress plugin (WordPress 6.2 or newer, PHP 7.4 or newer, WooCommerce), press Connect, approve. About 10 minutes.
 - Price: $50 a month, flat; does not rise with order volume. Early access is free while the store is set up.
-- Coming next: Shopify app, automatic WhatsApp reminders the owner approves, POS and branch sales, reorder links, referrals and review asks.
+- Not yet: POS and branch sales, orders placed through delivery apps. Coming next: Shopify app, automatic WhatsApp reminders the owner approves, POS and branch sales, reorder links, referrals and review asks.
 - Company: built by Digisavvy in Colombo, Sri Lanka; founded by Akmal Afzal. Contact: WhatsApp +94 77 027 4519, akmal@digisavvyteam.com.
 
 ## Main page
@@ -20,10 +24,25 @@ Key facts:
 ## Product
 - [Get more repeat customers from your WooCommerce store](https://getloyalbase.app/woocommerce-customer-retention/): Find WooCommerce customers who stopped buying, send each a ready written WhatsApp message, and see the sales that came back. 10 minute setup, $50 a month.
 - [Bring back Shopify customers without running a points program](https://getloyalbase.app/shopify-customer-retention/): Loyalbase finds Shopify customers who stopped buying and gives you a WhatsApp message for each, with proof of what came back. Now in early access.
+- [Ask your store questions in plain words](https://getloyalbase.app/ask-loyalbase/): Ask about your customers, sales, products or ads in plain words and get an answer, a table or a customer list. 47 ready-made questions, no AI needed.
+
+## Industries
+- [Built for how your store sells](https://getloyalbase.app/industries/): How Loyalbase brings customers back for bakeries, gift shops, grocery, beauty, fashion, pet, restaurants, coffee, baby stores and B2B sellers on WooCommerce.
+- [Get cake customers back for every birthday, not just one](https://getloyalbase.app/industries/bakeries-and-cake-shops/): Bring cake customers back for every birthday, anniversary and festival. Loyalbase finds who is due, writes the WhatsApp message and shows what came back.
+- [Remind gift buyers before the date, not after](https://getloyalbase.app/industries/gifts-flowers-and-hampers/): Gift buyers order for other people, on dates they forget. Loyalbase remembers the dates, finds last Valentine's buyers and writes the message.
+- [Notice the missed weekly shop before it becomes a lost customer](https://getloyalbase.app/industries/online-grocery/): Weekly shoppers rarely say goodbye, they just stop. Loyalbase spots the missed weekly shop early, shows who is due and which areas are slipping.
+- [Reach beauty customers when the bottle runs out](https://getloyalbase.app/industries/beauty-and-skincare/): Know when a customer's serum is running low, which first product turns buyers into regulars, and whether discounts bring them back.
+- [Bring last season's shoppers back for the next one](https://getloyalbase.app/industries/fashion-and-clothing/): Find last Eid's buyers before this Eid, see who only buys on discount, and bring back last season's shoppers. For WooCommerce fashion stores.
+- [Remind pet owners before the food bag runs out](https://getloyalbase.app/industries/pet-food-and-supplies/): Pet food runs out on a schedule. Loyalbase learns each customer's timing, lists who is due this week and who switched away, and writes the reminder.
+- [Keep your regulars ordering direct, not through the delivery apps](https://getloyalbase.app/industries/restaurants-and-cloud-kitchens/): For restaurants taking orders on their own website. See your regulars, when they order, which areas and branches sell, and bring back customers who went quiet.
+- [Turn one bag of coffee into a monthly habit](https://getloyalbase.app/industries/coffee-tea-and-specialty-food/): Turn tasting-set buyers into monthly regulars, remind people before the bag runs out, and find your gift and office customers.
+- [Grow with your customers' children](https://getloyalbase.app/industries/baby-and-kids/): Nappies run out, children grow, birthdays come round. Loyalbase shows which parents are due, what they buy next, and who orders for birthdays.
+- [See your company customers as companies, not strangers](https://getloyalbase.app/industries/corporate-gifting-and-b2b/): Loyalbase spots business customers from the company name or a work email, counts each company once and shows who ordered last festive season but not this one.
 
 ## Guides
 - [How to find customers who stopped buying from your store](https://getloyalbase.app/guides/how-to-find-customers-who-stopped-buying/): A simple method to spot customers who stopped buying, using each person's own buying rhythm. Includes a spreadsheet version you can do today.
 - [7 WhatsApp messages that bring customers back](https://getloyalbase.app/whatsapp-messages-to-bring-back-customers/): Copy 7 WhatsApp templates to win back customers: late regulars, first time buyers, unpaid checkouts, yearly occasions and more, with when to send each.
+- [How to find customers who order for the same festival every year](https://getloyalbase.app/guides/festival-customers/): A simple way to find customers who order for the same festival every year, when to message them, and what to say. With a spreadsheet method and ready messages.
 - [How to tell if your messages really brought customers back](https://getloyalbase.app/guides/how-to-prove-your-messages-worked/): Some customers would have ordered anyway. A held back group shows how many extra orders your messages really added. Simple explanation with a worked example.
 - [Do you need a loyalty program, or win back messages?](https://getloyalbase.app/guides/loyalty-program-vs-win-back-messages/): Points programs reward customers who already come back. Win back messages reach the ones who stopped. Costs, pros and cons, and when to use each.
 

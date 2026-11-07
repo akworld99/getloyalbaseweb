@@ -13,6 +13,9 @@ from html.parser import HTMLParser
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import content as C  # noqa: E402
+import industries as I  # noqa: E402
+
+C.PAGES.extend(I.PAGES)
 
 SITE = "https://getloyalbase.app"
 GA = "G-32C4JZB9DC"
@@ -33,6 +36,9 @@ HOME_FAQS = [
     ("Does it work with my POS and branches?", "Not yet. It's on the roadmap, starting with a sales file per branch and then direct sync for cloud POS systems. Walk in customers join the same lists when the till records a phone number."),
     ("Which countries does it work in?", "Any country. Phone numbers are matched in full international form, and money shows in your own currency."),
     ("I use Klaviyo or a points app. Do I switch?", "No. Keep them. Loyalbase finds the people who need a personal nudge and shows what it was worth."),
+    ("Can I ask Loyalbase questions about my store?", "Yes. Type a question in plain words, like \"who ordered before Eid last year but not since\", or pick one of over 40 ready-made questions. You get a sentence, a table or a list of customers from your own orders. The ready-made questions don't need AI, and any AI only ever sees totals."),
+    ("Can it find customers who order every festival?", "Yes. Customers are grouped by the festivals they order for, year by year: Christmas, Avurudu, Eid ul-Fitr, Eid ul-Adha, Vesak, Deepavali and Thai Pongal. Ask for anyone who ordered for a festival in two or more different years."),
+    ("Does it spot business and corporate customers?", "Yes. Anyone who orders with a company name, or from a work email address, is marked as a business customer, and people from the same company are counted together. Personal addresses like Gmail don't count, and the email never leaves your store."),
 ]
 
 HOME_DESC = "Get customers to order again, no loyalty program. Loyalbase finds who stopped buying, writes a WhatsApp message and shows what came back. From $50 a month."
@@ -78,16 +84,20 @@ SOFTWARE = {
         "Sales by returning and new customers, best sellers, bought together",
         "Peak dates with last year's numbers",
         "Meta ads, Facebook and Instagram posts and Google Analytics next to real sales",
+        "Ask Loyalbase: plain-word questions about customers, sales, products and ads, with over 40 ready-made questions that run without AI",
+        "Customers grouped by the festivals they order for: Christmas, Avurudu, Eid ul-Fitr, Eid ul-Adha, Vesak, Deepavali and Thai Pongal",
+        "Business customers recognised from the company name or a work email address",
         "Customer names, phones, emails and addresses stay on the store",
     ],
     "publisher": {"@id": f"{SITE}/#org"},
 }
 
-NAV = [("/#week", "How it works"), ("/woocommerce-customer-retention/", "WooCommerce"), ("/guides/", "Guides"), ("/compare/", "Compare"), ("/#pricing", "Pricing")]
+NAV = [("/industries/", "Industries"), ("/ask-loyalbase/", "Ask"), ("/woocommerce-customer-retention/", "WooCommerce"), ("/guides/", "Guides"), ("/compare/", "Compare"), ("/#pricing", "Pricing")]
 
 FOOTER_COLS = [
-    ("Product", [("/#week", "How it works"), ("/#features", "Features"), ("/#pricing", "Pricing"), ("/woocommerce-customer-retention/", "WooCommerce"), ("/shopify-customer-retention/", "Shopify")]),
-    ("Guides", [("/guides/how-to-find-customers-who-stopped-buying/", "Find customers who stopped buying"), ("/whatsapp-messages-to-bring-back-customers/", "WhatsApp templates"), ("/guides/how-to-prove-your-messages-worked/", "Prove your messages worked"), ("/guides/loyalty-program-vs-win-back-messages/", "Loyalty program or win back"), ("/guides/", "All guides")]),
+    ("Product", [("/#week", "How it works"), ("/#features", "Features"), ("/ask-loyalbase/", "Ask Loyalbase"), ("/#pricing", "Pricing"), ("/woocommerce-customer-retention/", "WooCommerce"), ("/shopify-customer-retention/", "Shopify")]),
+    ("Industries", [("/industries/bakeries-and-cake-shops/", "Bakeries and cake shops"), ("/industries/gifts-flowers-and-hampers/", "Gifts, flowers and hampers"), ("/industries/online-grocery/", "Online grocery"), ("/industries/beauty-and-skincare/", "Beauty and skincare"), ("/industries/fashion-and-clothing/", "Fashion and clothing"), ("/industries/", "All industries")]),
+    ("Guides", [("/guides/how-to-find-customers-who-stopped-buying/", "Find customers who stopped buying"), ("/whatsapp-messages-to-bring-back-customers/", "WhatsApp templates"), ("/guides/how-to-prove-your-messages-worked/", "Prove your messages worked"), ("/guides/festival-customers/", "Festival regulars"), ("/guides/loyalty-program-vs-win-back-messages/", "Loyalty program or win back"), ("/guides/", "All guides")]),
     ("Compare", [("/compare/smile-io-alternative-for-woocommerce/", "Smile.io alternative"), ("/compare/loyalbase-vs-klaviyo/", "Loyalbase vs Klaviyo"), ("/compare/", "All comparisons")]),
     ("Company", [("/about/", "About"), ("/#invest", "Investors"), ("/privacy/", "Privacy"), (f"https://wa.me/{WA_NUMBER}", "WhatsApp us"), (f"mailto:{EMAIL}", "Email us")]),
 ]
@@ -161,7 +171,9 @@ def crumbs_for(p):
         trail.append(("/guides/", "Guides"))
     if p["section"] == "compare" and p["path"] != "/compare/":
         trail.append(("/compare/", "Compare"))
-    label = {"/guides/": "Guides", "/compare/": "Compare"}.get(p["path"], p["nav"])
+    if p["section"] == "industries" and p["path"] != "/industries/":
+        trail.append(("/industries/", "Industries"))
+    label = {"/guides/": "Guides", "/compare/": "Compare", "/industries/": "Industries"}.get(p["path"], p["nav"])
     trail.append((p["path"], label))
     return trail
 
@@ -261,7 +273,7 @@ def related_html(paths):
     cards = ""
     for path in paths:
         r = BY_PATH[path]
-        kind = {"guides": "Guide", "compare": "Compare", "product": "Product", "company": "Company"}[r["section"]]
+        kind = {"guides": "Guide", "compare": "Compare", "product": "Product", "company": "Company", "industries": "Industry"}[r["section"]]
         if path == "/whatsapp-messages-to-bring-back-customers/":
             kind = "Templates"
         cards += f'<a class="sx-rel" href="{path}"><span>{kind}</span><b>{esc(r["h1"])}</b></a>'
@@ -289,8 +301,8 @@ def render_page(p):
     meta = f'<span>Updated {C.UPDATED_TEXT}</span><span>{mins} min read</span><span>By the Loyalbase team</span>' if p["schema"] == "article" else f"<span>Updated {C.UPDATED_TEXT}</span>"
     answer = f'<div class="sx-answer"><span class="sx-answer-label">Short answer</span><p>{p["answer"]}</p></div>' if p.get("answer") else ""
     faqs = faq_html_sub(p["faqs"]) if p.get("faqs") else ""
-    current = p["path"] if any(h == p["path"] for h, _ in NAV) else ("/guides/" if p["section"] == "guides" else "/compare/" if p["section"] == "compare" else None)
-    body_cls = "sx-body" if p["path"] not in ("/guides/",) else "sx-body sx-wide"
+    current = p["path"] if any(h == p["path"] for h, _ in NAV) else ("/guides/" if p["section"] == "guides" else "/compare/" if p["section"] == "compare" else "/industries/" if p["section"] == "industries" else None)
+    body_cls = "sx-body" if p["path"] not in ("/guides/", "/industries/") else "sx-body sx-wide"
     page = f'''<!doctype html>
 <html lang="en">
 <head>
@@ -308,7 +320,7 @@ def render_page(p):
 <p class="sx-stand">{esc(p["stand"])}</p>
 <div class="sx-meta">{meta}</div>
 </div></div>
-<div class="sx-main"><div class="lf-wrap"><article class="{body_cls}"{' style="max-width: none"' if p["path"] == "/guides/" else ""}>
+<div class="sx-main"><div class="lf-wrap"><article class="{body_cls}"{' style="max-width: none"' if p["path"] in ("/guides/", "/industries/") else ""}>
 {answer}
 {p["body"]}
 {faqs}
@@ -395,6 +407,120 @@ def home_guides_block():
 </section><!--/GUIDES-->'''
 
 
+ASK_DEMOS = [
+    {
+        "q": "Customers who ordered before Eid ul-Fitr 2026 but haven't ordered since",
+        "a": "96 customers ordered in the 3 weeks before Eid and haven't been back. They spent $8,450 then. 61 said yes to WhatsApp.",
+        "head": ["Customer", "Eid order", "Orders ever"],
+        "rows": [["Aisha N.", "$140", "4"], ["Omar K.", "$95", "1"], ["Fatima R.", "$210", "6"]],
+        "chip": "Eid buyers who didn't come back",
+    },
+    {
+        "q": "Which festivals do my customers order for?",
+        "a": "Christmas is your biggest festival: 412 customers, 96 of them in two or more years. Avurudu is next with 288.",
+        "head": ["Festival", "Customers", "2+ years"],
+        "rows": [["Christmas", "412", "96"], ["Avurudu", "288", "61"], ["Eid ul-Fitr", "203", "47"]],
+        "chip": "Which festivals?",
+    },
+    {
+        "q": "What new customers buy first, and who comes back",
+        "a": "The gentle cleanser brings the most second orders: 41% of people who started with it came back.",
+        "head": ["First product", "New customers", "Came back"],
+        "rows": [["Vitamin C serum", "212", "28%"], ["Gentle cleanser", "148", "41%"], ["SPF 50 sunscreen", "131", "33%"]],
+        "chip": "What brings people back?",
+    },
+    {
+        "q": "Business customers (company name or work email), sorted by spend",
+        "a": "148 customers order for a company, from 64 companies. They spent $52,300 in the last 12 months.",
+        "head": ["Customer", "Orders", "Spend"],
+        "rows": [["Ravi M.", "14", "$6,840"], ["Lena M.", "9", "$4,210"], ["James T.", "6", "$3,960"]],
+        "chip": "Business customers",
+    },
+]
+
+
+def ask_table(d):
+    th = "".join(f"<th scope=\"col\">{esc(h)}</th>" for h in d["head"])
+    tr = "".join("<tr>" + "".join(f"<td>{esc(c)}</td>" for c in r) + "</tr>" for r in d["rows"])
+    return f"<p>{esc(d['a'])}</p><table><thead><tr>{th}</tr></thead><tbody>{tr}</tbody></table>"
+
+
+ASK_JS = """<script>
+(function(){
+  var D=__DATA__;
+  var q=document.getElementById('lb-ask-q'),out=document.getElementById('lb-ask-out'),chips=[].slice.call(document.querySelectorAll('.lb-ask-chip'));
+  if(!q||!out)return;
+  var still=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var cur=0,timer=null,auto=true,seen=false;
+  function mark(i){chips.forEach(function(c,j){c.setAttribute('aria-pressed',j===i?'true':'false');});}
+  function next(){if(auto&&!still){timer=setTimeout(function(){show((cur+1)%D.length);},5200);}}
+  function show(i){
+    clearTimeout(timer);cur=i;mark(i);
+    if(still){q.textContent=D[i].q;out.innerHTML=D[i].h;return;}
+    out.classList.add('lb-ask-hide');q.textContent='';
+    var t=D[i].q,k=0;
+    (function type(){
+      if(k<=t.length){q.textContent=t.slice(0,k);k+=2;timer=setTimeout(type,28);}
+      else{q.textContent=t;timer=setTimeout(function(){out.innerHTML=D[i].h;out.classList.remove('lb-ask-hide');next();},280);}
+    })();
+  }
+  chips.forEach(function(c){c.addEventListener('click',function(){auto=false;show(+c.getAttribute('data-ask'));if(window.gtag)gtag('event','ask_demo_click',{question:c.textContent});});});
+  if(!still&&'IntersectionObserver' in window){
+    new IntersectionObserver(function(es,o){es.forEach(function(e){if(e.isIntersecting&&!seen){seen=true;o.disconnect();timer=setTimeout(function(){show(1);},3200);}});},{threshold:.4}).observe(out);
+  }
+})();
+</script>"""
+
+
+def home_ask_block():
+    first = ASK_DEMOS[0]
+    chips = "".join(
+        f'<button type="button" class="lb-ask-chip" data-ask="{i}" aria-pressed="{"true" if i == 0 else "false"}">{esc(d["chip"])}</button>'
+        for i, d in enumerate(ASK_DEMOS))
+    data = json.dumps([{"q": d["q"], "h": ask_table(d)} for d in ASK_DEMOS], ensure_ascii=False).replace("</", "<\\/")
+    return f'''<!--ASK--><section id="ask" class="lb-reveal" style="background: #FFFFFF; padding: clamp(56px, 7vw, 100px) 0">
+<div class="lb-wrap lb-ask-grid">
+<div class="lb-ask-copy">
+<div class="lb-eyebrow" style="color: #2A78D6">New: Ask Loyalbase</div>
+<h2 class="lb-h2">Ask your store anything. <span class="lb-soft">In plain words.</span></h2>
+<p class="lb-lead">Type a question the way you'd say it. Get the answer, a table or a list of customers to message, straight from your own orders.</p>
+<ul class="lb-ask-points">
+<li>Over 40 ready-made questions about customers, sales, products and ads. No AI needed.</li>
+<li>Change any underlined word: the festival, the product, the area, the dates.</li>
+<li>Knows Eid, Avurudu, Vesak, Deepavali, Christmas and more, even when the dates move.</li>
+<li>Customer details stay on your store. Any AI only sees totals.</li>
+</ul>
+<p style="margin: 24px 0 0"><a href="/ask-loyalbase/" style="color: #1F63B6; font-weight: 600; text-decoration: none">See every question you can ask →</a></p>
+</div>
+<div class="lb-ask-demo">
+<div class="lb-card lb-ask-box">
+<div class="lb-ask-bar"><span class="lb-ask-ico" aria-hidden="true">?</span><div class="lb-ask-text"><span><span id="lb-ask-q">{esc(first["q"])}</span><span class="lb-ask-caret" aria-hidden="true"></span></span></div></div>
+<div class="lb-ask-out" id="lb-ask-out">{ask_table(first)}</div>
+</div>
+<div class="lb-ask-chips" role="group" aria-label="Example questions">{chips}</div>
+<p class="lb-ask-note">Example answers. Names and numbers are made up.</p>
+</div>
+</div>
+{ASK_JS.replace("__DATA__", data)}
+</section><!--/ASK-->'''
+
+
+def home_industries_block():
+    cards = "".join(
+        f'<a class="lb-ind" href="/industries/{slug}/"><b>{esc(name)}</b><span>{esc(text)}</span></a>'
+        for slug, name, text in I.HUB_ITEMS)
+    return f'''<!--INDUSTRIES--><section id="industries" class="lb-soft-bg" style="padding: clamp(48px, 6vw, 84px) 0">
+<div class="lb-wrap">
+<div style="display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 12px">
+<div style="min-width: 0; flex: 1 1 520px"><div class="lb-eyebrow" style="color: #2A78D6">Industries</div><h2 class="lb-h2">Built for how your store sells</h2>
+<p class="lb-lead">A bakery loses a birthday. A grocery store loses a weekly shop. Loyalbase learns each customer's own rhythm, so it fits both.</p></div>
+<a href="/industries/" style="font-weight: 600; color: #1F63B6; text-decoration: none">All industries →</a>
+</div>
+<div class="lb-ind-grid">{cards}</div>
+</div>
+</section><!--/INDUSTRIES-->'''
+
+
 def patch_home():
     path = os.path.join(ROOT, "index.html")
     h = open(path, encoding="utf-8").read()
@@ -423,6 +549,16 @@ def patch_home():
     if "<!--GUIDES-->" not in h:
         h = h.replace("\n<!-- INVEST -->", "\n<!--GUIDES--><!--/GUIDES-->\n\n<!-- INVEST -->", 1)
     h = re.sub(r"<!--GUIDES-->.*?<!--/GUIDES-->", lambda m: home_guides_block(), h, count=1, flags=re.S)
+
+    # Ask demo + industries strip, between features and privacy
+    if "<!--ASK-->" not in h:
+        h = h.replace("<!-- PRIVACY (short) -->", "<!--ASK--><!--/ASK-->\n\n<!--INDUSTRIES--><!--/INDUSTRIES-->\n\n<!-- PRIVACY (short) -->", 1)
+    h = re.sub(r"<!--ASK-->.*?<!--/ASK-->", lambda m: home_ask_block(), h, count=1, flags=re.S)
+    h = re.sub(r"<!--INDUSTRIES-->.*?<!--/INDUSTRIES-->", lambda m: home_industries_block(), h, count=1, flags=re.S)
+
+    # nav: Platform -> Industries, Features -> Ask
+    h = h.replace('<a href="#platform" style="color: #16212F; text-decoration: none">Platform</a>', '<a href="/industries/" style="color: #16212F; text-decoration: none">Industries</a>', 1)
+    h = h.replace('<a href="#features" style="color: #16212F; text-decoration: none">Features</a>', '<a href="#ask" style="color: #16212F; text-decoration: none">Ask</a>', 1)
 
     # Footer
     if "<!--FOOT-->" not in h:
@@ -529,8 +665,9 @@ def to_text(fragment):
 
 def write_llms():
     groups = [
-        ("Product", ["/woocommerce-customer-retention/", "/shopify-customer-retention/"]),
-        ("Guides", ["/guides/how-to-find-customers-who-stopped-buying/", "/whatsapp-messages-to-bring-back-customers/", "/guides/how-to-prove-your-messages-worked/", "/guides/loyalty-program-vs-win-back-messages/"]),
+        ("Product", ["/woocommerce-customer-retention/", "/shopify-customer-retention/", "/ask-loyalbase/"]),
+        ("Industries", ["/industries/"] + [p["path"] for p in I.PAGES if p["section"] == "industries" and p["path"] != "/industries/"]),
+        ("Guides", ["/guides/how-to-find-customers-who-stopped-buying/", "/whatsapp-messages-to-bring-back-customers/", "/guides/festival-customers/", "/guides/how-to-prove-your-messages-worked/", "/guides/loyalty-program-vs-win-back-messages/"]),
         ("Compare", ["/compare/", "/compare/smile-io-alternative-for-woocommerce/", "/compare/loyalbase-vs-klaviyo/"]),
         ("Company", ["/about/", "/privacy/"]),
     ]
@@ -539,11 +676,15 @@ def write_llms():
 - What it does: reads a store's orders and, every morning, lists customers to bring back with the reason and the value of one more order: late regulars, yearly occasions, unpaid checkouts, first time buyers (45 to 150 days after a first order), customers who stopped ordering, best customers and corporate buyers. Each comes with a WhatsApp message ready to send.
 - How "late" is decided: for customers with two or more orders, late means the days since their last order exceed the largest of 1.5 times their median gap, their median gap plus 21 days, and 45 days.
 - Proof: every message is matched to the first paid order within 60 days, each order counted once. 1 in 10 people on the bring back lists are held back at random so Results shows how many orders the messages added.
+- Ask Loyalbase: owners type a question in plain words or pick one of over 40 ready-made questions (customers, sales, products, Meta ads and posts). Answers are a sentence, a table or a customer list. Every date, festival, product, area and amount can be changed. Ready-made questions run without AI; where AI is switched on it only receives totals, product names, areas and order sources, never customer names, phones, emails or order numbers.
+- Festival groups: customers are tagged by the festivals they order for, year by year, using a short ordering window for each (Christmas, Avurudu, Eid ul-Fitr, Eid ul-Adha, Vesak, Deepavali, Thai Pongal). Days shared by two festivals count for neither.
+- Business customers: recognised from the company name at checkout, or a work email domain when that's empty (personal providers and the shop's own domain excluded). Only a keyed hash of the domain leaves the store (plugin 0.5.0+).
+- Industries it suits: bakeries and cake shops, gifts, flowers and hampers, online grocery, beauty and skincare, fashion and clothing, pet food and supplies, restaurants and cloud kitchens (own website orders), coffee, tea and specialty food, baby and kids, corporate gifting and B2B.
 - Also includes: sales by returning and new customers, best sellers, products rising and falling, bought together, discount code performance, peak dates with last year's numbers, Meta ads and Facebook and Instagram posts and Google Analytics next to the store's real sales, a Monday brief, a monthly report, team logins, list downloads and Sendy email sends.
 - Privacy: customer names, phone numbers, emails and addresses never leave the store. Loyalbase stores order facts and keyed hashes. Names load from the store to the owner's browser using a 5 minute signed pass, and each lookup is logged on the store.
 - Setup: install the WordPress plugin (WordPress 6.2 or newer, PHP 7.4 or newer, WooCommerce), press Connect, approve. About 10 minutes.
 - Price: $50 a month, flat; does not rise with order volume. Early access is free while the store is set up.
-- Coming next: Shopify app, automatic WhatsApp reminders the owner approves, POS and branch sales, reorder links, referrals and review asks.
+- Not yet: POS and branch sales, orders placed through delivery apps. Coming next: Shopify app, automatic WhatsApp reminders the owner approves, POS and branch sales, reorder links, referrals and review asks.
 - Company: built by Digisavvy in Colombo, Sri Lanka; founded by Akmal Afzal. Contact: WhatsApp +94 77 027 4519, akmal@digisavvyteam.com."""
     lines = ["# Loyalbase", "", "> Loyalbase is a customer retention app for WooCommerce and Shopify stores. It finds customers who stopped buying or are due to order, writes a WhatsApp message for each, and shows the sales that came back, measured against a held back group. From $50 a month, flat.", "", facts, ""]
     lines.append("## Main page")

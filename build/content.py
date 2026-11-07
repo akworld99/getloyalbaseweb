@@ -1,8 +1,8 @@
 # Content for getloyalbase.app subpages. Plain English, no em dashes or hyphens in visible copy.
 # Every fact here comes from the Loyalbase repo or a cited public source.
 
-UPDATED = "2026-11-04"
-UPDATED_TEXT = "4 November 2026"
+UPDATED = "2026-11-07"
+UPDATED_TEXT = "7 November 2026"
 
 SRC_SMILE_PLATFORMS = ("Smile.io help centre: supported ecommerce platforms", "https://help.smile.io/en/articles/4036185-supported-ecommerce-platforms")
 SRC_SMILE_PRICE = ("Rivo: Smile.io pricing breakdown, April 2026 (a competing vendor)", "https://www.rivo.io/blog/smile-io-pricing")
@@ -570,6 +570,9 @@ PAGES.append(dict(
 <a href="/whatsapp-messages-to-bring-back-customers/"><span>Templates</span><b>7 WhatsApp messages that bring customers back</b><p>Copy and send. When to send each one, and why it works.</p></a>
 <a href="/guides/how-to-prove-your-messages-worked/"><span>Guide</span><b>How to prove your messages worked</b><p>Held back groups explained, with a worked example.</p></a>
 <a href="/guides/loyalty-program-vs-win-back-messages/"><span>Guide</span><b>Loyalty program or win back messages?</b><p>What each costs, who each reaches, and which to start with.</p></a>
+<a href="/guides/festival-customers/"><span>Guide</span><b>How to find customers who order for the same festival every year</b><p>Eid, Avurudu, Christmas and Deepavali regulars, and when to message them.</p></a>
+<a href="/ask-loyalbase/"><span>Product</span><b>Ask your store questions in plain words</b><p>Every ready-made question, and what stays private.</p></a>
+<a href="/industries/"><span>Industries</span><b>Built for how your store sells</b><p>Bakeries, gifts, grocery, beauty, fashion, pet, restaurants and more.</p></a>
 <a href="/woocommerce-customer-retention/"><span>WooCommerce</span><b>Customer retention for WooCommerce</b><p>What Loyalbase finds in your WooCommerce orders, and how to set it up.</p></a>
 <a href="/compare/"><span>Compare</span><b>Loyalbase vs loyalty and email apps</b><p>Smile.io, LoyaltyLion, Yotpo and Klaviyo, side by side.</p></a>
 </div>
