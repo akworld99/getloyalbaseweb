@@ -11,6 +11,15 @@ import sys
 from html.parser import HTMLParser
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
+
+def _css_version():
+    import hashlib
+    with open(os.path.join(ROOT, "assets", "site.css"), "rb") as f:
+        return hashlib.md5(f.read()).hexdigest()[:8]
+
+
+CSS_V = _css_version()
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import content as C  # noqa: E402
 import industries as I  # noqa: E402
@@ -242,7 +251,7 @@ def head(title, desc, path, og_img, schema, extra=""):
 <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
 <link rel="alternate" type="text/plain" title="LLM summary" href="/llms.txt">
 {FONTS}
-<link rel="stylesheet" href="/assets/site.css">
+<link rel="stylesheet" href="/assets/site.css?v={CSS_V}">
 {extra}{jsonld(schema)}'''
 
 
@@ -379,7 +388,7 @@ def home_seo_block():
 <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
 <link rel="alternate" type="text/plain" title="LLM summary" href="/llms.txt">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="/assets/site.css">
+<link rel="stylesheet" href="/assets/site.css?v={CSS_V}">
 {jsonld(home_schema())}
 <!--/SEO-->'''
 
