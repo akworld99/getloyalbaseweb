@@ -606,7 +606,7 @@ PAGES.append(dict(
 </ul>
 
 <h2>Who we are</h2>
-<p>Loyalbase is built by <b>Digisavvy</b>, a performance marketing team in Colombo, and founded by <a href="https://www.linkedin.com/in/akmal-afzal24" rel="noopener">Akmal Afzal</a>.</p>
+<p>Loyalbase is built by <b>Digisavvy</b>, a performance marketing team in Colombo.</p>
 
 <h2>Where we're going</h2>
 <p>Next up: the Shopify app, automatic WhatsApp reminders you approve before they send, and walk in sales from POS systems at your outlets. Our first markets are Sri Lanka, India, Pakistan, Bangladesh, the UAE and the Gulf, and stores anywhere can join.</p>
