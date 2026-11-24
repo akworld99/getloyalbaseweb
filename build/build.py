@@ -30,7 +30,7 @@ C.PAGES.extend(I.PAGES)
 SITE = "https://getloyalbase.app"
 GA = "G-32C4JZB9DC"
 WA_NUMBER = "94770274519"
-EMAIL = "akmal@digisavvyteam.com"
+EMAIL = "digisavvyteam@gmail.com"
 
 PAGES = C.PAGES
 BY_PATH = {p["path"]: p for p in PAGES}
@@ -695,7 +695,7 @@ def write_llms():
 - Setup: install the WordPress plugin (WordPress 6.2 or newer, PHP 7.4 or newer, WooCommerce), press Connect, approve. About 10 minutes.
 - Price: $50 a month, flat; does not rise with order volume. Early access is free while the store is set up.
 - Not yet: POS and branch sales, orders placed through delivery apps. Coming next: Shopify app, automatic WhatsApp reminders the owner approves, POS and branch sales, reorder links, referrals and review asks.
-- Company: built by Digisavvy in Colombo, Sri Lanka. Contact: WhatsApp +94 77 027 4519, akmal@digisavvyteam.com."""
+- Company: built by Digisavvy in Colombo, Sri Lanka. Contact: WhatsApp +94 77 027 4519, digisavvyteam@gmail.com."""
     lines = ["# Loyalbase", "", "> Loyalbase is a customer retention app for WooCommerce and Shopify stores. It finds customers who stopped buying or are due to order, writes a WhatsApp message for each, and shows the sales that came back, measured against a held back group. From $50 a month, flat.", "", facts, ""]
     lines.append("## Main page")
     lines.append(f"- [Loyalbase home]({SITE}/): what it does, a week with Loyalbase, features, comparison, pricing, FAQ")

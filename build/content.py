@@ -615,7 +615,7 @@ PAGES.append(dict(
 <h2>Contact</h2>
 <ul>
 <li>WhatsApp: <a href="https://wa.me/94770274519">+94 77 027 4519</a></li>
-<li>Email: <a href="mailto:akmal@digisavvyteam.com">akmal@digisavvyteam.com</a></li>
+<li>Email: <a href="mailto:digisavvyteam@gmail.com">digisavvyteam@gmail.com</a></li>
 </ul>
 ''' + cta(),
     faqs=[],
@@ -645,7 +645,7 @@ PAGES.append(dict(
 <h3>Hosting and fonts</h3>
 <p>This site is hosted on GitHub Pages and loads fonts from Google Fonts. Like any web host, they may receive your IP address when you visit.</p>
 <h3>How long we keep it, and your choices</h3>
-<p>We keep early access details for as long as we're in touch about Loyalbase, and delete them when you ask. You can ask to see, correct or delete anything we hold about you by emailing <a href="mailto:akmal@digisavvyteam.com">akmal@digisavvyteam.com</a>. We don't sell personal data.</p>
+<p>We keep early access details for as long as we're in touch about Loyalbase, and delete them when you ask. You can ask to see, correct or delete anything we hold about you by emailing <a href="mailto:digisavvyteam@gmail.com">digisavvyteam@gmail.com</a>. We don't sell personal data.</p>
 
 <h2 id="app">The Loyalbase app and your store's data</h2>
 <ul>
@@ -659,7 +659,7 @@ PAGES.append(dict(
 </ul>
 
 <h2>Who we are</h2>
-<p>Loyalbase is a product of Digisavvy, Colombo, Sri Lanka. Questions about privacy: <a href="mailto:akmal@digisavvyteam.com">akmal@digisavvyteam.com</a>.</p>
+<p>Loyalbase is a product of Digisavvy, Colombo, Sri Lanka. Questions about privacy: <a href="mailto:digisavvyteam@gmail.com">digisavvyteam@gmail.com</a>.</p>
 ''',
     faqs=[],
     related=[],
